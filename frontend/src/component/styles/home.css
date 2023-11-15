@@ -13,6 +13,17 @@
     word-wrap: break-word;
 }
 
+/* Heading 2 & Heading 1 Spacing */
+h2, h1 {
+    word-spacing: 10px;
+    letter-spacing: 5px;
+}
+
+/* Paragraph Line Height */
+p {
+    line-height: 30px;
+}
+
 html, body {
     width:100%;
     overflow-x:hidden
@@ -20,8 +31,8 @@ html, body {
 
 :root {
     --primary-color: #fca311;
-    --navbar-bg: #14213d;
     --text-color-light: #fff;
     --text-color-dark: #000;
-    --font-family: 'Inter', sans-serif;
+    --font-family: 'Montserrat', sans-serif;
 }
+
