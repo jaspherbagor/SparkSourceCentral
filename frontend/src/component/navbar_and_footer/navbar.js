@@ -4,7 +4,77 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     return(
         <>
-            <div class="main_navbar sticky-top">
+            <header class="position-fixed container-fluid m-0 p-0">
+                <div class="container-fluid py-2 px-4">
+                    <div class="row align-items-center justify-content-center text-center">
+                        <div class="col-md-2 text-center text-md-start">
+                            <img src="../images/spark_source_central_logo.svg" alt="Logo" class="img-fluid"/>
+                        </div>
+                        <div class="col-md-8 text-center mb-2 mt-2">
+                            <form class="d-flex">
+                                <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search"/>
+                                <button class="btn" type="submit">
+                                    <i class="bi bi-search text-white"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <div class="account_info d-flex justify-content-end align-items-center text-white mt-3">
+                                <a class="text-white position-relative nav-link me-3">
+                                    <i class="bi bi-bag fs-4"></i>
+                                    <span class="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
+                                        0
+                                    </span>
+                                </a>
+                                <a class="text-white position-relative nav-link me-3">
+                                    <i class="bi bi-heart fs-4"></i>
+                                    <span class="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
+                                        0
+                                    </span>
+                                </a>
+                                <a href="#" class="text-white">
+                                    <i class="bi bi-person fs-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="navbar navbar-expand-lg navbar-dark py-2">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white fw-semibold" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white fw-semibold" href="#">Products</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white fw-semibold" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white fw-semibold" href="#">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white fw-semibold" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </>
+    )
+}
+
+export default Navbar;
+
+
+            {/* <div class="main_navbar sticky-top">
                 <div class="top-navbar py-3 px-4">
                     <div class="container-fluid">
                         <div class="row">
@@ -94,11 +164,4 @@ const Navbar = () => {
                         </div>
                     </div>
                 </nav>
-            </div>
-
-
-        </>
-    )
-}
-
-export default Navbar;
+            </div> */}

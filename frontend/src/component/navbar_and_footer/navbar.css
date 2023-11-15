@@ -26,7 +26,32 @@ html, body {
     --font-family: 'Inter', sans-serif;
 }
 
-.main_navbar{
+header {
+    background: var(--navbar-bg);
+}
+
+@media only screen and (max-width:767px) {
+    div.account_info {
+        justify-content: center !important;
+    }
+}
+
+.navbar {
+    background: var(--text-color-dark)
+}
+
+button[type=submit] {
+    background:var(--text-color-dark);
+    border: 2px solid var(--primary-color);
+    border-radius: 0px 10px 10px 0px;
+}
+
+form > input[type=search] {
+    border: 2px solid var(--primary-color);
+    border-radius: 10px 0px 0px 10px;
+}
+
+/* .main_navbar{
     border-bottom: 1px solid #ccc;
 }
 .main_navbar .top-navbar{
@@ -42,17 +67,7 @@ html, body {
     padding: 0px 0px;
     border-radius: 0px;
 }
-.main_navbar .top-navbar .dropdown-menu .dropdown-item{
-    padding: 8px 16px;
-    border-bottom: 1px solid #ccc;
-    font-size: 14px;
-}
-.main_navbar .top-navbar .dropdown-menu .dropdown-item i{
-    width: 20px;
-    text-align: center;
-    color: #2874f0;
-    font-size: 14px;
-}
+
 .main_navbar .navbar{
     background-color: var(--navbar-bg);
 }
@@ -65,4 +80,4 @@ html, body {
         font-size: 12px;
         padding: 8px 10px;
     }
-}
+} */
