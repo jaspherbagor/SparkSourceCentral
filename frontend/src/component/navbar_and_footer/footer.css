@@ -26,6 +26,13 @@ html, body {
     --font-family: 'Inter', sans-serif;
 }
 
+footer {
+    background: var(--footer-bg);
+}
+
+.footer_copyright p {
+    font-size: 12px
+}
 
 @media only screen and (max-width:575px) {
     .footer_logo, .customer_service, .categories, .quick_links, .my_account, .social_links, div .social_icons a i {

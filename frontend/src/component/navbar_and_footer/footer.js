@@ -3,8 +3,8 @@ import "./footer.css"
 const Footer = () => {
     return(
         <>
-            <footer className="footer container-fluid px-4 pt-5 pb-2 bg-dark">
-                <div className="row flex-wrap align-items-top justify-content-space-between pb-5">
+            <footer className="footer container-fluid px-4 pt-5 pb-3">
+                <div className="row flex-wrap align-items-top justify-content-space-between pb-1">
                     <div className="footer_logo col-lg-2 col-md-4 col-sm-4 col-12 text-start text-white px-2 py-2">
                         <a href="index.html">
                             <img src="../images/footer_logo.svg" className="logo-img mt-4" alt=""/>

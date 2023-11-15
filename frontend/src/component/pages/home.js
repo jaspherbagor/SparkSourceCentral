@@ -3,7 +3,7 @@ import React from "react";
 const Home = () => {
     return(
         <>
-            <div className="container-fluid bg-warning w-100 p-5 vh-100">
+            <div className="container-fluid bg-secondary w-100 p-5 vh-100">
                 <h2>This is a home content</h2>
             </div>
         </>

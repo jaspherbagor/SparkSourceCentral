@@ -25,3 +25,44 @@ html, body {
     --text-color-dark: #000;
     --font-family: 'Inter', sans-serif;
 }
+
+.main_navbar{
+    border-bottom: 1px solid #ccc;
+}
+.main_navbar .top-navbar{
+    background-color: var(--navbar-bg);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.main_navbar .top-navbar .nav-link{
+    color: #fff;
+}
+.main_navbar .top-navbar .dropdown-menu{
+    padding: 0px 0px;
+    border-radius: 0px;
+}
+.main_navbar .top-navbar .dropdown-menu .dropdown-item{
+    padding: 8px 16px;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+}
+.main_navbar .top-navbar .dropdown-menu .dropdown-item i{
+    width: 20px;
+    text-align: center;
+    color: #2874f0;
+    font-size: 14px;
+}
+.main_navbar .navbar{
+    background-color: var(--navbar-bg);
+}
+.main_navbar .navbar .nav-item .nav-link{
+    color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    .main_navbar .top-navbar .nav-link{
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
