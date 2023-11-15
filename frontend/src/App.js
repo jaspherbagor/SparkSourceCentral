@@ -1,8 +1,18 @@
-function App() {
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./component/navbar_and_footer/navbar";
+import Footer from "./component/navbar_and_footer/footer";
+import Routeway from "./component/route";
+const App = () => {
   return (
-    <div className="App">
-      <h2>React App</h2>
-    </div>
+
+    <>
+      <BrowserRouter>
+        <Navbar/>
+        <Routeway/>
+        <Footer/>
+      </BrowserRouter>
+    </>
   );
 }
 
