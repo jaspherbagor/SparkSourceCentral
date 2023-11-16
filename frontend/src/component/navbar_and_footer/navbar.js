@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     return(
         <>
-            <header class="position-fixed container-fluid m-0 p-0">
+            <header class="position-fixed container-fluid m-0 p-0 mb-5">
                 <div class="container-fluid py-2 px-4">
                     <div class="row align-items-center justify-content-center text-center">
                         <div class="col-md-2 text-center text-md-start">
@@ -12,8 +12,8 @@ const Navbar = () => {
                         </div>
                         <div class="col-md-8 text-center mb-2 mt-2">
                             <form class="d-flex">
-                                <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search"/>
-                                <button class="btn" type="submit">
+                                <input class="form-control search_input" type="search" placeholder="Search for products..." aria-label="Search"/>
+                                <button class="btn search_btn" type="submit">
                                     <i class="bi bi-search text-white"></i>
                                 </button>
                             </form>
@@ -47,20 +47,20 @@ const Navbar = () => {
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav mx-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link text-white fw-semibold" href="#">Home</a>
+                                <li class="nav-item me-3">
+                                    <a class="nav-link text-white fw-semibold" href="#"><i class="bi bi-lightning"></i> ALL ITEMS</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white fw-semibold" href="#">Products</a>
+                                <li class="nav-item me-3">
+                                    <a class="nav-link text-white fw-semibold" href="#"><i class="bi bi-lightbulb"></i> LIGHTING FIXTURES</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white fw-semibold" href="#">About</a>
+                                <li class="nav-item me-3">
+                                    <a class="nav-link text-white fw-semibold" href="#"><i class="bi bi-toggle-on"></i> SWITCHES & OUTLETS</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white fw-semibold" href="#">Blog</a>
+                                <li class="nav-item me-3">
+                                    <a class="nav-link text-white fw-semibold" href="#"><i class="bi bi-shield-lock"></i> SAFETY & PROTECTION</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white fw-semibold" href="#">Contact</a>
+                                <li class="nav-item me-3">
+                                    <a class="nav-link text-white fw-semibold" href="#"><i class="bi bi-tools"></i>  TOOLS & ACCESSORIES</a>
                                 </li>
                             </ul>
                         </div>

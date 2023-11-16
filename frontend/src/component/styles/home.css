@@ -32,7 +32,38 @@ html, body {
 :root {
     --primary-color: #fca311;
     --text-color-light: #fff;
+    --navbar-bg: #14213d;
     --text-color-dark: #000;
+    --dark-semitransparent: rgba(0,0,0,0.6);
     --font-family: 'Montserrat', sans-serif;
 }
 
+.hero_section {
+    background: url('https://img.freepik.com/premium-photo/set-electrician-tools-equipment-repair-electricity-system-top-view-with-copy-space-banner_106035-1623.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero_text {
+    margin-top:150px !important;
+    background: var(--dark-semitransparent);
+}
+
+@media only screen and (max-width:400px) {
+    .hero_text {
+        margin-top:240px !important;
+    }
+}
+
+.shopnow_btn {
+    border: 2px solid var(--primary-color);
+    background: var(--navbar-bg);
+    color:var(--text-color-light)
+}
+
+.shopnow_btn:hover {
+    border: 2px solid var(--primary-color);
+    background: var(--text-color-dark);
+    color:var(--text-color-light)
+}

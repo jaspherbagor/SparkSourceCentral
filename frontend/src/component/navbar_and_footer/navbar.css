@@ -28,9 +28,10 @@ html, body {
 
 header {
     background: var(--navbar-bg);
+    z-index:1000
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
     div.account_info {
         justify-content: center !important;
     }
@@ -40,15 +41,32 @@ header {
     background: var(--text-color-dark)
 }
 
-button[type=submit] {
+.search_btn {
     background:var(--text-color-dark);
     border: 2px solid var(--primary-color);
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 15px 15px 0px;
 }
 
-form > input[type=search] {
+.search_btn:hover {
+    background:var(--navbar-bg);
     border: 2px solid var(--primary-color);
-    border-radius: 10px 0px 0px 10px;
+}
+
+.search_btn i:hover {
+    color: var(--primary-color);
+}
+
+.search_input {
+    border: 2px solid var(--primary-color);
+    border-radius: 15px 0px 0px 15px;
+}
+
+.navbar-toggler {
+    border:none;
+}
+
+navbar-toggler-icon{
+    color:var(--text-color-light)
 }
 
 /* .main_navbar{
