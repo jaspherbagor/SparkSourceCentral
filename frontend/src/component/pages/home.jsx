@@ -73,7 +73,7 @@ const Home = () => {
                             {
                                 return(
                                     <div className="col-lg-3 col-md-4 col-sm-6 col-12 mb-4" key={currentElement.id}>
-                                        <div className="card text-center">
+                                        <div className="product_card card text-center">
                                             <img src={currentElement.Image} className="card-img-top img-fluid" alt={currentElement.Title}/>
                                             <div className="card-body mt-0 pt-1">
                                                 <p className="card-text text-secondary text-uppercase fs-6">{currentElement.Category}</p>
@@ -187,8 +187,8 @@ const Home = () => {
             </section>
 
             {/* <!-- Call-to-Action Section --> */}
-            <section className="cta-section text-center">
-                <div className="container">
+            <section className="cta-section text-center container-fluid px-4 py-5">
+                <div className="container-fluid p-4 bg-secondary">
                 <h2>Subscribe for Updates</h2>
                 <p>Sign up for our newsletter to receive exclusive offers and updates.</p>
                 <form action="#" method="post" className="subscribe-form">
@@ -198,16 +198,68 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* <!-- Trust Badges or Certifications Section --> */}
-            <section className="trust-badges-section text-center">
-                <div className="container">
-                <h2>Our Certifications</h2>
-                {/* <!-- Display trust badges or certifications here --> */}
-                <img src="certification1.png" alt="Certification 1"/>
-                <img src="certification2.png" alt="Certification 2"/>
-                {/* <!-- Add more certifications as needed --> */}
+            {/* Customers Review Section Start */}
+            <section class="customers-review-section container-fluid px-3 py-4 text-center h-auto">
+
+                <h2 class="fw-bolder mt-4 mb-3">CUSTOMERS <span>TESTIMONIALS</span></h2>
+
+                <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade mb-4 mt-3 px-2" data-bs-ride="carousel">
+                    <div class="carousel-inner px-0">
+
+                        <div class="carousel-item active">
+                            <div class="carousel-text">
+                                <i class="bi bi-quote"></i>
+                                <h3 class="fw-semi-bold text-dark fst-italic">"Incredible quality coupled with unbeatable durability! I'm amazed by the reliability of these electrical supplies. They've truly exceeded my expectations. Plus, the affordability makes them a game-changer for any project. Thank you for providing top-notch products!"</h3>
+                                <h5 class="fw-bold mb-5 mt-3">Olivia Chen</h5>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-text">
+                                <i class="bi bi-quote"></i>
+                                <h3 class="fw-semi-bold text-dark fst-italic">"I can't express enough gratitude for the exceptional quality your electrical supplies offer. The durability is unmatched, and the affordability makes them a gem in the market. Thank you for making high-quality products accessible to everyone!"</h3>
+                                <h5 class="fw-bold mb-5 mt-3">Jonathan Martinez</h5>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-text">
+                                <i class="bi bi-quote"></i>
+                                <h3 class="fw-semi-bold text-dark fst-italic">"Exceptional quality that withstands the test of time! Your electrical supplies have transformed my projects. The durability is impressive, and what's more amazing is the affordability. Thank you for delivering such outstanding products!"</h3>
+                                <h5 class="fw-bold mb-5 mt-3">Michael Turner</h5>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-text">
+                                <i class="bi bi-quote"></i>
+                                <h3 class="fw-semi-bold text-dark fst-italic">"Words can't describe how thankful I am for discovering your electrical supplies shop. The quality of your products is outstanding, and the durability is exceptional. Above all, the affordability has made my projects stress-free. Highly recommended!"</h3>
+                                <h5 class="fw-bold mb-5 mt-3">Emily Rodriguez</h5>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="carousel-text">
+                                <i class="bi bi-quote"></i>
+                                <h3 class="fw-semi-bold text-dark fst-italic">"Kudos to your shop for providing top-notch electrical supplies! The quality is unparalleled, the durability is impressive, and the affordability makes it a standout choice. Thank you for offering such amazing products that cater to every need!"</h3>
+                                <h5 class="fw-bold mb-5 mt-3">Robert Thompson</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
+            
             </section>
+            {/* Clients Reviews Section End  */}
+
         </>
     )
 }

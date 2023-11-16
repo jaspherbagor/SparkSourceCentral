@@ -34,7 +34,7 @@ html, body {
     --text-color-light: #fff;
     --navbar-bg: #14213d;
     --text-color-dark: #000;
-    --dark-semitransparent: rgba(0,0,0,0.6);
+    --dark-semitransparent: rgba(0,0,0,0.4);
     --grayish-color:#E5E5E5;
     --font-family: 'Montserrat', sans-serif;
 }
@@ -76,7 +76,7 @@ html, body {
 }
 
 
-.card {
+.product_card {
     border: 1.5px solid var(--text-color-dark);
     border-radius: 6px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -141,3 +141,16 @@ html, body {
     font-size: 60px;
     color:var(--primary-color)
 }
+
+
+/* Customers Review Section Start */
+.customers-review-section {
+}
+.customers-review-section h2, .carousel-text i, .carousel-text h5 {
+    color:var(--primary-color)
+}
+
+.carousel-text i {
+    font-size:80px;
+}
+/* Customers Review Section End */
