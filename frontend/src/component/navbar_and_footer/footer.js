@@ -33,19 +33,16 @@ const Footer = () => {
                     <div className="categories col-lg-2 col-md-4 col-sm-4 col-12 text-white text-start px-2 py-2">
                         <h5 className="fw-semibold mb-3">CATEGORIES</h5>
                         <p>
-                            <a href="" className="text-decoration-none text-white">Tools</a>
+                            <a href="" className="text-decoration-none text-white">Tools & Accessories</a>
                         </p>
                         <p>
-                            <a href="" className="text-decoration-none text-white">Protection</a>
+                            <a href="" className="text-decoration-none text-white">Safety & Protection</a>
                         </p>
                         <p>
-                            <a href="" className="text-decoration-none text-white">Lighting</a>
+                            <a href="" className="text-decoration-none text-white">Lighting Fixtures</a>
                         </p>
                         <p>
-                            <a href="" className="text-decoration-none text-white">Wires</a>
-                        </p>
-                        <p>
-                            <a href="" className="text-decoration-none text-white">Outlets</a>
+                            <a href="" className="text-decoration-none text-white">Switch & Outlet</a>
                         </p>
                     </div>
                     <div className="quick_links col-lg-2 col-md-4 col-sm-4 col-12 text-white text-start px-2 py-2">
@@ -80,16 +77,13 @@ const Footer = () => {
                         <h5 className="fw-semibold mb-3">SOCIAL LINKS</h5>
                         <div className="social_icons align-items-center justify-content-start">
                             <a href="" className="mx-2 text-white">
-                                <i className="bi bi-facebook fs-4"></i>
+                                <i className="bi bi-facebook fs-5"></i>
                             </a>
                             <a href="" className="mx-2 text-white">
-                                <i className="bi bi-instagram fs-4"></i>
+                                <i className="bi bi-instagram fs-5"></i>
                             </a>
                             <a href="" className="mx-2 text-white">
-                                <i className="bi bi-tiktok fs-4"></i>
-                            </a>
-                            <a href="" className="mx-2 text-white">
-                                <i className="bi bi-envelope fs-4"></i>
+                                <i className="bi bi-tiktok fs-5"></i>
                             </a>
                         </div>
                     </div>

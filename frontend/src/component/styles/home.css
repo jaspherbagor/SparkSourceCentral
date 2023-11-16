@@ -35,9 +35,11 @@ html, body {
     --navbar-bg: #14213d;
     --text-color-dark: #000;
     --dark-semitransparent: rgba(0,0,0,0.6);
+    --grayish-color:#E5E5E5;
     --font-family: 'Montserrat', sans-serif;
 }
 
+/* Hero Section Start */
 .hero_section {
     background: url('https://img.freepik.com/premium-photo/set-electrician-tools-equipment-repair-electricity-system-top-view-with-copy-space-banner_106035-1623.jpg');
     background-repeat: no-repeat;
@@ -66,4 +68,66 @@ html, body {
     border: 2px solid var(--primary-color);
     background: var(--text-color-dark);
     color:var(--text-color-light)
+}
+/* Hero Section End */
+
+.hashtag {
+    color:var(--primary-color)
+}
+
+
+.card {
+    border: 1.5px solid var(--text-color-dark);
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    height: 600px
+}
+
+.card-img-top {
+    height: 60%; /* Adjust the image height ratio */
+    /* object-fit: cover; */
+  }
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transform: scale(1.05)
+}
+
+.card-body {
+    border-top: 1.5px solid var(--text-color-dark);
+    max-height: 30%; /* Adjust the body height ratio */
+    padding: 1rem;
+    text-overflow: ellipsis;
+}
+
+.add_to_cart {
+    border: 2px solid var(--text-color-dark);
+    color:var(--text-color-dark)
+}
+.add_to_cart:hover {
+    border: 2px solid var(--text-color-dark);
+    background:var(--navbar-bg);
+    color:var(--primary-color)
+}
+
+.view_detail {
+    border: 2px solid var(--text-color-dark);
+    color:var(--text-color-dark)
+}
+
+.view_detail:hover {
+    border: 2px solid var(--text-color-dark);
+    background:var(--navbar-bg);
+    color:var(--primary-color)
+}
+
+.add_to_wishlist {
+    border: 2px solid var(--text-color-dark);
+    color:var(--text-color-dark)
+}
+
+.add_to_wishlist:hover {
+    border: 2px solid var(--text-color-dark);
+    background:var(--navbar-bg);
+    color:var(--primary-color)
 }
