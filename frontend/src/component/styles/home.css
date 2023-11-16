@@ -80,12 +80,11 @@ html, body {
     border: 1.5px solid var(--text-color-dark);
     border-radius: 6px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    height: 600px
+    height: 420px
 }
 
 .card-img-top {
-    height: 60%; /* Adjust the image height ratio */
-    /* object-fit: cover; */
+    height: 50%;
   }
 
 .card:hover {
@@ -129,5 +128,10 @@ html, body {
 .add_to_wishlist:hover {
     border: 2px solid var(--text-color-dark);
     background:var(--navbar-bg);
+    color:var(--primary-color)
+}
+
+.icon i {
+    font-size: 60px;
     color:var(--primary-color)
 }

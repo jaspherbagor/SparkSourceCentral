@@ -1,9 +1,10 @@
 import React from "react";
 import '../styles/home.css';
-import './Topproducts.js';
+import Topproducts from "./Topproducts";
 const Home = () => {
     return(
         <>
+            {/* Hero Section Start */}
             <section class="hero_section container-fluid vh-100 d-flex align-items-center justify-content-center py-5 px-4">
                 <div class="hero_text text-center py-2 px-2 mt-5 text-white">
                     <h1 class="fw-bolder mt-4 text-uppercase">Discover Excellence in Electrical Innovation</h1>
@@ -13,139 +14,89 @@ const Home = () => {
                     </div>    
                 </div>
             </section>
+            {/* Hero Section end */}
 
-            {/* <!-- Featured Products Section --> */}
+            {/*  */}
+            <section className="about_section container_fluid px-4 pt-5 mt-5">
+                <div className="container">
+                    <div class="row">
+                        <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-between mb-4">
+                            <div className="icon me-4">
+                                <i class="fa-solid fa-truck"></i>
+                            </div>
+                            <div className="detail">
+                                <h3 className="fw-bolder">FREE SHIPPING</h3>
+                                <p>Order above $1000</p>
+                            </div>
+                        </div>
+                        <div className="features col-lg-3 col-md-4 col-sm-6 col-12x d-flex align-items-center justify-content-between mb-4">
+                            <div className="icon me-4">
+                                <i class="fa-solid fa-peso-sign"></i>
+                            </div>
+                            <div className="detail">
+                                <h3 className="fw-bolder">RETURN AND REFUND</h3>
+                                <p>Money Back Guarantee</p>
+                            </div>
+                        </div>
+                        <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-between mb-4">
+                            <div className="icon me-4">
+                                <i class="fa-solid fa-percent"></i>
+                            </div>
+                            <div className="detail">
+                                <h3 className="fw-bolder">MEMBER DISCOUNT</h3>
+                                <p>On Every Order</p>
+                            </div>
+                        </div>
+                        <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-between">
+                            <div className="icon me-4">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <div className="detail">
+                                <h3 className="fw-bolder">CUSTOMER SUPPORT</h3>
+                                <p>Every Time Call Support</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+            {/*  */}
+
+            {/* <!-- Top Products Section --> */}
             <section class="top_products_section container-fluid py-5 px-4">
                 <div class="container-fluid">
                     <h2 class="text-center fw-bolder fs-2 mt-5 mb-5 pb-5">Leading the charge with innovative electrical solutions, empowering you to <span class="hashtag">#EnergizeResponsibly</span>.</h2>
                     <h2 class="my-5 text-center fw-bolder">TOP PRODUCTS</h2>
                     <div class="row mt-5 row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
-
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
-                            <div class="card text-center">
-                                <img src="../images/Safety_Shoes.jpg" class="card-img-top img-fluid" alt="Product Image"/>
-                                <div class="card-body mt-0 pt-1">
-                                    <p class="card-text text-secondary text-uppercase fs-6">Safety and Protection</p>
-                                    <h5 class="card-title fw-medium text-uppercase">Safety Shoes</h5>
-                                    <p class="card-price fw-bold fs-4">P99.99</p>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <a href="#" class="btn me-2 add_to_cart">
-                                            <i class="bi bi-bag-plus"></i>
-                                        </a>
-                                        <a href="#" class="btn me-2 add_to_wishlist">
-                                            <i class="bi bi-heart"></i>
-                                        </a>
-                                        <a href="#" class="btn view_detail">
-                                            <i class="bi bi-eye"></i>
-                                        </a>                      
-                                    </div>                         
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
-                            <div class="card text-center">
-                                <img src="../images/Cordless_Drill.jpg" class="card-img-top img-fluid" alt="Product Image"/>
-                                <div class="card-body mt-0 pt-1">
-                                    <p class="card-text text-secondary text-uppercase fs-6">Tools and Accessories</p>
-                                    <h5 class="card-title fw-medium text-uppercase">Cordless Electrical Drill</h5>
-                                    <p class="card-price fw-bold fs-4">P99.99</p>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <a href="#" class="btn me-2 add_to_cart">
-                                            <i class="bi bi-bag-plus"></i>
-                                        </a>
-                                        <a href="#" class="btn me-2 add_to_wishlist">
-                                            <i class="bi bi-heart"></i>
-                                        </a>
-                                        <a href="#" class="btn view_detail">
-                                            <i class="bi bi-eye"></i>
-                                        </a>                      
-                                    </div>                         
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
-                            <div class="card text-center">
-                                <img src="../images/Safety_Shoes.jpg" class="card-img-top" alt="Product Image"/>
-                                <div class="card-body mt-0 pt-1">
-                                    <p class="card-text text-secondary text-uppercase fs-6">Safety and Protection</p>
-                                    <h5 class="card-title fw-medium text-uppercase p-0">Safety Shoes</h5>
-                                    <p class="card-price fw-bold fs-4">P99.99</p>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <a href="#" class="btn me-2 add_to_cart">
-                                            <i class="bi bi-bag-plus"></i>
-                                        </a>
-                                        <a href="#" class="btn me-2 add_to_wishlist">
-                                            <i class="bi bi-heart"></i>
-                                        </a>
-                                        <a href="#" class="btn view_detail">
-                                            <i class="bi bi-eye"></i>
-                                        </a>                      
-                                    </div>                         
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
-                            <div class="card text-center">
-                                <img src="../images/Safety_Shoes.jpg" class="card-img-top" alt="Product Image"/>
-                                <div class="card-body mt-0 pt-1">
-                                    <p class="card-text text-secondary text-uppercase fs-6">Safety and Protection</p>
-                                    <h5 class="card-title fw-medium text-uppercase p-0">Safety Shoes</h5>
-                                    <p class="card-price fw-bold fs-4">P99.99</p>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <a href="#" class="btn me-2 add_to_cart">
-                                            <i class="bi bi-bag-plus"></i>
-                                        </a>
-                                        <a href="#" class="btn me-2 add_to_wishlist">
-                                            <i class="bi bi-heart"></i>
-                                        </a>
-                                        <a href="#" class="btn view_detail">
-                                            <i class="bi bi-eye"></i>
-                                        </a>                      
-                                    </div>                         
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
-                            <div class="card">
-                                <img src="product-image.jpg" class="card-img-top" alt="Product Image"/>
-                                <div class="card-body">
-                                    <h5 class="card-title">Product Title</h5>
-                                    <p class="card-text">Brief description of the product.</p>
-                                    <p class="card-price">$99.99</p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
-                            <div class="card">
-                                <img src="product-image.jpg" class="card-img-top" alt="Product Image"/>
-                                <div class="card-body">
-                                    <h5 class="card-title">Product Title</h5>
-                                    <p class="card-text">Brief description of the product.</p>
-                                    <p class="card-price">$99.99</p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-4">
-                            <div class="card">
-                                <img src="product-image.jpg" class="card-img-top" alt="Product Image"/>
-                                <div class="card-body">
-                                    <h5 class="card-title">Product Title</h5>
-                                    <p class="card-text">Brief description of the product.</p>
-                                    <p class="card-price">$99.99</p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
-                                </div>
-                            </div>
-                        </div>
+                        {
+                            Topproducts.map((currentElement) => 
+                            {
+                                return(
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4" key={currentElement.id}>
+                                        <div class="card text-center">
+                                            <img src={currentElement.Image} class="card-img-top img-fluid" alt={currentElement.Title}/>
+                                            <div class="card-body mt-0 pt-1">
+                                                <p class="card-text text-secondary text-uppercase fs-6">{currentElement.Category}</p>
+                                                <h5 class="card-title fw-medium text-uppercase">{currentElement.Title}</h5>
+                                                <p class="card-price fw-bold fs-4">₱{currentElement.Price}</p>
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <a href="#" class="btn me-2 add_to_cart">
+                                                        <i class="bi bi-bag-plus"></i>
+                                                    </a>
+                                                    <a href="#" class="btn me-2 add_to_wishlist">
+                                                        <i class="bi bi-heart"></i>
+                                                    </a>
+                                                    <a href="#" class="btn view_detail">
+                                                        <i class="bi bi-eye"></i>
+                                                    </a>                      
+                                                </div>                         
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
                         
-
-                        {/* <!-- Add more product cards as needed --> */}
                     </div>
                 </div>
             </section>
