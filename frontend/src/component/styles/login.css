@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;800&display=swap');
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    list-style:none;
+    text-decoration: none;
+    border:none;
+    outline:none;
+    scroll-behavior: smooth;
+    font-family:var(--font-family);
+    word-wrap: break-word;
+}
+
+/* Heading 2 & Heading 1 Spacing */
+h2, h1 {
+    word-spacing: 10px;
+    letter-spacing: 5px;
+}
+
+/* Paragraph Line Height */
+p {
+    line-height: 30px;
+}
+
+html, body {
+    width:100%;
+    overflow-x:hidden
+}
+
+:root {
+    --primary-color: #fca311;
+    --text-color-light: #fff;
+    --navbar-bg: #14213d;
+    --text-color-dark: #000;
+    --dark-semitransparent: rgba(0,0,0,0.4);
+    --grayish-color:#E5E5E5;
+    --font-family: 'Inter', sans-serif;
+    --register-link-hover: #0efe42;
+}
+
+.logo {
+    height:90px
+}
+
+.heading {
+color: var(--text-color-light)
+}
+
+label {
+color:var(--text-color-light)
+}
+
+input {
+    border: 2px solid var(--navbar-bg) !important;
+}
+
+.login-container-div {
+background-image: url('https://cdn-prod.medicalnewstoday.com/content/images/articles/323/323114/illustration-of-light-bulb-with-brain-in-it.jpg');
+background-repeat: no-repeat;
+background-size:cover;
+background-position:center
+}
+
+
+.form-container {
+border-radius:10px;
+background: rgba(48, 48, 48, 0.7);
+-webkit-box-shadow: -1px -1px 45px 3px rgba(218, 220, 236, 1);
+-moz-box-shadow: -1px -1px 45px 3px rgba(218, 220, 236, 1);
+box-shadow: -1px -1px 45px 3px rgba(218, 220, 236, 1);
+}
+
+.login-btn {
+border: 2px solid var(--primary-color);
+background:var(--navbar-bg)
+
+}
+
+.login-btn:hover {
+border: 2px solid var(--primary-color);
+background:var(--text-color-dark);
+}
+
+.register-link {
+color: var(--primary-color)
+}
+
+.register-link:hover {
+color: var(--register-link-hover)
+}
+
+.input-group-addon i {
+margin-left: -37px;
+cursor: pointer;
+z-index: 200;
+color:var(--navbar-bg)
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import './navbar.css';
+import "../styles/navbar.css";
 import { Link } from "react-router-dom";
 const Navbar = () => {
     return(
@@ -34,9 +34,9 @@ const Navbar = () => {
                                         0
                                     </span>
                                 </a>
-                                <a href="#" className="text-white">
+                                <Link to="/login" className="text-white">
                                     <i className="bi bi-person fs-2"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

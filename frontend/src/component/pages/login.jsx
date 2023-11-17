@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/login.css";
 import { Link } from "react-router-dom";
 
 function LoginPage() {
@@ -10,10 +10,10 @@ function LoginPage() {
       const togglePassword = document.getElementById('togglePassword');
         if(password.type === "password"){
             password.type = "text";
-            togglePassword.className="bi bi-eye-slash text-danger position-absolute fs-4 mt-1";
+            togglePassword.className="bi bi-eye-slash position-absolute fs-4 mt-1";
         } else {
             password.type = "password";
-            togglePassword.className="bi bi-eye text-danger position-absolute fs-4 mt-1";
+            togglePassword.className="bi bi-eye position-absolute fs-4 mt-1";
         }
     }
   
@@ -92,11 +92,13 @@ function LoginPage() {
   };
 
   return (
-    <div class="App">
-      <div className="signup-container-div container-fluid vh-100 d-flex align-items-center justify-content-center px-3 py-3 w-100">
+    <>
+      <div className="login-container-div container-fluid d-flex align-items-center justify-content-center px-4 py-5">
         <div className="g-3 needs-validation form-container p-4 my-4 h-auto" novalidate>
-
-            <h1  className="mb-4 text-center fw-bolder heading">LOGIN ACCOUNT</h1>
+            <div className="text-center">
+                <img src="../images/spark_source_central_logo.svg" className="logo"/>
+            </div>
+            <h1  className="my-4 text-center fw-bolder heading">LOGIN ACCOUNT</h1>
 
             <div className="row">
                 <div className="col-md-12 mb-3">
@@ -124,11 +126,11 @@ function LoginPage() {
 
 
             <div className="text-center mt-2 mb-2">
-              <button className="btn text-white fw-semi-bold register-btn" type="submit" id="login" onClick = {login}>LOGIN</button>
+              <button className="btn text-white fs-5 fw-semibold px-3 py-2 login-btn" type="submit" id="login" onClick = {login}>LOGIN</button>
             </div>
 
             <div className="text-center mt-3">
-                <p className="text-white">Don't have an account yet? <Link to="/" className="text-decoration-none login-link">Register instead.</Link></p>
+                <p className="text-white">Don't have an account yet? <Link to="/register" className="text-decoration-none register-link">Register instead.</Link></p>
             </div>
 
             <div className="toast-container position-fixed top-0 p-2">
@@ -145,7 +147,7 @@ function LoginPage() {
         </div>
 
       </div>
-    </div>
+    </>
   );
 }
 
