@@ -28,9 +28,9 @@ const Product = () => {
                                         <div className="col-lg-4 col-md-4 col-sm-6 mb-4" key={currentElement.id}>
                                             <div className="product_card card text-center">
                                                 <img src={currentElement.Image} className="card-img-top img-fluid" alt={currentElement.Title}/>
-                                                <div className="card-body mt-0 pt-1">
+                                                <div className="card-body mt-0 pt-0">
                                                     <p className="card-text text-secondary text-uppercase fs-6">{currentElement.Category}</p>
-                                                    <h5 className="card-title fw-semibold text-uppercase">{currentElement.Title}</h5>
+                                                    <h5 className="card-title fw-medium mt-0 py-0 text-uppercase">{currentElement.Title}</h5>
                                                     <p className="card-price fw-bolder fs-4">₱{currentElement.Price} <span className="text-decoration-line-through text-danger fs-5 fw-medium"></span></p>
                                                     <div className="d-flex justify-content-center align-items-baseline">
                                                         <a href="#" className="btn me-2 add_to_cart">
