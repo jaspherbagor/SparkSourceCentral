@@ -214,7 +214,7 @@ return (
                     </div>
 
                     <div className="text-center mt-3">
-                        <p className="text-white">Already have an account? <Link to="./login" className="text-decoration-none login-link">Login instead.</Link></p>
+                        <p className="text-white">Already have an account? <Link to="/login" className="text-decoration-none login-link">Login instead.</Link></p>
                     </div>
 
                     <div className="toast-container position-fixed top-0 p-2">
