@@ -143,7 +143,7 @@ img.card-img-top {
     height: 250px
 }
 
-.card-title {
+.card-title, .card-text {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
