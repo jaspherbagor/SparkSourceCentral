@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/product.css";
 const Product = () => {
     return(
         <> 
@@ -56,17 +56,6 @@ const Product = () => {
                 </div>
             </div>
 
-            {/* <div className="container-fluid bg-dark">
-                <h1 className="text-white">This is a product page</h1>
-                <div className="row">
-                        <div className="col-md-3 col-sm-3 bg-white">
-                            <h2>This is a category column</h2>
-                        </div>
-                        <div className="col-md-9 col-sm-9 bg-primary">
-                            <h2>This is a product column</h2>
-                        </div>
-                </div>
-            </div> */}
         </>
     )
 }

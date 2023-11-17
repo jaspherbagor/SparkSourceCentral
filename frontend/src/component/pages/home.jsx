@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/home.css';
-import Topproducts from "./Topproducts";
+import Topproducts from "../resources/Topproducts";
 const Home = () => {
     return(
         <>
