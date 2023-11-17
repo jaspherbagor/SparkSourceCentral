@@ -65,14 +65,14 @@ html, body {
     border: 1.5px solid var(--navbar-bg);
     border-radius: 6px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    height: 400px
+    height: auto
 }
 
-.card-img-top {
-    height: 50%;
+img.card-img-top {
+    height: 200px
 }
 
-.card_title {
+.card-title {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

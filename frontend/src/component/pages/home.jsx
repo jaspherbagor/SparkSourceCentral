@@ -100,17 +100,19 @@ const Home = () => {
                                                 <p className="card-text text-secondary text-uppercase fs-6">{currentElement.Category}</p>
                                                 <h5 className="card-title fw-medium text-uppercase">{currentElement.Title}</h5>
                                                 <p className="card-price fw-bold fs-4">₱{currentElement.Price}</p>
-                                                <div className="d-flex justify-content-center align-items-center">
-                                                    <a href="#" className="btn me-2 add_to_cart">
-                                                        <i className="bi bi-bag-plus"></i>
-                                                    </a>
-                                                    <a href="#" className="btn me-2 add_to_wishlist">
-                                                        <i className="bi bi-heart"></i>
-                                                    </a>
-                                                    <a href="#" className="btn view_detail">
-                                                        <i className="bi bi-eye"></i>
-                                                    </a>                      
-                                                </div>                         
+                                                <div className="card-footer text-body-secondary">
+                                                        <div className="d-flex justify-content-center align-items-baseline">
+                                                            <a href="#" className="btn me-2 add_to_cart">
+                                                                <i className="bi bi-bag-plus"></i>
+                                                            </a>
+                                                            <a href="#" className="btn me-2 add_to_wishlist">
+                                                                <i className="bi bi-heart"></i>
+                                                            </a>
+                                                            <a href="#" className="btn view_detail">
+                                                                <i className="bi bi-eye"></i>
+                                                            </a>                      
+                                                        </div>        
+                                                    </div>                     
                                             </div>
                                         </div>
                                     </div>

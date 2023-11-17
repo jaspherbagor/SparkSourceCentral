@@ -71,6 +71,62 @@ html, body {
 }
 /* Hero Section End */
 
+/* About Section Start */
+.icon i {
+    font-size: 60px;
+    color:var(--primary-color)
+}
+/* About Section End */
+
+/* Top Products Categories Start */
+.top_products_categories h2 span {
+    color:var(--primary-color)
+}
+
+.lighting_fixtures, .tools_and_accessories, .safety_and_protection, .switches_and_outlets {
+    box-shadow: -5px 0px 37px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.lighting_fixtures:hover, .tools_and_accessories:hover, .safety_and_protection:hover, .switches_and_outlets:hover
+{
+    transform:scale(1.05)
+}
+
+.top_products_categories div div h3 {
+    background: rgba(0,0,0,0.4);
+    border: 2px solid var(--navbar-bg);
+}
+
+.lighting_fixtures {
+    background: url('https://t4.ftcdn.net/jpg/06/01/36/13/360_F_601361321_OxT8qbG2KDPQrxvzSnPVtCWjUz29wIIv.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+
+.tools_and_accessories {
+    background: url('https://t4.ftcdn.net/jpg/00/49/18/05/360_F_49180552_XzbbXHGjtI0NoQsOXp0obnHZd1vupTkD.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+
+.safety_and_protection {
+    background: url('https://t4.ftcdn.net/jpg/03/69/75/59/360_F_369755973_HcLkmzXFZO5MvWFESgZeiK0kOm3KuNB1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+
+.switches_and_outlets {
+    background: url('https://img.freepik.com/premium-vector/wall-switch-power-electrical-socket-electricity-turn-plug-realistic-pictures_80590-7105.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+/* Top Products Categories End */
+
 /* Top Products Section Start */
 h2 span {
     color:var(--primary-color)
@@ -136,64 +192,7 @@ h2 span {
     background:var(--navbar-bg);
     color:var(--primary-color)
 }
-
-.icon i {
-    font-size: 60px;
-    color:var(--primary-color)
-}
 /* Top Products Section End */
-
-/* Featured Products Categories Start */
-.top_products_categories h2 span {
-    color:var(--primary-color)
-}
-
-.lighting_fixtures, .tools_and_accessories, .safety_and_protection, .switches_and_outlets {
-    box-shadow: -5px 0px 37px 10px rgba(0,0,0,0.2);
-    cursor: pointer;
-}
-
-.lighting_fixtures:hover, .tools_and_accessories:hover, .safety_and_protection:hover, .switches_and_outlets:hover
-{
-    transform:scale(1.05)
-}
-
-.top_products_categories div div h3 {
-    background: rgba(0,0,0,0.2);
-    border: 2px solid var(--primary-color)
-}
-
-.lighting_fixtures {
-    background: url('https://t4.ftcdn.net/jpg/06/01/36/13/360_F_601361321_OxT8qbG2KDPQrxvzSnPVtCWjUz29wIIv.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size:cover;
-}
-
-
-.tools_and_accessories {
-    background: url('https://t4.ftcdn.net/jpg/00/49/18/05/360_F_49180552_XzbbXHGjtI0NoQsOXp0obnHZd1vupTkD.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size:cover;
-}
-
-.safety_and_protection {
-    background: url('https://t4.ftcdn.net/jpg/03/69/75/59/360_F_369755973_HcLkmzXFZO5MvWFESgZeiK0kOm3KuNB1.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size:cover;
-}
-
-.switches_and_outlets {
-    background: url('https://img.freepik.com/premium-vector/wall-switch-power-electrical-socket-electricity-turn-plug-realistic-pictures_80590-7105.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size:cover;
-}
-/* Featured Product Categories End */
-
-
 
 /* Customers Review Section Start */
 .customers-review-section {
