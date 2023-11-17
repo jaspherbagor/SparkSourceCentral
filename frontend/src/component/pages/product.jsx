@@ -32,7 +32,7 @@ const Product = () => {
                                                     <p className="card-text text-secondary text-uppercase fs-6">{currentElement.Category}</p>
                                                     <h5 className="card-title fw-medium mt-0 py-0 text-uppercase">{currentElement.Title}</h5>
                                                     <p className="card-price fw-bolder fs-4">₱{currentElement.Price} <span className="text-decoration-line-through text-danger fs-5 fw-medium"></span></p>
-                                                    <div className="card-footer text-body-secondary">
+                                                    <div className="card-footer bg-transparent">
                                                         <div className="d-flex justify-content-center align-items-baseline">
                                                             <a href="#" className="btn me-2 add_to_cart">
                                                                 <i className="bi bi-bag-plus"></i>
