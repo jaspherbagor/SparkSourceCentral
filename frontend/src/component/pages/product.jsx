@@ -5,16 +5,17 @@ const Product = () => {
     return(
         <> 
             <div class="product_page container-fluid px-4 py-5">
+                <h1 class="fw-bolder"># PRODUCTS</h1>
+                <p className="text-secondary mb-4">Home - Products</p>
                 <div class="row">
                     {/* <!-- Product categories column --> */}
                     <div class="col-lg-3 col-md-3 col-sm-3 product_category mb-4">
                         <ul class="list-group">
-                            <li className="">Categories</li>
-                            <li class="list-group-item active">All</li>
-                            <li class="list-group-item">Electronics</li>
-                            <li class="list-group-item">Books</li>
-                            <li class="list-group-item">Clothing</li>
-                            <li class="list-group-item">Accessories</li>
+                            <li class="list-group-item all_product_category fw-medium">All Categories</li>
+                            <li class="list-group-item fw-medium">Safety & Protection</li>
+                            <li class="list-group-item fw-medium">Tools & Accessories</li>
+                            <li class="list-group-item fw-medium">Safety & Protection</li>
+                            <li class="list-group-item fw-medium">Switches & Outlets</li>
                         </ul>
                     </div>
                     {/* <!-- Product cards column --> */}
@@ -29,8 +30,8 @@ const Product = () => {
                                                 <img src={currentElement.Image} className="card-img-top img-fluid" alt={currentElement.Title}/>
                                                 <div className="card-body mt-0 pt-1">
                                                     <p className="card-text text-secondary text-uppercase fs-6">{currentElement.Category}</p>
-                                                    <h5 className="card-title fw-medium text-uppercase">{currentElement.Title}</h5>
-                                                    <p className="card-price fw-bold fs-4">₱{currentElement.Price}</p>
+                                                    <h5 className="card-title fw-semibold text-uppercase">{currentElement.Title}</h5>
+                                                    <p className="card-price fw-bolder fs-4">₱{currentElement.Price} <span className="text-decoration-line-through text-danger fs-5 fw-medium"></span></p>
                                                     <div className="d-flex justify-content-center align-items-baseline">
                                                         <a href="#" className="btn me-2 add_to_cart">
                                                             <i className="bi bi-bag-plus"></i>

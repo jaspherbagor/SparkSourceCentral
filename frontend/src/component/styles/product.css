@@ -39,12 +39,33 @@ html, body {
     --font-family: 'Montserrat', sans-serif;
 }
 
+/* Categories Column Start */
+.list-group {
+    border: 1px solid var(--navbar-bg)    
+}
+
+.all_product_category{
+    background:var(--navbar-bg);
+    color:var(--text-color-light)
+}
+
+.list-group-item {
+    cursor: pointer;
+    border-bottom: 1px solid var(--navbar-bg);
+}
+
+.list-group-item:hover {
+    background: var(--navbar-bg);
+    color:var(--text-color-light)
+}
+/* Categories Column End */
+
 /* Products Column Start */
 .product_card {
     border: 1.5px solid var(--navbar-bg);
     border-radius: 6px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    height: 420px
+    height: 400px
 }
 
 .card-img-top {
