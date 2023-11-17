@@ -2,8 +2,71 @@ import React from "react";
 
 const Product = () => {
     return(
-        <>
-            <h2>This is a product page</h2>
+        <> 
+            <div class="product_page container-fluid bg-secondary px-4 py-2">
+                <div class="row">
+                    {/* <!-- Product categories column --> */}
+                    <div class="col-lg-3 col-md-3 col-sm-3 product_category">
+                        <ul class="list-group">
+                            <li class="list-group-item active">All</li>
+                            <li class="list-group-item">Electronics</li>
+                            <li class="list-group-item">Books</li>
+                            <li class="list-group-item">Clothing</li>
+                            <li class="list-group-item">Accessories</li>
+                        </ul>
+                    </div>
+                    {/* <!-- Product cards column --> */}
+                    <div class="col-lg-9 col-md-9 col-sm-9">
+                        <div class="row">
+                        {/* <!-- Product card 1 --> */}
+                            <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
+                                <div class="card">
+                                    <img src="product1.jpg" class="card-img-top" alt="Product 1"/>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Product 1</h5>
+                                        <p class="card-text">$19.99</p>
+                                        <a href="#" class="btn btn-primary">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* <!-- Product card 2 --> */}
+                            <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
+                                <div class="card">
+                                    <img src="product2.jpg" class="card-img-top" alt="Product 2"/>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Product 2</h5>
+                                        <p class="card-text">$29.99</p>
+                                        <a href="#" class="btn btn-primary">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* <!-- Product card 3 --> */}
+                            <div class="col-lg-4 col-md-4 col-sm-6 mb-3">
+                                <div class="card">
+                                    <img src="product3.jpg" class="card-img-top" alt="Product 3"/>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Product 3</h5>
+                                        <p class="card-text">$39.99</p>
+                                        <a href="#" class="btn btn-primary">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* <div className="container-fluid bg-dark">
+                <h1 className="text-white">This is a product page</h1>
+                <div className="row">
+                        <div className="col-md-3 col-sm-3 bg-white">
+                            <h2>This is a category column</h2>
+                        </div>
+                        <div className="col-md-9 col-sm-9 bg-primary">
+                            <h2>This is a product column</h2>
+                        </div>
+                </div>
+            </div> */}
         </>
     )
 }

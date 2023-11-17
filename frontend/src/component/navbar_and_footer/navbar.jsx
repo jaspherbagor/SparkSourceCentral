@@ -8,7 +8,9 @@ const Navbar = () => {
                 <div className="container-fluid py-2 px-4">
                     <div className="row align-items-center justify-content-center text-center">
                         <div className="col-md-2 text-center text-md-start">
-                            <img src="../images/spark_source_central_logo.svg" alt="Logo" className="img-fluid"/>
+                            <Link to="/">
+                                <img src="../images/spark_source_central_logo.svg" alt="Logo" className="img-fluid"/>
+                            </Link>
                         </div>
                         <div className="col-md-8 text-center mb-2 mt-2">
                             <form className="d-flex">
@@ -48,7 +50,7 @@ const Navbar = () => {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav mx-auto">
                                 <li className="nav-item me-3">
-                                    <a className="nav-link text-white fw-semibold" href="#"><i className="bi bi-lightning"></i> ALL ITEMS</a>
+                                    <Link to="/product" className="nav-link text-white fw-semibold" href="#"><i className="bi bi-lightning"></i> ALL ITEMS</Link>
                                 </li>
                                 <li className="nav-item me-3">
                                     <a className="nav-link text-white fw-semibold" href="#"><i className="bi bi-lightbulb"></i> LIGHTING FIXTURES</a>

@@ -6,7 +6,7 @@ const Routeway = () => {
     return(
         <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/product" element={<Product/>}></Route>
+            <Route path="/product" element={<Product/>}/>
         </Routes>
     )
 }
