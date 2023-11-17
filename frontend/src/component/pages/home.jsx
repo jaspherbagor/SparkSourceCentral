@@ -193,17 +193,15 @@ const Home = () => {
 
             {/* <!-- Newsletter Subscription Section Start --> */}
             <section class="newsletter_section px-4 py-3">
-                <div class="container-fluid newsletter-form px-3 py-3">
+                <div class="container-fluid newsletter-form py-3">
                     <div class="row justify-content-center">
                         <div class="newsletter_container col-md-8 col-12 text-center">
                             <h2 class="fw-bolder">Subscribe to SparkSource Central's Latest Promotion</h2>
                             <p class="fw-light">Suscribe to our email newsletter so that you never miss out our newest promotions. </p>
                             <form class="newsletter-form">
                                 <div class="input-group mb-3">
-                                    <input type="email" class="form-control" placeholder="Your Email Address" aria-label="Your Email Address" aria-describedby="subscribe-button"/>
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="submit" id="subscribe-button">Subscribe</button>
-                                    </div>
+                                    <input type="email" class="form-control newsletter_input_field" placeholder="Your Email Address" aria-label="Your Email Address" aria-describedby="subscribe-button"/>
+                                    <button class="btn subscribe_btn mx-0 fw-semibold" type="submit" id="subscribe-button">Subscribe</button>
                                 </div>
                             </form>
                         </div>

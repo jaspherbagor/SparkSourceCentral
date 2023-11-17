@@ -221,6 +221,20 @@ img.card-img-top {
 
 /* Newsletter Section Start */
 .newsletter_section {
-    background:var(--primary-color)
+    background:var(--navbar-bg)
+}
+
+.subscribe_btn, .newsletter_input_field {
+    background:var(--navbar-bg);
+    border-radius:0px;
+    border: 2px solid var(--primary-color)!important;
+    color: var(--text-color-light);
+}
+
+.newsletter_input_field {
+    background: var(--text-color-light);
+    border-radius:0px;
+    border: 2px solid var(--primary-color)!important;
+    color: var(--text-color-light);
 }
 /* Newsletter Section End */
