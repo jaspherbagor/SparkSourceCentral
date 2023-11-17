@@ -37,7 +37,7 @@ html, body {
     --dark-semitransparent: rgba(0,0,0,0.4);
     --grayish-color:#E5E5E5;
     --font-family: 'Inter', sans-serif;
-    --register-link-hover: #0efe42;
+    --login-link-hover: #0efe42;
 }
 
 .logo {
@@ -56,8 +56,8 @@ input {
     border: 2px solid var(--navbar-bg) !important;
 }
 
-.login-container-div {
-background-image: url('https://cdn-prod.medicalnewstoday.com/content/images/articles/323/323114/illustration-of-light-bulb-with-brain-in-it.jpg');
+.register-container-div {
+background-image: url('https://innovationatwork.ieee.org/wp-content/uploads/2020/06/bigstock-Hand-Holding-Light-Bulb-Lamp-S-29293144_1024X684.png');
 background-repeat: no-repeat;
 background-size:cover;
 background-position:center
@@ -72,23 +72,23 @@ background: rgba(48, 48, 48, 0.7);
 box-shadow: -1px -1px 45px 3px rgba(218, 220, 236, 1);
 }
 
-.login-btn {
+.register-btn {
 border: 2px solid var(--primary-color);
 background:var(--navbar-bg)
 
 }
 
-.login-btn:hover {
+.register-btn:hover {
 border: 2px solid var(--primary-color);
 background:var(--text-color-dark);
 }
 
-.register-link {
+.login-link {
 color: var(--primary-color)
 }
 
-.register-link:hover {
-color: var(--register-link-hover)
+.login-link:hover {
+color: var(--login-link-hover)
 }
 
 .input-group-addon i {

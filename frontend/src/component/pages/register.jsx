@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "../styles/register.css"
 function RegisterPage() {
 
     const togglePassword = function(){
@@ -133,10 +133,12 @@ function RegisterPage() {
 }
 
 return (
-    <div className="App">
-        <div className="signup-container-div container-fluid h-auto d-flex align-items-center justify-content-center px-3 py-3 w-100">
+    <>
+        <div className="register-container-div container-fluid h-auto d-flex align-items-center justify-content-center px-3 py-3 w-100">
                 <div className="g-3 needs-validation form-container p-4 my-4 h-auto" noValidate>
-
+                    <div className="text-center">
+                        <img src="../images/spark_source_central_logo.svg" className="logo"/>
+                    </div>
                     <h1  className="mb-4 text-center fw-bolder heading">REGISTER ACCOUNT</h1>
 
                     <div className="row">
@@ -210,7 +212,7 @@ return (
                     </div>
 
                     <div className="text-center mt-4 mb-2">
-                    <button className="btn text-white fw-semi-bold register-btn" type="button" id="register" onClick={register}>REGISTER</button>
+                    <button className="btn text-white fw-semibold px-3 py-2 register-btn" type="button" id="register" onClick={register}>REGISTER</button>
                     </div>
 
                     <div className="text-center mt-3">
@@ -231,7 +233,7 @@ return (
                 </div>
 
             </div>
-    </div>
+    </>
   );   
  
 }
