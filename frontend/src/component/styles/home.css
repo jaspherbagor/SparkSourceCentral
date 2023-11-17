@@ -231,6 +231,11 @@ img.card-img-top {
     color: var(--text-color-light);
 }
 
+.subscribe_btn:hover {
+    background:var(--text-color-dark);
+    border: 2px solid var(--primary-color)!important;
+}
+
 .newsletter_input_field {
     background: var(--text-color-light);
     border-radius:0px;

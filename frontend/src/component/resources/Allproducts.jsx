@@ -9,7 +9,7 @@ const AllProducts =
     },
     {
         id: 2,
-        Title: "Cordless Drill",
+        Title: "Cordless Electric Drill",
         Category: "Tools & Accessories",
         Price: "1800",
         Image: "../images/Cordless_Drill.jpg"
@@ -23,7 +23,7 @@ const AllProducts =
     },
     {
         id: 4,
-        Title: "Safety Gloves",
+        Title: "Insulated Gloves",
         Category: "Safety & Protection",
         Price: "450",
         Image: "../images/Insulated_Gloves.jpg"

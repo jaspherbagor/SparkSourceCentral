@@ -196,12 +196,12 @@ const Home = () => {
                 <div class="container-fluid newsletter-form py-3">
                     <div class="row justify-content-center">
                         <div class="newsletter_container col-md-8 col-12 text-center">
-                            <h2 class="fw-bolder">Subscribe to SparkSource Central's Latest Promotion</h2>
-                            <p class="fw-light">Suscribe to our email newsletter so that you never miss out our newest promotions. </p>
+                            <h2 class="fw-bolder text-white">Subscribe to SparkSource Central's Latest Promotion</h2>
+                            <p class="fw-light text-white">Suscribe to our email newsletter so that you never miss out our newest promotions. </p>
                             <form class="newsletter-form">
                                 <div class="input-group mb-3">
                                     <input type="email" class="form-control newsletter_input_field" placeholder="Your Email Address" aria-label="Your Email Address" aria-describedby="subscribe-button"/>
-                                    <button class="btn subscribe_btn mx-0 fw-semibold" type="submit" id="subscribe-button">Subscribe</button>
+                                    <button class="btn subscribe_btn mx-0 fw-semibold text-white" type="submit" id="subscribe-button">Subscribe</button>
                                 </div>
                             </form>
                         </div>
