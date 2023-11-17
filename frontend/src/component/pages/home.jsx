@@ -20,7 +20,7 @@ const Home = () => {
             <section className="about_section container_fluid px-4 pt-5 mt-5">
                 <div className="container">
                     <div className="row">
-                        <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-between mb-4">
+                        <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-center mb-4">
                             <div className="icon me-4">
                                 <i class="fa-solid fa-truck"></i>
                             </div>
@@ -29,7 +29,7 @@ const Home = () => {
                                 <p>Order above ₱10,000</p>
                             </div>
                         </div>
-                        <div className="features col-lg-3 col-md-4 col-sm-6 col-12x d-flex align-items-center justify-content-between mb-4">
+                        <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-center mb-4">
                             <div className="icon me-4">
                                 <i class="fa-solid fa-right-left"></i>
                             </div>
@@ -38,7 +38,7 @@ const Home = () => {
                                 <p>Money Back Guarantee</p>
                             </div>
                         </div>
-                        <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-between mb-4">
+                        <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-center mb-4">
                             <div className="icon me-4">
                                 <i class="fa-solid fa-trophy"></i>
                             </div>
@@ -47,7 +47,7 @@ const Home = () => {
                                 <p>Durable Products</p>
                             </div>
                         </div>
-                        <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-between mb-4">
+                        <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-center mb-4">
                             <div className="icon me-4">
                                 <i class="fa-solid fa-headset"></i>
                             </div>
@@ -62,11 +62,32 @@ const Home = () => {
             </section>
             {/* About Section End */}
 
-            {/* <!-- Top Products Section --> */}
+            {/* <!-- Featured Products Categories Section Start --> */}
+            <section class="top_products_categories container-fluid px-4 py-5 text-center">
+                <h2 class="fw-bolder my-5 pb-3">TOP <span>CATEGORIES</span></h2>
+                <div class="top_categories mt-5">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center">
+                        <div class="col px-4 py-5 mx-2 my-3 lighting_fixtures container-fluid">
+                            <h3 class="fw-bolder text-white p-2">LIGHTING FIXTURES</h3>
+                        </div>
+                        <div class="col px-4 py-5 mx-2 my-3 tools_and_accessories container-fluid">
+                            <h3 class="fw-bolder text-white p-2">TOOLS & ACCESSORIES</h3>
+                        </div>
+                        <div class="col px-4 py-5 mx-2 my-3 safety_and_protection container-fluid">
+                            <h3 class="fw-bolder text-white p-2">SAFETY & PROTECTION</h3>
+                        </div>
+                        <div class="col px-4 py-5 mx-2 my-3 switches_and_outlets container-fluid">
+                            <h3 class="fw-bolder text-white p-2">SWITCHES & OUTLETS</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* <!-- Featured Products Caregories Section End --> */}
+
+            {/* Top Products Section Start */}
             <section className="top_products_section container-fluid py-5 px-4">
                 <div className="container-fluid">
-                    <h2 className="text-center fw-bolder fs-2 mt-5 mb-5 pb-5">Leading the charge with innovative electrical solutions, empowering you to <span className="hashtag">#EnergizeResponsibly</span>.</h2>
-                    <h2 className="my-5 text-center fw-bolder">TOP PRODUCTS</h2>
+                    <h2 className="mb-5 text-center fw-bolder pb-4 mt-4">TOP <span>PRODUCTS</span></h2>
                     <div className="row mt-5 row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
                         {
                             Topproducts.map((currentElement) => 
@@ -98,167 +119,96 @@ const Home = () => {
                         }
                         
                     </div>
+                    <div className="text-center mt-4">
+                    <a href="#"  className="btn shopnow_btn my-2 mx-2 px-4 py-3 fw-semibold">BROWSE MORE</a>
+                    </div>
                 </div>
             </section>
+            {/* Top Product Section End */}
+          
 
-            {/* <!-- Product Categories Section --> */}
-            <section className="product-categories-section">
-                <div className="container text-center">
-                <h2>Product Categories</h2>
-                <div className="row">
-                    <div className="col-md-4">
-                        <div className="category">
-                            <img src="category1-icon.png" alt="Category 1"/>
-                            <h4>Lighting</h4>
-                            <a href="#" className="btn btn-outline-primary">Shop Now</a>
+        {/* Customers Review Section Start */}
+        <section class="customers-review-section container-fluid px-3 py-4 text-center h-auto">
+
+            <h2 class="fw-bolder mt-4 mb-3 text-white">CUSTOMERS <span>TESTIMONIALS</span></h2>
+
+            <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade mb-4 mt-3 px-2" data-bs-ride="carousel">
+                <div class="carousel-inner px-0">
+
+                    <div class="carousel-item active">
+                        <div class="carousel-text">
+                            <i class="bi bi-quote"></i>
+                            <h3 class="fw-semi-bold text-dark fst-italic">"Incredible quality coupled with unbeatable durability! I'm amazed by the reliability of these electrical supplies. They've truly exceeded my expectations. Plus, the affordability makes them a game-changer for any project. Thank you for providing top-notch products!"</h3>
+                            <h5 class="fw-bold mb-5 mt-3">Olivia Chen</h5>
                         </div>
                     </div>
-                    <div className="col-md-4">
-                    {/* <!-- Repeat similar structure for other categories -->
-                    <!-- Example: Wiring category --> */}
-                    <div className="category">
-                            <img src="category1-icon.png" alt="Category 1"/>
-                            <h4>Lighting</h4>
-                            <a href="#" className="btn btn-outline-primary">Shop Now</a>
+
+                    <div class="carousel-item">
+                        <div class="carousel-text">
+                            <i class="bi bi-quote"></i>
+                            <h3 class="fw-semi-bold text-dark fst-italic">"I can't express enough gratitude for the exceptional quality your electrical supplies offer. The durability is unmatched, and the affordability makes them a gem in the market. Thank you for making high-quality products accessible to everyone!"</h3>
+                            <h5 class="fw-bold mb-5 mt-3">Jonathan Martinez</h5>
                         </div>
                     </div>
-                    <div className="col-md-4">
-                    {/* <!-- Example: Tools category --> */}
-                        <div className="category">
-                            <img src="category1-icon.png" alt="Category 1"/>
-                            <h4>Lighting</h4>
-                            <a href="#" className="btn btn-outline-primary">Shop Now</a>
+
+                    <div class="carousel-item">
+                        <div class="carousel-text">
+                            <i class="bi bi-quote"></i>
+                            <h3 class="fw-semi-bold text-dark fst-italic">"Exceptional quality that withstands the test of time! Your electrical supplies have transformed my projects. The durability is impressive, and what's more amazing is the affordability. Thank you for delivering such outstanding products!"</h3>
+                            <h5 class="fw-bold mb-5 mt-3">Michael Turner</h5>
                         </div>
                     </div>
-                </div>
-                </div>
-            </section>
 
-            {/* <!-- Special Offers Section --> */}
-            <section className="special-offers-section">
-                <div className="container text-center">
-                <h2>Special Offers</h2>
-                <div className="row">
-                    {/* <!-- Display special offers here -->
-                    <!-- Sample offer card --> */}
-                    <div className="col-md-4">
-                    <div className="card">
-                        <div className="card-body">
-                        <h5 className="card-title">Limited Time Offer</h5>
-                        <p className="card-text">Get 20% off on selected products.</p>
-                        <a href="#" className="btn btn-primary">Shop Now</a>
+                    <div class="carousel-item">
+                        <div class="carousel-text">
+                            <i class="bi bi-quote"></i>
+                            <h3 class="fw-semi-bold text-dark fst-italic">"Words can't describe how thankful I am for discovering your electrical supplies shop. The quality of your products is outstanding, and the durability is exceptional. Above all, the affordability has made my projects stress-free. Highly recommended!"</h3>
+                            <h5 class="fw-bold mb-5 mt-3">Emily Rodriguez</h5>
                         </div>
                     </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-text">
+                            <i class="bi bi-quote"></i>
+                            <h3 class="fw-semi-bold text-dark fst-italic">"Kudos to your shop for providing top-notch electrical supplies! The quality is unparalleled, the durability is impressive, and the affordability makes it a standout choice. Thank you for offering such amazing products that cater to every need!"</h3>
+                            <h5 class="fw-bold mb-5 mt-3">Robert Thompson</h5>
+                        </div>
                     </div>
-                    {/* <!-- Add more offer cards as needed --> */}
+
                 </div>
-                </div>
-            </section>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
 
-            {/* <!-- Customer Testimonials Section --> */}
-            <section className="customer-testimonials-section">
-                <div className="container text-center">
-                <h2>Customer Testimonials</h2>
-                <div className="row">
-                    {/* <!-- Display customer testimonials here -->
-                    <!-- Sample testimonial --> */}
-                    <div className="col-md-6">
-                    <div className="testimonial">
-                        <p>"Great quality products and excellent service!"</p>
-                        <p>- John Doe</p>
-                    </div>
-                    </div>
-                    {/* <!-- Add more testimonials as needed --> */}
-                </div>
-                </div>
-            </section>
-
-            {/* <!-- Value Proposition Section --> */}
-            <section className="value-proposition-section">
-                <div className="container text-center">
-                <h2>Why Choose Us?</h2>
-                <p>We offer top-quality electrical supplies with...</p>
-                <ul>
-                    <li>High durability</li>
-                    <li>Environmentally friendly options</li>
-                    <li>Affordable prices</li>
-                </ul>
-                </div>
-            </section>
-
-            {/* <!-- Call-to-Action Section --> */}
-            <section className="cta-section text-center container-fluid px-4 py-5">
-                <div className="container-fluid p-4 bg-secondary">
-                <h2>Subscribe for Updates</h2>
-                <p>Sign up for our newsletter to receive exclusive offers and updates.</p>
-                <form action="#" method="post" className="subscribe-form">
-                    <input type="email" name="email" placeholder="Enter your email" required/>
-                    <button type="submit" className="btn btn-primary">Subscribe</button>
-                </form>
-                </div>
-            </section>
-
-            {/* Customers Review Section Start */}
-            <section class="customers-review-section container-fluid px-3 py-4 text-center h-auto">
-
-                <h2 class="fw-bolder mt-4 mb-3">CUSTOMERS <span>TESTIMONIALS</span></h2>
-
-                <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade mb-4 mt-3 px-2" data-bs-ride="carousel">
-                    <div class="carousel-inner px-0">
-
-                        <div class="carousel-item active">
-                            <div class="carousel-text">
-                                <i class="bi bi-quote"></i>
-                                <h3 class="fw-semi-bold text-dark fst-italic">"Incredible quality coupled with unbeatable durability! I'm amazed by the reliability of these electrical supplies. They've truly exceeded my expectations. Plus, the affordability makes them a game-changer for any project. Thank you for providing top-notch products!"</h3>
-                                <h5 class="fw-bold mb-5 mt-3">Olivia Chen</h5>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="carousel-text">
-                                <i class="bi bi-quote"></i>
-                                <h3 class="fw-semi-bold text-dark fst-italic">"I can't express enough gratitude for the exceptional quality your electrical supplies offer. The durability is unmatched, and the affordability makes them a gem in the market. Thank you for making high-quality products accessible to everyone!"</h3>
-                                <h5 class="fw-bold mb-5 mt-3">Jonathan Martinez</h5>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="carousel-text">
-                                <i class="bi bi-quote"></i>
-                                <h3 class="fw-semi-bold text-dark fst-italic">"Exceptional quality that withstands the test of time! Your electrical supplies have transformed my projects. The durability is impressive, and what's more amazing is the affordability. Thank you for delivering such outstanding products!"</h3>
-                                <h5 class="fw-bold mb-5 mt-3">Michael Turner</h5>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="carousel-text">
-                                <i class="bi bi-quote"></i>
-                                <h3 class="fw-semi-bold text-dark fst-italic">"Words can't describe how thankful I am for discovering your electrical supplies shop. The quality of your products is outstanding, and the durability is exceptional. Above all, the affordability has made my projects stress-free. Highly recommended!"</h3>
-                                <h5 class="fw-bold mb-5 mt-3">Emily Rodriguez</h5>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="carousel-text">
-                                <i class="bi bi-quote"></i>
-                                <h3 class="fw-semi-bold text-dark fst-italic">"Kudos to your shop for providing top-notch electrical supplies! The quality is unparalleled, the durability is impressive, and the affordability makes it a standout choice. Thank you for offering such amazing products that cater to every need!"</h3>
-                                <h5 class="fw-bold mb-5 mt-3">Robert Thompson</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            
             </section>
             {/* Clients Reviews Section End  */}
+
+            {/* <!-- Newsletter Subscription Section Start --> */}
+            <section class="newsletter_section px-4 py-3">
+                <div class="container-fluid newsletter-form px-3 py-3">
+                    <div class="row justify-content-center">
+                        <div class="newsletter_container col-md-8 col-12 text-center">
+                            <h2 class="fw-bolder">Subscribe to SparkSource Central's Latest Promotion</h2>
+                            <p class="fw-light">Suscribe to our email newsletter so that you never miss out our newest promotions. </p>
+                            <form class="newsletter-form">
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email Address" aria-label="Your Email Address" aria-describedby="subscribe-button"/>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit" id="subscribe-button">Subscribe</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* <!-- Newsletter Subscription Section End --> */}
 
         </>
     )

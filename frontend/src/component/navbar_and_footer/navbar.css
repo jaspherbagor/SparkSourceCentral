@@ -38,7 +38,8 @@ header {
 }
 
 .navbar {
-    background: var(--text-color-dark)
+    background: var(--text-color-dark);
+    z-index:1000
 }
 
 .search_btn {

@@ -48,15 +48,15 @@ html, body {
 }
 
 .hero_text {
-    margin-top:150px !important;
+    /* margin-top:150px !important; */
     background: var(--dark-semitransparent);
 }
 
-@media only screen and (max-width:400px) {
+/* @media only screen and (max-width:400px) {
     .hero_text {
         margin-top:240px !important;
     }
-}
+} */
 
 .shopnow_btn {
     border: 2px solid var(--primary-color);
@@ -71,13 +71,13 @@ html, body {
 }
 /* Hero Section End */
 
-.hashtag {
+/* Top Products Section Start */
+h2 span {
     color:var(--primary-color)
 }
 
-
 .product_card {
-    border: 1.5px solid var(--text-color-dark);
+    border: 1.5px solid var(--navbar-bg);
     border-radius: 6px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     height: 420px
@@ -94,12 +94,12 @@ html, body {
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.7);
     transform: scale(1.05)
 }
 
 .card-body {
-    border-top: 1.5px solid var(--text-color-dark);
+    border-top: 1.5px solid var(--navbar-bg);
     max-height: 30%; /* Adjust the body height ratio */
     padding: 1rem;
     text-overflow: ellipsis;
@@ -141,16 +141,83 @@ html, body {
     font-size: 60px;
     color:var(--primary-color)
 }
+/* Top Products Section End */
+
+/* Featured Products Categories Start */
+.top_products_categories h2 span {
+    color:var(--primary-color)
+}
+
+.lighting_fixtures, .tools_and_accessories, .safety_and_protection, .switches_and_outlets {
+    box-shadow: -5px 0px 37px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.lighting_fixtures:hover, .tools_and_accessories:hover, .safety_and_protection:hover, .switches_and_outlets:hover
+{
+    transform:scale(1.05)
+}
+
+.top_products_categories div div h3 {
+    background: rgba(0,0,0,0.2);
+    border: 2px solid var(--primary-color)
+}
+
+.lighting_fixtures {
+    background: url('https://t4.ftcdn.net/jpg/06/01/36/13/360_F_601361321_OxT8qbG2KDPQrxvzSnPVtCWjUz29wIIv.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+
+
+.tools_and_accessories {
+    background: url('https://t4.ftcdn.net/jpg/00/49/18/05/360_F_49180552_XzbbXHGjtI0NoQsOXp0obnHZd1vupTkD.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+
+.safety_and_protection {
+    background: url('https://t4.ftcdn.net/jpg/03/69/75/59/360_F_369755973_HcLkmzXFZO5MvWFESgZeiK0kOm3KuNB1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+
+.switches_and_outlets {
+    background: url('https://img.freepik.com/premium-vector/wall-switch-power-electrical-socket-electricity-turn-plug-realistic-pictures_80590-7105.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+/* Featured Product Categories End */
+
 
 
 /* Customers Review Section Start */
 .customers-review-section {
+    background: url('https://buildingbiologyinstitute.org/wp-content/uploads/2019/03/iStock-157312838-e1561232692729.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
-.customers-review-section h2, .carousel-text i, .carousel-text h5 {
-    color:var(--primary-color)
+
+.customers-review-section h2 span, .carousel-text i, .carousel-text h5 {
+    color: var(--primary-color)
+}
+
+.carousel-text h3 {
+    color:var(--text-color-light) !important
 }
 
 .carousel-text i {
     font-size:80px;
 }
 /* Customers Review Section End */
+
+/* Newsletter Section Start */
+.newsletter_section {
+    background:var(--primary-color)
+}
+/* Newsletter Section End */

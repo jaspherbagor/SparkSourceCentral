@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
     return(
         <>
-            <header className="position-fixed container-fluid m-0 p-0 mb-5">
+            <header className="sticky-top container-fluid m-0 p-0">
                 <div className="container-fluid py-2 px-4">
                     <div className="row align-items-center justify-content-center text-center">
                         <div className="col-md-2 text-center text-md-start">
@@ -40,7 +40,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <nav className="navbar navbar-expand-lg navbar-dark py-2">
+                <nav className="container-fluid navbar navbar-expand-lg navbar-dark py-2">
                     <div className="container-fluid">
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
