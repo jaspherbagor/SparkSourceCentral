@@ -12,10 +12,10 @@ const Navbar = ({ searchProducts, filteredProducts}) => {
     };
     const handleSearchButtonClick = () => {
         searchProducts(search);
-        // setSearch("")
+        setSearch("")
       };
     const handleSuggestionClick = () => {
-    // setSearch("")
+        setSearch("")
     };
     
     return(
@@ -33,7 +33,7 @@ const Navbar = ({ searchProducts, filteredProducts}) => {
                             <input
                                 className="form-control search_input"
                                 type="search"
-                                placeholder="Search for products..."
+                                placeholder="Search for products or category..."
                                 aria-label="Search"
                                 value={search}
                                 onChange={handleSearch}
@@ -49,12 +49,12 @@ const Navbar = ({ searchProducts, filteredProducts}) => {
                             </div>
                             {/* Display filtered product suggestions */}
                             {search.length > 0 && (
-                            <div className="search-suggestions bg-danger">
+                            <div className="search-suggestions bg-warning py-2 px-2 position-absolute ms-5">
                                 {filteredProducts.map((product) => (
                                 <Link key={product.id} to={`/product`} onClick={handleSuggestionClick} className="text-white text-decoration-none">
                                     {/* Navigate to the product page on click */}
                                     <div>
-                                        <li>{product.Title} <span>({product.Category})</span></li>
+                                        <li className="text-dark text-start fw-semibold result_list">{product.Title} ({product.Category})</li>
                                     </div>
                                 </Link>
                                 ))}

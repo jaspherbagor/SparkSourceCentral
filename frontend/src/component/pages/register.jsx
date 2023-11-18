@@ -8,10 +8,10 @@ function RegisterPage() {
       const togglePassword = document.getElementById('togglePassword');
         if(passwordInput.type === "password"){
             passwordInput.type = "text";
-            togglePassword.className="bi bi-eye-slash text-danger position-absolute fs-4 mt-1";
+            togglePassword.className="bi bi-eye-slash position-absolute fs-4 mt-1";
         } else {
             passwordInput.type = "password";
-            togglePassword.className="bi bi-eye text-danger position-absolute fs-4 mt-1";
+            togglePassword.className="bi bi-eye position-absolute fs-4 mt-1";
         }
     };
 
@@ -20,10 +20,10 @@ function RegisterPage() {
         const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
         if(confirmPasswordInput.type === "password"){
             confirmPasswordInput.type = "text";
-            toggleConfirmPassword.className="bi bi-eye-slash text-danger position-absolute fs-4 mt-1";
+            toggleConfirmPassword.className="bi bi-eye-slash position-absolute fs-4 mt-1";
         } else {
             confirmPasswordInput.type = "password";
-            toggleConfirmPassword.className="bi bi-eye text-danger position-absolute fs-4 mt-1";
+            toggleConfirmPassword.className="bi bi-eye position-absolute fs-4 mt-1";
           }
     };
 

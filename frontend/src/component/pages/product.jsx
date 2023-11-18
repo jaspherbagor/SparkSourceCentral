@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/product.css";
 import AllProducts from "../resources/Allproducts";
+import { Link } from "react-router-dom";
 const Product = ({product, setProduct}) => {
-    
+    const [selectedCategory, setSelectedCategory] = useState("All Categories");
     const filterProducts = (selectedCategory) => 
     {
         if (selectedCategory === "All Categories") {
@@ -13,12 +14,23 @@ const Product = ({product, setProduct}) => {
             });
             setProduct(filteredProducts);
         }
+        setSelectedCategory(selectedCategory);
     };
     return(
         <> 
             <div class="product_page container-fluid px-4 py-5">
-                <h1 class="fw-bolder"># PRODUCTS</h1>
-                <p className="text-secondary mb-4">Home - Products</p>
+                <h1 class="fw-bolder">ELECTRICAL PRODUCTS</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb text-secondary">
+                        <Link to="/" class="breadcrumb-item fw-semibold"><a href="#">Home</a></Link>
+                        <Link to="/product" class="breadcrumb-item fw-semibold" aria-current="page">Products</Link>
+                        {selectedCategory !== "All Categories" && (
+                            <li className="breadcrumb-item fw-semibold active" aria-current="page">
+                                {selectedCategory}
+                            </li>
+                        )}
+                    </ol>
+                </nav>
                 <div class="row">
                     {/* <!-- Product categories column --> */}
                     <div className="col-lg-3 col-md-3 col-sm-3 product_category mb-4">

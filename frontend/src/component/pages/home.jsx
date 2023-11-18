@@ -1,6 +1,7 @@
 import React from "react";
 import '../styles/home.css';
 import Topproducts from "../resources/Topproducts";
+import { Link } from "react-router-dom";
 const Home = () => {
     return(
         <>
@@ -10,7 +11,7 @@ const Home = () => {
                     <h1 className="fw-bolder mt-4 text-uppercase">Discover Excellence in Electrical Innovation</h1>
                     <p className="fw-medium mt-4 fs-3">Find High-Quality Electrical Products at Affordable Prices.</p>
                     <div className="text-center mb-2">
-                        <a href="#"  className="btn shopnow_btn my-2 mx-2 px-4 py-3 fw-semibold">SHOP NOW</a>
+                        <Link to="/product"  className="btn shopnow_btn my-2 mx-2 px-4 py-3 fw-semibold">SHOP NOW</Link>
                     </div>    
                 </div>
             </section>
@@ -122,7 +123,7 @@ const Home = () => {
                         
                     </div>
                     <div className="text-center mt-4">
-                    <a href="#"  className="btn shopnow_btn my-2 mx-2 px-4 py-3 fw-semibold">BROWSE MORE</a>
+                    <Link to="/product"  className="btn shopnow_btn my-2 mx-2 px-4 py-3 fw-semibold">BROWSE MORE</Link>
                     </div>
                 </div>
             </section>

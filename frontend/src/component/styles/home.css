@@ -151,7 +151,7 @@ img.card-img-top {
 
 .card:hover {
     box-shadow: 0 16px 32px 0 rgba(0,0,0,0.7);
-    transform: scale(1.05)
+    transform: scale(1.01)
 }
 
 .card-body {
