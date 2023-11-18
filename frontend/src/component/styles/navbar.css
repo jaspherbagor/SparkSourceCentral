@@ -71,6 +71,7 @@ header {
 .search-suggestions {
     z-index:10;
     border: 2px solid var(--navbar-bg);
+    border-radius: 10px;
 }
 .result_list:hover {
     color:var(--text-color-light) !important
