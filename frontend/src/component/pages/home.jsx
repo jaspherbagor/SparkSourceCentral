@@ -97,12 +97,12 @@ const Home = () => {
                                     <div className="col-lg-3 col-md-4 col-sm-6 col-12 mb-4" key={currentElement.id}>
                                         <div className="product_card card text-center">
                                             <img src={currentElement.Image} className="card-img-top img-fluid" alt={currentElement.Title}/>
-                                            <div className="card-body mt-0 pt-1">
-                                                <p className="card-text text-secondary text-uppercase fs-6">{currentElement.Category}</p>
-                                                <h5 className="card-title fw-medium text-uppercase">{currentElement.Title}</h5>
-                                                <p className="card-price fw-bold fs-4">₱{currentElement.Price}</p>
+                                            <div className="card-body mt-0 px-1 py-0">
+                                                <p className="card-text text-secondary text-uppercase fs-6 p-0 m-0">{currentElement.Category}</p>
+                                                <p className="card-title fs-5 fw-medium text-uppercase">{currentElement.Title}</p>
+                                                <p className="card-price fw-bold fs-5 p-0">₱{currentElement.Price}</p>
                                                 <div className="card-footer bg-transparent">
-                                                        <div className="d-flex justify-content-center align-items-baseline">
+                                                        <div className="d-flex justify-content-center align-items-baseline mb-1 mt-0 pt-0">
                                                             <a href="#" className="btn me-2 add_to_cart">
                                                                 <i className="bi bi-bag-plus"></i>
                                                             </a>

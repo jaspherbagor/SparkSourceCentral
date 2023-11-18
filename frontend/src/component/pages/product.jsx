@@ -51,42 +51,24 @@ const Product = ({product, setProduct}) => {
                                     return(
                                         <div className="col-lg-4 col-md-4 col-sm-6 mb-4" key={currentElement.id}>
                                             <div className="product_card card text-center">
-                                                <img src={currentElement.Image} className="card-img-top img-fluid" alt={currentElement.Title}/>
-                                                <div className="card-body">
-                                                    <p className="card-text text-secondary text-uppercase fs-6">{currentElement.Category}</p>
-                                                    <h5 className="card-title fw-medium mt-0 py-0 text-uppercase">{currentElement.Title}</h5>
-                                                    <p className="card-price fw-bolder fs-4">₱{currentElement.Price} <span className="text-decoration-line-through text-danger fs-5 fw-medium"></span></p>
-                                                    <div className="card-footer bg-transparent">
-                                                        <div className="d-flex justify-content-center align-items-baseline">
+                                            <img src={currentElement.Image} className="card-img-top img-fluid" alt={currentElement.Title}/>
+                                            <div className="card-body mt-0 px-1 py-0">
+                                                <p className="card-text text-secondary text-uppercase fs-6 p-0 m-0">{currentElement.Category}</p>
+                                                <p className="card-title fs-5 fw-medium text-uppercase">{currentElement.Title}</p>
+                                                <p className="card-price fw-bold fs-5 p-0">₱{currentElement.Price}</p>
+                                                <div className="card-footer bg-transparent">
+                                                        <div className="d-flex justify-content-center align-items-baseline mb-1 mt-0 pt-0">
                                                             <a href="#" className="btn me-2 add_to_cart">
                                                                 <i className="bi bi-bag-plus"></i>
                                                             </a>
                                                             <a href="#" className="btn me-2 add_to_wishlist">
                                                                 <i className="bi bi-heart"></i>
                                                             </a>
-                                                            <a href="#" className="btn view_detail" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                            <a href="#" className="btn view_detail">
                                                                 <i className="bi bi-eye"></i>
                                                             </a>                      
                                                         </div>        
-                                                    </div>
-                                                                     
-                                                </div>
-                                            </div>
-                                            <div class="modal fade" id="staticBackdrop"data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        {/* <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> */}
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <h1>{currentElement.Title}</h1>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                                    </div>
-                                                    </div>
+                                                    </div>                     
                                                 </div>
                                             </div>
                                         </div>

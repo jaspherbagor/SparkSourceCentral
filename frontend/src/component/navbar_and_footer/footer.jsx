@@ -1,14 +1,15 @@
 import React from "react";
-import "../styles/footer.css"
+import "../styles/footer.css";
+import { Link } from "react-router-dom";
 const Footer = () => {
     return(
         <>
             <footer className="footer container-fluid px-4 pt-5 pb-3">
                 <div className="row flex-wrap align-items-top justify-content-space-between pb-1">
                     <div className="footer_logo col-lg-2 col-md-4 col-sm-4 col-12 text-start text-white px-2 py-2">
-                        <a href="index.html">
-                            <img src="../images/footer_logo.svg" className="logo-img mt-4" alt=""/>
-                        </a>
+                        <Link to="/">
+                            <img src="../images/footer_logo.svg" className="logo-img mt-4" alt="logo"/>
+                        </Link>
                     </div>
                     <div className="customer_service col-lg-2 col-md-4 col-sm-4 col-12 text-white text-start px-2 py-2">
                         <h5 className="fw-semibold mb-3">CUSTOMER SERVICE</h5>
@@ -48,10 +49,10 @@ const Footer = () => {
                     <div className="quick_links col-lg-2 col-md-4 col-sm-4 col-12 text-white text-start px-2 py-2">
                         <h5 className="fw-semibold mb-3">QUICK LINKS</h5>
                         <p>
-                            <a href="" className="text-decoration-none text-white">Home</a>
+                            <Link to="/" className="text-decoration-none text-white">Home</Link>
                         </p>
                         <p>
-                            <a href="" className="text-decoration-none text-white">Products</a>
+                            <Link to="/product" className="text-decoration-none text-white">Products</Link>
                         </p>
                         <p>
                             <a href="" className="text-decoration-none text-white">Account</a>
