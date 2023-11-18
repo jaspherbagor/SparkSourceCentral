@@ -5,11 +5,11 @@ import Product from "../pages/product";
 import LoginPage from "../pages/login";
 import RegisterPage from "../pages/register";
 
-const Routeway = () => {
+const Routeway = ({product, setProduct}) => {
     return(
         <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/product" element={<Product/>}/>
+            <Route path="/product" element={<Product product={product} setProduct={setProduct}/>}/>
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/register" element={<RegisterPage/>}/>
         </Routes>

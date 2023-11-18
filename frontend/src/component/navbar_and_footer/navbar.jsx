@@ -1,7 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import "../styles/navbar.css";
 import { Link } from "react-router-dom";
-const Navbar = () => {
+
+const Navbar = ({ searchProducts, filteredProducts}) => {
+    const [search, setSearch] = useState("");
+  
+    const handleSearch = (e) => {
+      const searchTerm = e.target.value;
+      setSearch(searchTerm);
+      searchProducts(searchTerm);
+    };
+    const handleSearchButtonClick = () => {
+        searchProducts(search);
+        // setSearch("")
+      };
+    const handleSuggestionClick = () => {
+    // setSearch("")
+    };
+    
     return(
         <>
             <header className="sticky-top container-fluid m-0 p-0">
@@ -13,12 +29,37 @@ const Navbar = () => {
                             </Link>
                         </div>
                         <div className="col-md-8 text-center mb-2 mt-2">
-                            <form className="d-flex">
-                                <input className="form-control search_input" type="search" placeholder="Search for products..." aria-label="Search"/>
-                                <button className="btn search_btn" type="submit">
+                            <div className="d-flex">
+                            <input
+                                className="form-control search_input"
+                                type="search"
+                                placeholder="Search for products..."
+                                aria-label="Search"
+                                value={search}
+                                onChange={handleSearch}
+                            />
+                            {/* Search button */}
+                            
+                            <Link to={`/product`} className="text-white text-decoration-none">
+                                <button className="btn search_btn" type="submit" onClick={handleSearchButtonClick}>
                                     <i className="bi bi-search text-white"></i>
                                 </button>
-                            </form>
+                            </Link>
+                            
+                            </div>
+                            {/* Display filtered product suggestions */}
+                            {search.length > 0 && (
+                            <div className="search-suggestions bg-danger">
+                                {filteredProducts.map((product) => (
+                                <Link key={product.id} to={`/product`} onClick={handleSuggestionClick} className="text-white text-decoration-none">
+                                    {/* Navigate to the product page on click */}
+                                    <div>
+                                        <li>{product.Title} <span>({product.Category})</span></li>
+                                    </div>
+                                </Link>
+                                ))}
+                            </div>
+                            )}
                         </div>
                         <div className="col-md-2 text-center">
                             <div className="account_info d-flex justify-content-end align-items-center text-white mt-3">

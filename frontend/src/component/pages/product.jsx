@@ -1,7 +1,19 @@
 import React from "react";
 import "../styles/product.css";
 import AllProducts from "../resources/Allproducts";
-const Product = () => {
+const Product = ({product, setProduct}) => {
+    
+    const filterProducts = (selectedCategory) => 
+    {
+        if (selectedCategory === "All Categories") {
+            setProduct(AllProducts);
+        } else {
+            const filteredProducts = AllProducts.filter((product) => {
+                return product.Category === selectedCategory;
+            });
+            setProduct(filteredProducts);
+        }
+    };
     return(
         <> 
             <div class="product_page container-fluid px-4 py-5">
@@ -9,20 +21,20 @@ const Product = () => {
                 <p className="text-secondary mb-4">Home - Products</p>
                 <div class="row">
                     {/* <!-- Product categories column --> */}
-                    <div class="col-lg-3 col-md-3 col-sm-3 product_category mb-4">
-                        <ul class="list-group">
-                            <li class="list-group-item all_product_category fw-medium">All Categories</li>
-                            <li class="list-group-item fw-medium">Safety & Protection</li>
-                            <li class="list-group-item fw-medium">Tools & Accessories</li>
-                            <li class="list-group-item fw-medium">Safety & Protection</li>
-                            <li class="list-group-item fw-medium">Switches & Outlets</li>
+                    <div className="col-lg-3 col-md-3 col-sm-3 product_category mb-4">
+                        <ul className="list-group">
+                            <li className="list-group-item all_product_category fw-medium" onClick={() => filterProducts("All Categories")}>All Categories</li>
+                            <li className="list-group-item fw-medium" onClick={() => filterProducts("Tools & Accessories")}>Tools & Accessories</li>
+                            <li className="list-group-item fw-medium" onClick={() => filterProducts("Safety & Protection")}>Safety & Protection</li>
+                            <li className="list-group-item fw-medium" onClick={() => filterProducts("Lighting Fixtures")}>Lighting Fixtures</li>
+                            <li className="list-group-item fw-medium" onClick={() => filterProducts("Switches & Outlets")}>Switches & Outlets</li>
                         </ul>
                     </div>
                     {/* <!-- Product cards column --> */}
                     <div class="col-lg-9 col-md-9 col-sm-9">
                         <div class="row">
                             {
-                                AllProducts.map((currentElement) => 
+                                product.map((currentElement) => 
                                 {
                                     return(
                                         <div className="col-lg-4 col-md-4 col-sm-6 mb-4" key={currentElement.id}>
@@ -40,7 +52,7 @@ const Product = () => {
                                                             <a href="#" className="btn me-2 add_to_wishlist">
                                                                 <i className="bi bi-heart"></i>
                                                             </a>
-                                                            <a href="#" className="btn view_detail">
+                                                            <a href="#" className="btn view_detail" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                                                 <i className="bi bi-eye"></i>
                                                             </a>                      
                                                         </div>        
@@ -48,15 +60,33 @@ const Product = () => {
                                                                      
                                                 </div>
                                             </div>
+                                            <div class="modal fade" id="staticBackdrop"data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        {/* <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> */}
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h1>{currentElement.Title}</h1>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     )
                                 })
                             }
                         </div>
+                        
                     </div>
                 </div>
             </div>
-
+            
         </>
     )
 }

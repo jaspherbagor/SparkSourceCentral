@@ -50,7 +50,7 @@ const Topproducts =
         Image: "../images/Wall_Sconce.webp"
     },
     {
-        id: 7,
+        id: 8,
         Title: "Light Chandelier",
         Category: "Lighting Fixtures",
         Price: "12900",
