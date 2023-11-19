@@ -26,11 +26,11 @@ const Product = ({product, setProduct, detail, view, close, setClose}) => {
                         {
                             return(
                                 <div class="modal" id="viewProductModal" tabindex="-1" aria-labelledby="viewProductModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                                    <div class="modal-dialog modal-dialog-centered modal-xl" >
                                         <div class="modal-content h-auto">
                                             <div class="modal-header">
                                                 <p class="modal-title fs-5 fw-bold" id="exampleModalLabel">View Product</p>
-                                                <button type="button" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                                                <button type="button" onClick={() => setClose(false)} data-bs-dismiss="modal">Close</button>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="container-fluid">
