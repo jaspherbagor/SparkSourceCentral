@@ -15,12 +15,10 @@ const App = () => {
     const filtered = AllProducts.filter((product) => {
       const formattedCategory = product.Category.toLowerCase();
       const formattedTitle = product.Title.toLowerCase();
-      const formattedPrice = product.Price.toLowerCase();
 
       return (
         formattedCategory.includes(formattedSearchTerm) ||
-        formattedTitle.includes(formattedSearchTerm) ||
-        formattedPrice.includes(formattedSearchTerm)
+        formattedTitle.includes(formattedSearchTerm)
       );
     });
 
