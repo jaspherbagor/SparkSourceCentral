@@ -19,66 +19,81 @@ const Product = ({product, setProduct, detail, view, close, setClose}) => {
     return(
         <>
             {
-                close ? 
-                <div className="product_detail">
-                    <div className="container">
-                        <button onClick={() => setClose(false)} className="closebtn">x</button>
+                close ?
+                <>
+                    {
+                        detail.map((currentElement) =>
                         {
-                            detail.map((currentElement) => 
-                            {
-                                return(
-                                    <div className="productbox">
-                                        <div className="img_box">
-                                            <img src={currentElement.Image} alt={currentElement.Title}></img>
-                                        </div>
-                                        <div className="detail">
-                                            <h4>{currentElement.Category}</h4>
-                                            <h2>{currentElement.Title}</h2>
-                                            <p>A screen everyone will love: Whether your family is having a good time or having fun.</p>
-                                            <h3>{currentElement.Price}</h3>
-                                            <button>Add to Cart</button>
+                            return(
+                                <div class="modal" id="viewProductModal" tabindex="-1" aria-labelledby="viewProductModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                                        <div class="modal-content h-auto">
+                                            <div class="modal-header">
+                                                <p class="modal-title fs-5 fw-bold" id="exampleModalLabel">View Product</p>
+                                                <button type="button" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                                            <p2>This is a product image</p2>
+                                                            <div className="container product_image">
+                                                                <img src={currentElement.Image} alt={currentElement.Title} className="img-fluid w-100 h-100"></img>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 col-md-8 col-sm-8 col ms-auto">
+                                                            <p>This is a content of the product specification</p>
+                                                            <h4>{currentElement.Category}</h4>
+                                                            <h2>{currentElement.Title}</h2>
+                                                            <p>A screen everyone will love: Whether your family is having a good time or having fun.</p>
+                                                            <h3>{currentElement.Price}</h3>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button>Add to Cart</button>
+                                            </div>                     
                                         </div>
                                     </div>
-                                )
-                            })
-                        }
-                        <div className="productbox"></div>
-                    </div>
-                </div> : null
+                                </div>
+                            )
+                        })
+                    }
+                </> : null
+                
+                // <div className="product_detail">
+                //     <div className="container">
+                //         <button onClick={() => setClose(false)} className="closebtn">x</button>
+                //         {
+                //             detail.map((currentElement) => 
+                //             {
+                //                 return(
+                //                     <div className="productbox">
+                //                         <div className="img_box">
+                //                             <img src={currentElement.Image} alt={currentElement.Title}></img>
+                //                         </div>
+                //                         <div className="detail">
+                //                             <h4>{currentElement.Category}</h4>
+                //                             <h2>{currentElement.Title}</h2>
+                //                             <p>A screen everyone will love: Whether your family is having a good time or having fun.</p>
+                //                             <h3>{currentElement.Price}</h3>
+                //                             <button>Add to Cart</button>
+                //                         </div>
+                //                     </div>
+                //                 )
+                //             })
+                //         }
+                //         <div className="productbox"></div>
+                //     </div>
+                // </div> : null
             }
 
             {/* Modal Start */}
 
             
-            <div class="modal fade" id="viewProductModal" tabindex="-1" aria-labelledby="viewProductModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-xl">
-                    <div class="modal-content h-auto">
-                        <div class="modal-header">
-                            <p class="modal-title fs-5 fw-bold" id="exampleModalLabel">View Product</p>
-                            <button type="button" data-bs-dismiss="modal" aria-label="Close">Close</button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col">
-                                        <p2>This is a product image</p2>
-                                    </div>
-                                    <div class="col-lg-8 col-md-8 col-sm-8 col ms-auto">
-                                        <p>This is a content of the product specification</p>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            {/* <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div> */}
-
+            
             {/* Modal End */}
 
             <div className="product_page container-fluid px-4 py-5">
