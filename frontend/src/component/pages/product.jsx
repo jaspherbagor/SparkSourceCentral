@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/product.css";
 import AllProducts from "../resources/Allproducts";
 import { Link } from "react-router-dom";
-const Product = ({product, setProduct}) => {
+const Product = ({product, setProduct, detail, view, close, setClose}) => {
     const [selectedCategory, setSelectedCategory] = useState("All Categories");
     const filterProducts = (selectedCategory) => 
     {
@@ -17,7 +17,37 @@ const Product = ({product, setProduct}) => {
         setSelectedCategory(selectedCategory);
     };
     return(
-        <> 
+        <>
+            {
+                close ? 
+                <div className="product_detail">
+                    <div className="container">
+                        <button onClick={() => setClose(false)} className="closebtn">x</button>
+                        {
+                            detail.map((currentElement) => 
+                            {
+                                return(
+                                    <div className="productbox">
+                                        <div className="img_box">
+                                            <img src={currentElement.Image} alt={currentElement.Title}></img>
+                                        </div>
+                                        <div className="detail">
+                                            <h4>{currentElement.Category}</h4>
+                                            <h2>{currentElement.Title}</h2>
+                                            <p>A screen everyone will love: Whether your family is having a good time or having fun.</p>
+                                            <h3>{currentElement.Price}</h3>
+                                            <button>Add to Cart</button>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                        <div className="productbox"></div>
+                    </div>
+                </div> : null
+            }
+
+
             <div class="product_page container-fluid px-4 py-5">
                 <h1 class="fw-bolder">ELECTRICAL PRODUCTS</h1>
                 <nav aria-label="breadcrumb">
@@ -58,15 +88,15 @@ const Product = ({product, setProduct}) => {
                                                 <p className="card-price fw-bold fs-5 p-0">₱{currentElement.Price}</p>
                                                 <div className="card-footer bg-transparent">
                                                         <div className="d-flex justify-content-center align-items-baseline mb-1 mt-0 pt-0">
-                                                            <a href="#" className="btn me-2 add_to_cart">
+                                                            <li className="btn me-2 add_to_cart">
                                                                 <i className="bi bi-bag-plus"></i>
-                                                            </a>
-                                                            <a href="#" className="btn me-2 add_to_wishlist">
+                                                            </li>
+                                                            <li className="btn me-2 add_to_wishlist">
                                                                 <i className="bi bi-heart"></i>
-                                                            </a>
-                                                            <a href="#" className="btn view_detail">
+                                                            </li>
+                                                            <li onClick={() => view (currentElement)} className="btn view_detail">
                                                                 <i className="bi bi-eye"></i>
-                                                            </a>                      
+                                                            </li>                      
                                                         </div>        
                                                     </div>                     
                                                 </div>

@@ -5,6 +5,16 @@ import Footer from "./component/navbar_and_footer/footer";
 import Routeway from "./component/route/route";
 import AllProducts from "./component/resources/Allproducts";
 const App = () => {
+  //product detail
+  const [close, setClose] = useState(false);
+  const [detail, setDetail] = useState([]);
+
+  const view = (product) =>
+  {
+    setDetail([{...product}]);
+    setClose(true);
+  } 
+
   // Filter Products
   const [product, setProduct] = useState(AllProducts);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -31,7 +41,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Navbar searchProducts={searchProducts} filteredProducts={filteredProducts}/>
-        <Routeway product={product} setProduct={setProduct}/>
+        <Routeway product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose}/>
         <Footer/>
       </BrowserRouter>
     </>
