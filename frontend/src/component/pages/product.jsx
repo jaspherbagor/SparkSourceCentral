@@ -47,13 +47,46 @@ const Product = ({product, setProduct, detail, view, close, setClose}) => {
                 </div> : null
             }
 
+            {/* Modal Start */}
 
-            <div class="product_page container-fluid px-4 py-5">
-                <h1 class="fw-bolder">ELECTRICAL PRODUCTS</h1>
+            
+            <div class="modal fade" id="viewProductModal" tabindex="-1" aria-labelledby="viewProductModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content h-auto">
+                        <div class="modal-header">
+                            <p class="modal-title fs-5 fw-bold" id="exampleModalLabel">View Product</p>
+                            <button type="button" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col">
+                                        <p2>This is a product image</p2>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col ms-auto">
+                                        <p>This is a content of the product specification</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            {/* <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div> */}
+
+            {/* Modal End */}
+
+            <div className="product_page container-fluid px-4 py-5">
+                <h1 className="fw-bolder">ELECTRICAL PRODUCTS</h1>
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb text-secondary">
-                        <Link to="/" class="breadcrumb-item fw-semibold"><a href="#">Home</a></Link>
-                        <Link to="/product" class="breadcrumb-item fw-semibold" aria-current="page">Products</Link>
+                    <ol className="breadcrumb text-secondary">
+                        <Link to="/" className="breadcrumb-item fw-semibold">Home</Link>
+                        <Link to="/product" className="breadcrumb-item fw-semibold" aria-current="page">Products</Link>
                         {selectedCategory !== "All Categories" && (
                             <li className="breadcrumb-item fw-semibold active" aria-current="page">
                                 {selectedCategory}
@@ -94,7 +127,7 @@ const Product = ({product, setProduct, detail, view, close, setClose}) => {
                                                             <li className="btn me-2 add_to_wishlist">
                                                                 <i className="bi bi-heart"></i>
                                                             </li>
-                                                            <li onClick={() => view (currentElement)} className="btn view_detail">
+                                                            <li onClick={() => view (currentElement)} className="btn view_detail" data-bs-toggle="modal" data-bs-target="#viewProductModal">
                                                                 <i className="bi bi-eye"></i>
                                                             </li>                      
                                                         </div>        
