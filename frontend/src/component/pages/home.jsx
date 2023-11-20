@@ -6,14 +6,19 @@ const Home = () => {
     return(
         <>
             {/* Hero Section Start */}
-            <section className="hero_section container-fluid vh-100 d-flex align-items-center justify-content-center py-5 px-4">
-                <div className="hero_text text-center py-2 px-2 mt-5 text-white">
-                    <h1 className="fw-bolder mt-4 text-uppercase">Discover Excellence in Electrical Innovation</h1>
-                    <p className="fw-medium mt-4 fs-3">Find High-Quality Electrical Products at Affordable Prices.</p>
-                    <div className="text-center mb-2">
-                        <Link to="/product"  className="btn shopnow_btn my-2 mx-2 px-4 py-3 fw-semibold">SHOP NOW</Link>
-                    </div>    
+            <section className="hero_section container-fluid h-auto align-items-center justify-content-center py-5 px-3">
+            <div class="container mt-0">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-sm-12 test-start text-md-left mx-auto mt-0" id="UniqueProposition">
+                        <h1 className="fw-bolder mt-0">Discover Excellence in Electrical Innovation</h1>
+                        <p className="fw-medium mt-1 fs-6">Find High-Quality Electrical Products at Affordable Prices.</p>
+                        <Link to="/product"  className="btn shopnow_btn px-4 py-3 fw-semibold">SHOP NOW</Link>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <img src="../images/hero-image.svg" alt="" className="img-fluid p-2 mt-0"/>
+                    </div>
                 </div>
+            </div>
             </section>
             {/* Hero Section end */}
 
@@ -26,8 +31,8 @@ const Home = () => {
                                 <i class="fa-solid fa-truck"></i>
                             </div>
                             <div className="detail">
-                                <h3 className="fw-bolder">FREE SHIPPING</h3>
-                                <p>Order above ₱10,000</p>
+                                <h4 className="fw-bolder">FREE SHIPPING</h4>
+                                <p>Order above ₱5,000</p>
                             </div>
                         </div>
                         <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-center mb-4">
@@ -35,7 +40,7 @@ const Home = () => {
                                 <i class="fa-solid fa-right-left"></i>
                             </div>
                             <div className="detail">
-                                <h3 className="fw-bolder">RETURN AND REFUND</h3>
+                                <h4 className="fw-bolder">RETURN AND REFUND</h4>
                                 <p>Money Back Guarantee</p>
                             </div>
                         </div>
@@ -44,7 +49,7 @@ const Home = () => {
                                 <i class="fa-solid fa-trophy"></i>
                             </div>
                             <div className="detail">
-                                <h3 className="fw-bolder">HIGH QUALITY</h3>
+                                <h4 className="fw-bolder">HIGH QUALITY</h4>
                                 <p>Durable Products</p>
                             </div>
                         </div>
@@ -53,7 +58,7 @@ const Home = () => {
                                 <i class="fa-solid fa-headset"></i>
                             </div>
                             <div className="detail">
-                                <h3 className="fw-bolder">CUSTOMER SUPPORT</h3>
+                                <h4 className="fw-bolder">CUSTOMER SUPPORT</h4>
                                 <p>Every Time Call Support</p>
                             </div>
                         </div>

@@ -49,12 +49,12 @@ const Navbar = ({ searchProducts, filteredProducts}) => {
                             </div>
                             {/* Display filtered product suggestions */}
                             {search.length > 0 && (
-                            <div className="search-suggestions bg-warning py-2 px-2 position-absolute w-auto">
+                            <div className="search-suggestions bg-warning py-2 px-2 position-absolute">
                                 {filteredProducts.map((product) => (
                                 <Link key={product.id} to={`/product`} onClick={handleSuggestionClick} className="text-white text-decoration-none">
                                     {/* Navigate to the product page on click */}
                                     <div>
-                                        <li className="text-dark text-start fw-semibold result_list">{product.Title} --- [ {product.Category} Category ]</li>
+                                        <li className="text-dark text-start fw-semibold result_list">{product.Title}</li>
                                     </div>
                                 </Link>
                                 ))}

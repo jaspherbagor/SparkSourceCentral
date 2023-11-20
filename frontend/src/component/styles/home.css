@@ -41,22 +41,8 @@ html, body {
 
 /* Hero Section Start */
 .hero_section {
-    background: url('https://img.freepik.com/premium-photo/set-electrician-tools-equipment-repair-electricity-system-top-view-with-copy-space-banner_106035-1623.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: var(--grayish-color);
 }
-
-.hero_text {
-    /* margin-top:150px !important; */
-    background: var(--dark-semitransparent);
-}
-
-/* @media only screen and (max-width:400px) {
-    .hero_text {
-        margin-top:240px !important;
-    }
-} */
 
 .shopnow_btn {
     border: 2px solid var(--primary-color);
@@ -216,7 +202,7 @@ img.card-img-top {
 }
 
 .carousel-text i {
-    font-size:80px;
+    font-size:60px;
 }
 /* Customers Review Section End */
 

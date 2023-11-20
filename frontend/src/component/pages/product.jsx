@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.css';
+import Modal from 'react-bootstrap/Modal';
 import "../styles/product.css";
 import AllProducts from "../resources/Allproducts";
 import { Link } from "react-router-dom";
@@ -25,35 +27,32 @@ const Product = ({product, setProduct, detail, view, close, setClose}) => {
                         detail.map((currentElement) =>
                         {
                             return(
-                                <div class="modal" id="viewProductModal" tabindex="-1" aria-labelledby="viewProductModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-xl" >
+                                <div class="modal fade" data-bs-backdrop="static" id="viewProductModal" tabindex="-1" aria-labelledby="viewProductModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg" >
                                         <div class="modal-content h-auto">
                                             <div class="modal-header">
                                                 <p class="modal-title fs-5 fw-bold" id="exampleModalLabel">View Product</p>
-                                                <button type="button" onClick={() => setClose(false)} data-bs-dismiss="modal">Close</button>
+                                                <i class="bi bi-x-circle text-danger fs-4 close_btn" onClick={() => setClose(false)} data-bs-dismiss="modal"></i>
                                             </div>
                                             <div class="modal-body">
                                                 <div class="container-fluid">
                                                     <div class="row">
                                                         <div class="col-lg-4 col-md-4 col-sm-4 col">
-                                                            <p2>This is a product image</p2>
                                                             <div className="container product_image">
                                                                 <img src={currentElement.Image} alt={currentElement.Title} className="img-fluid w-100 h-100"></img>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-8 col-md-8 col-sm-8 col ms-auto">
-                                                            <p>This is a content of the product specification</p>
                                                             <h4>{currentElement.Category}</h4>
                                                             <h2>{currentElement.Title}</h2>
-                                                            <p>A screen everyone will love: Whether your family is having a good time or having fun.</p>
-                                                            <h3>{currentElement.Price}</h3>
+                                                            <p>A product that everyone would love</p>
+                                                            <h3>₱{currentElement.Price}</h3>
                                                         </div>
                                                     </div> 
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button>Add to Cart</button>
+                                                <button type="button" className="add_to_cart_btn btn px-3 py-2">Add to Cart</button>
                                             </div>                     
                                         </div>
                                     </div>
@@ -62,39 +61,8 @@ const Product = ({product, setProduct, detail, view, close, setClose}) => {
                         })
                     }
                 </> : null
-                
-                // <div className="product_detail">
-                //     <div className="container">
-                //         <button onClick={() => setClose(false)} className="closebtn">x</button>
-                //         {
-                //             detail.map((currentElement) => 
-                //             {
-                //                 return(
-                //                     <div className="productbox">
-                //                         <div className="img_box">
-                //                             <img src={currentElement.Image} alt={currentElement.Title}></img>
-                //                         </div>
-                //                         <div className="detail">
-                //                             <h4>{currentElement.Category}</h4>
-                //                             <h2>{currentElement.Title}</h2>
-                //                             <p>A screen everyone will love: Whether your family is having a good time or having fun.</p>
-                //                             <h3>{currentElement.Price}</h3>
-                //                             <button>Add to Cart</button>
-                //                         </div>
-                //                     </div>
-                //                 )
-                //             })
-                //         }
-                //         <div className="productbox"></div>
-                //     </div>
-                // </div> : null
+    
             }
-
-            {/* Modal Start */}
-
-            
-            
-            {/* Modal End */}
 
             <div className="product_page container-fluid px-4 py-5">
                 <h1 className="fw-bolder">ELECTRICAL PRODUCTS</h1>
