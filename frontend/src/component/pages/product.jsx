@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.css';
-import Modal from 'react-bootstrap/Modal';
 import "../styles/product.css";
 import AllProducts from "../resources/Allproducts";
 import { Link } from "react-router-dom";
-const Product = ({product, setProduct, detail, view, close, setClose}) => {
+const Product = ({product, setProduct, detail, view, close, setClose, addToCart}) => {
     const [selectedCategory, setSelectedCategory] = useState("All Categories");
     const filterProducts = (selectedCategory) => 
     {
@@ -41,7 +39,7 @@ const Product = ({product, setProduct, detail, view, close, setClose}) => {
                                                 <p className="fs-2 pb-3 fw-bold">{currentElement.Title}</p>
                                                 <p>A product that everyone would love</p>
                                                 <h3 className="pb-4 pt-3 fw-bold">₱{currentElement.Price}</h3>
-                                                <button type="button" className="add_to_cart_btn btn px-3 py-2 mb-auto">Add to Cart</button>
+                                                <button type="button" className="add_to_cart_btn btn px-3 py-2 mb-auto" onClick={() => addToCart (currentElement)}>Add to Cart</button>
                                             </div>
                                         </div> 
                                     </div>
@@ -92,7 +90,7 @@ const Product = ({product, setProduct, detail, view, close, setClose}) => {
                                                 <p className="card-price fw-bold fs-5 p-0">₱{currentElement.Price}</p>
                                                 <div className="card-footer bg-transparent">
                                                         <div className="d-flex justify-content-center align-items-baseline mb-1 mt-0 pt-0">
-                                                            <li className="btn me-2 add_to_cart">
+                                                            <li className="btn me-2 add_to_cart" onClick={() => addToCart (currentElement)}>
                                                                 <i className="bi bi-bag-plus"></i>
                                                             </li>
                                                             <li className="btn me-2 add_to_wishlist">

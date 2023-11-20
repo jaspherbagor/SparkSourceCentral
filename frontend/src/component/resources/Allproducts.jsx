@@ -4,21 +4,21 @@ const AllProducts =
         id: 1,
         Title: "Safety Shoes",
         Category: "Safety & Protection",
-        Price: "1,600",
+        Price: "1600",
         Image: "../images/Safety_Shoes.jpg"
     },
     {
         id: 2,
         Title: "Cordless Electric Drill",
         Category: "Tools & Accessories",
-        Price: "1,800",
+        Price: "1800",
         Image: "../images/Cordless_Drill.jpg"
     },
     {
         id: 3,
         Title: "GFCI Outlet (Ground Fault Circuit Interrupter)",
         Category: "Switches & Outlets",
-        Price: "1,500",
+        Price: "1500",
         Image: "../images/GFCI_Outlet.jpg"
     },
     {
@@ -32,28 +32,28 @@ const AllProducts =
         id: 5,
         Title: "Timer Switch",
         Category: "Switches & Outlets",
-        Price: "1,500",
+        Price: "1500",
         Image: "../images/Timer_Switch.png"
     },
     {
         id: 6,
         Title: "Circuit Finder",
         Category: "Tools & Accessories",
-        Price: "1,290",
+        Price: "1290",
         Image: "../images/Circuit_Finder.jpg"
     },
     {
         id: 7,
         Title: "Wall Sconce",
         Category: "Lighting Fixtures",
-        Price: "4,600",
+        Price: "4600",
         Image: "../images/Wall_Sconce.webp"
     },
     {
         id: 8,
         Title: "Light Chandelier",
         Category: "Lighting Fixtures",
-        Price: "12,900",
+        Price: "12900",
         Image: "../images/Light Chandelier.webp"
     },
     {
@@ -81,49 +81,49 @@ const AllProducts =
         id: 12,
         Title: "Pendant Light",
         Category: "Lighting Fixtures",
-        Price: "1,450",
+        Price: "1450",
         Image: "../images/Pendant_Light.jpg"
     },
     {
         id: 13,
         Title: "Flush Mount Ceiling Light",
         Category: "Lighting Fixtures",
-        Price: "1,050",
+        Price: "1050",
         Image: "../images/Flush_Mount_Celing_light.webp"
     },
     {
         id: 14,
         Title: "LED Track Light",
         Category: "Lighting Fixtures",
-        Price: "4,280",
+        Price: "4280",
         Image: "../images/LED_Track_Light.webp"
     },
     {
         id: 15,
         Title: "Floor Lamp",
         Category: "Lighting Fixtures",
-        Price: "12,830",
+        Price: "12830",
         Image: "../images/Floor_Lamp.webp"
     },
     {
         id: 16,
         Title: "Table Lamp",
         Category: "Lighting Fixtures",
-        Price: "6,300",
+        Price: "6300",
         Image: "../images/Table_Lamp.webp"
     },
     {
         id: 17,
         Title: "LED Recessed Downlight",
         Category: "Lighting Fixtures",
-        Price: "1,035",
+        Price: "1035",
         Image: "../images/LED_Recessed_Downlight.jpg"
     },
     {
         id: 18,
         Title: "Vanity Light",
         Category: "Lighting Fixtures",
-        Price: "5,500",
+        Price: "5500",
         Image: "../images/Vanity_Light.jpg"
     },
     {
@@ -172,7 +172,7 @@ const AllProducts =
         id: 25,
         Title: "Smart Outlet (WI-FI Enabled Outlet)",
         Category: "Switches & Outlets",
-        Price: "1,250",
+        Price: "1250",
         Image: "../images/Smart_Outlet.jpg"
     },
     {
