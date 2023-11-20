@@ -63,12 +63,12 @@ const Navbar = ({ searchProducts, filteredProducts}) => {
                         </div>
                         <div className="col-md-2 text-center">
                             <div className="account_info d-flex justify-content-end align-items-center text-white mt-3">
-                                <a className="text-white position-relative nav-link me-3">
+                                <Link to="/cart" className="text-white position-relative nav-link me-3">
                                     <i className="bi bi-bag fs-4"></i>
                                     <span className="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
                                         0
                                     </span>
-                                </a>
+                                </Link>
                                 <a className="text-white position-relative nav-link me-3">
                                     <i className="bi bi-heart fs-4"></i>
                                     <span className="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
