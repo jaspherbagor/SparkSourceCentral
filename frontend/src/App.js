@@ -35,13 +35,31 @@ const App = () => {
     setProduct(filtered);
     setFilteredProducts(filtered);
   };
+
+  //add to cart
+  const [cart, setCart] = useState([]);
+  const addToCart = (product) =>
+  {
+    const exist = cart.find((x) => 
+    {
+      return x.id === product.id
+    })
+    if(exist) {
+      alert("This product is already added to cart")
+    } 
+    else {
+      setCart([...cart, {...product, qty:1}])
+      alert("Product is added to cart")
+    }
+  }
+  console.log(cart)
   
   return (
 
     <>
       <BrowserRouter>
         <Navbar searchProducts={searchProducts} filteredProducts={filteredProducts}/>
-        <Routeway product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose}/>
+        <Routeway product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addToCart={addToCart}/>
         <Footer/>
       </BrowserRouter>
     </>
