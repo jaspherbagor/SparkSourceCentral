@@ -45,15 +45,15 @@ html, body {
 }
 
 .shopnow_btn {
-    border: 2px solid var(--primary-color);
-    background: var(--navbar-bg);
-    color:var(--text-color-light)
+    border: 2px solid var(--primary-color) !important;
+    background: var(--navbar-bg) !important;
+    color:var(--text-color-light) !important
 }
 
 .shopnow_btn:hover {
-    border: 2px solid var(--primary-color);
-    background: var(--text-color-dark);
-    color:var(--text-color-light)
+    border: 2px solid var(--primary-color) !important;
+    background: var(--text-color-dark) !important;
+    color:var(--text-color-light)!important
 }
 /* Hero Section End */
 

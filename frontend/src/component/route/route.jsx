@@ -8,7 +8,7 @@ import RegisterPage from "../pages/register";
 const Routeway = ({product, setProduct, detail, view, close, setClose}) => {
     return(
         <Routes>
-            <Route exact path="/" element={<Home/>}/>
+            <Route exact path="/" element={<Home detail={detail} view={view} close={close} setClose={setClose}/>}/>
             <Route path="/product" element={<Product product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose}/>}/>
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/register" element={<RegisterPage/>}/>

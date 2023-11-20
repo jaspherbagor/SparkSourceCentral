@@ -27,41 +27,29 @@ const Product = ({product, setProduct, detail, view, close, setClose}) => {
                         detail.map((currentElement) =>
                         {
                             return(
-                                <div class="modal fade" data-bs-backdrop="static" id="viewProductModal" tabindex="-1" aria-labelledby="viewProductModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-lg" >
-                                        <div class="modal-content h-auto">
-                                            <div class="modal-header">
-                                                <p class="modal-title fs-5 fw-bold" id="exampleModalLabel">View Product</p>
-                                                <i class="bi bi-x-circle text-danger fs-4 close_btn" onClick={() => setClose(false)} data-bs-dismiss="modal"></i>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="container-fluid">
-                                                    <div class="row">
-                                                        <div class="col-lg-4 col-md-4 col-sm-4 col">
-                                                            <div className="container product_image">
-                                                                <img src={currentElement.Image} alt={currentElement.Title} className="img-fluid w-100 h-100"></img>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-8 col-md-8 col-sm-8 col ms-auto">
-                                                            <h4>{currentElement.Category}</h4>
-                                                            <h2>{currentElement.Title}</h2>
-                                                            <p>A product that everyone would love</p>
-                                                            <h3>₱{currentElement.Price}</h3>
-                                                        </div>
-                                                    </div> 
+                                <div className="container-fluid position-fixed view_product py-3">
+                                    <div className="container">
+                                        <i className="bi bi-x-circle text-danger fs-4 close_btn" onClick={() => setClose(false)}></i>
+                                        <div className="row">
+                                            <div className="col-lg-5 col-md-5 col-sm-5 col-12">
+                                                <div className="container product_image">
+                                                    <img src={currentElement.Image} alt={currentElement.Title} className="img-fluid w-100 view_product-img"></img>
                                                 </div>
                                             </div>
-                                            <div class="modal-footer">
-                                                <button type="button" className="add_to_cart_btn btn px-3 py-2">Add to Cart</button>
-                                            </div>                     
-                                        </div>
+                                            <div className="col-lg-7 col-md-7 col-sm-7 col-12">
+                                                <h4 className="text-secondary mt-2 mb-3 text-uppercase">{currentElement.Category}</h4>
+                                                <p className="fs-2 pb-3 fw-bold">{currentElement.Title}</p>
+                                                <p>A product that everyone would love</p>
+                                                <h3 className="pb-4 pt-3 fw-bold">₱{currentElement.Price}</h3>
+                                                <button type="button" className="add_to_cart_btn btn px-3 py-2 mb-auto">Add to Cart</button>
+                                            </div>
+                                        </div> 
                                     </div>
                                 </div>
                             )
                         })
                     }
-                </> : null
-    
+                </> : null  
             }
 
             <div className="product_page container-fluid px-4 py-5">
@@ -77,7 +65,7 @@ const Product = ({product, setProduct, detail, view, close, setClose}) => {
                         )}
                     </ol>
                 </nav>
-                <div class="row">
+                <div className="row">
                     {/* <!-- Product categories column --> */}
                     <div className="col-lg-3 col-md-3 col-sm-3 product_category mb-4">
                         <ul className="list-group">
@@ -89,8 +77,8 @@ const Product = ({product, setProduct, detail, view, close, setClose}) => {
                         </ul>
                     </div>
                     {/* <!-- Product cards column --> */}
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                        <div class="row">
+                    <div className="col-lg-9 col-md-9 col-sm-9">
+                        <div className="row">
                             {
                                 product.map((currentElement) => 
                                 {
@@ -110,7 +98,7 @@ const Product = ({product, setProduct, detail, view, close, setClose}) => {
                                                             <li className="btn me-2 add_to_wishlist">
                                                                 <i className="bi bi-heart"></i>
                                                             </li>
-                                                            <li onClick={() => view (currentElement)} className="btn view_detail" data-bs-toggle="modal" data-bs-target="#viewProductModal">
+                                                            <li onClick={() => view (currentElement)} className="btn view_detail">
                                                                 <i className="bi bi-eye"></i>
                                                             </li>                      
                                                         </div>        

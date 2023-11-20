@@ -41,13 +41,13 @@ header {
 }
 
 .search_btn {
-    background:var(--text-color-dark);
-    border: 2px solid var(--primary-color);
-    border-radius: 0px 15px 15px 0px;
+    background:var(--text-color-dark) !important;
+    border: 2px solid var(--primary-color) !important;
+    border-radius: 0px 15px 15px 0px !important;
 }
 
 .search_btn:hover {
-    background:var(--navbar-bg);
+    background:var(--navbar-bg) !important;
     border: 2px solid var(--primary-color);
 }
 
