@@ -105,19 +105,29 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart}) => {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav mx-auto">
                                 <li className="nav-item me-3">
-                                    <Link to="/product" className="nav-link text-white fw-semibold" href="#"><i className="bi bi-lightning"></i> ALL ITEMS</Link>
+                                    <Link to="/product" className="nav-link text-white fw-semibold">
+                                        <i className="bi bi-lightning"></i> ALL ITEMS
+                                    </Link>
                                 </li>
                                 <li className="nav-item me-3">
-                                    <a className="nav-link text-white fw-semibold" href="#"><i className="bi bi-lightbulb"></i> LIGHTING FIXTURES</a>
+                                    <Link to="/product?category=lighting-fixtures" className="nav-link text-white fw-semibold">
+                                        <i className="bi bi-lightbulb"></i> LIGHTING FIXTURES
+                                    </Link>
                                 </li>
                                 <li className="nav-item me-3">
-                                    <a className="nav-link text-white fw-semibold" href="#"><i className="bi bi-toggle-on"></i> SWITCHES & OUTLETS</a>
+                                    <Link to="/product?category=switches-outlets" className="nav-link text-white fw-semibold">
+                                        <i className="bi bi-toggle-on"></i> SWITCHES & OUTLETS
+                                    </Link>
                                 </li>
                                 <li className="nav-item me-3">
-                                    <a className="nav-link text-white fw-semibold" href="#"><i className="bi bi-shield-lock"></i> SAFETY & PROTECTION</a>
+                                    <Link to="/product?category=safety-protection" className="nav-link text-white fw-semibold">
+                                        <i className="bi bi-shield-lock"></i> SAFETY & PROTECTION
+                                    </Link>
                                 </li>
                                 <li className="nav-item me-3">
-                                    <a className="nav-link text-white fw-semibold" href="#"><i className="bi bi-tools"></i>  TOOLS & ACCESSORIES</a>
+                                    <Link to="/product?category=tools-accessories" className="nav-link text-white fw-semibold">
+                                        <i className="bi bi-tools"></i> TOOLS & ACCESSORIES
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

@@ -36,6 +36,7 @@ const App = () => {
     setFilteredProducts(filtered);
   };
 
+
   //add to cart
   const [cart, setCart] = useState([]);
   const addToCart = (product) => {
@@ -64,7 +65,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Navbar searchProducts={searchProducts} filteredProducts={filteredProducts} cart={cart}/>
-        <Routeway product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addToCart={addToCart} userToken={userToken}/>
+        <Routeway product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addToCart={addToCart} userToken={userToken} />
         <Footer/>
       </BrowserRouter>
     </>

@@ -13,7 +13,7 @@ const Routeway = ({product, setProduct, detail, view, close, setClose, cart, set
         <Routes>
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/register" element={<RegisterPage/>}/>
-            <Route path="/" element={<Home detail={detail} view={view} close={close} setClose={setClose} addToCart={addToCart}/>}/>
+            <Route path="/" element={<Home detail={detail} view={view} close={close} setClose={setClose} addToCart={addToCart} userToken={userToken}/>}/>
             <Route path="/product" element={<Product product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} addToCart={addToCart}/>}/>
             <Route path="/cart" element={<CartPage cart={cart} setCart={setCart}/>}/>
             <Route path="/contact" element={<Contact/>} />

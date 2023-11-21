@@ -1,9 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "../styles/product.css";
 import AllProducts from "../resources/Allproducts";
 import { Link } from "react-router-dom";
 const Product = ({product, setProduct, detail, view, close, setClose, addToCart}) => {
+    const location = useLocation();
     const [selectedCategory, setSelectedCategory] = useState("All Categories");
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+        const categoryParam = searchParams.get("category");
+
+        if (categoryParam) {
+            const filteredProducts = AllProducts.filter(
+                (product) => product.Category.toLowerCase().replace(/\s+/g, '-') === categoryParam
+            );
+            setProduct(filteredProducts);
+            setSelectedCategory(categoryParam);
+        } else {
+            // If no category is provided in the URL, display all products
+            setProduct(AllProducts);
+            setSelectedCategory("All Categories");
+        }
+    }, [location.search]);
+
     const filterProducts = (selectedCategory) => 
     {
         if (selectedCategory === "All Categories") {
