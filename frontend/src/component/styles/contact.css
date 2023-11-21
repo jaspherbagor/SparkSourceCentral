@@ -44,12 +44,12 @@ html, body {
 /* Contact Text Section End */
 
 /* Contact Form Start */
-.first_name, .last_name, .contact_number, .zip_code, .email .address {
-    height:50px
+.first_name, .last_name, .contact_number, .zip_code, .email, .address {
+    height:50px !important
 }
 
-.first_name, .last_name, .contact_number, .zip_code, .email .address, textarea.message-text-area {
-    border:1px solid var(--text-color-dark)
+.first_name, .last_name, .contact_number, .zip_code, .email, .address, .message-text-area {
+    border:1px solid var(--text-color-dark) !important
 }
 
 textarea.message-text-area {
