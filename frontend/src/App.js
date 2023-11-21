@@ -53,13 +53,17 @@ const App = () => {
     }
   }
   console.log(cart)
+
+  // Token
+  const userToken = localStorage.getItem('token');
+  console.log('current userToken: ', userToken);
   
   return (
 
     <>
       <BrowserRouter>
         <Navbar searchProducts={searchProducts} filteredProducts={filteredProducts}/>
-        <Routeway product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addToCart={addToCart}/>
+        <Routeway product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addToCart={addToCart} userToken={userToken}/>
         <Footer/>
       </BrowserRouter>
     </>

@@ -64,24 +64,26 @@ function LoginPage() {
               console.log('result: ', result)
 
               if (result.success) {
-                  toastLabel.innerText = "SUCCESS";
-                  toastLabel.style.color = "#FFFFFF";
-                  toastMessage.innerText = "Login Success";
-                  toastMessage.style.color = "green";
-                  toastLive.style.border = "2.5px solid green"
-                  toastHeader.style.background = "green";
+                localStorage.setItem('token', result.token);
+                window.location.href = '/';
+                toastLabel.innerText = "SUCCESS";
+                toastLabel.style.color = "#FFFFFF";
+                toastMessage.innerText = "Login Success";
+                toastMessage.style.color = "green";
+                toastLive.style.border = "2.5px solid green"
+                toastHeader.style.background = "green";
 
-                  username.value = "";
-                  password.value = "";
+                username.value = "";
+                password.value = "";
 
               } else {
-                  toastLabel.innerText = "ERROR";
-                  toastLabel.style.color = "#FFFFFF";
-                  toastMessage.innerText = "Invalid Credentials!";
-                  toastMessage.style.color = "red";
-                  toastLive.style.border = "2.5px solid #fe0039";
-                  toastHeader.style.background = "#fe0039";
-              }
+                toastLabel.innerText = "ERROR";
+                toastLabel.style.color = "#FFFFFF";
+                toastMessage.innerText = "Invalid Credentials!";
+                toastMessage.style.color = "red";
+                toastLive.style.border = "2.5px solid #fe0039";
+                toastHeader.style.background = "#fe0039";
+            }
           })
           }
 
@@ -94,7 +96,7 @@ function LoginPage() {
   return (
     <>
       <div className="login-container-div container-fluid d-flex align-items-center justify-content-center px-4 py-5">
-        <div className="g-3 needs-validation form-container p-4 my-4 h-auto" novalidate>
+        <div className="g-3 needs-validation form-container p-4 my-4 h-auto" noValidate>
             <div className="text-center">
                 <img src="../images/spark_source_central_logo.svg" className="logo"/>
             </div>
@@ -102,7 +104,7 @@ function LoginPage() {
 
             <div className="row">
                 <div className="col-md-12 mb-3">
-                    <label for="username" className="form-label">Username</label>
+                    <label htmlFor="username" className="form-label">Username</label>
                     <input type="text" className="form-control" id="username" required/>
                     <div className="invalid-feedback">
                         You must input username.
@@ -113,7 +115,7 @@ function LoginPage() {
             <div className="row">
                 <div className="col-md-12 mb-3">
                     <div className="col-md-12 mb-3">
-                        <label for="password" className="form-label">Password</label>
+                        <label htmlFor="password" className="form-label">Password</label>
                         <div className="d-flex">
                             <input type="password" className="form-control" id="password" required/>
                             <span className="input-group-addon">

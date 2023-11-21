@@ -35,10 +35,36 @@ html, body {
 }
 
 .cart_product_img {
-    max-width: 200px !important
+    max-width: 100px !important
 }
 
 .cart_item_container {
-    border: 1px solid var(--text-color-dark);
+    border: 2px solid var(--text-color-dark);
     border-radius: 5px;
+}
+
+.checkout {
+    background:var(--navbar-bg);
+    border:2px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.checkout:hover {
+    background: var(--text-color-dark);
+}
+
+.emptycartbtn {
+    background:var(--navbar-bg);
+    border:2px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.emptycartbtn:hover {
+    background: var(--text-color-dark);
+    border:2px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.quantity {
+    max-width:200px
 }

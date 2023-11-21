@@ -60,8 +60,8 @@ const CartPage = ({cart, setCart}) => {
                 {
                     cart.length === 0 && 
                     <div className="emptycart container-fluid text-center p-5">
-                        <h2 className="empty fw-bolder">Cart is Empty</h2>
-                        <Link to="/product" className="emptycartbtn btn btn-danger">Shop Now</Link>
+                        <h2 className="empty fw-bolder mb-3">Cart is Empty</h2>
+                        <Link to="/product" className="emptycartbtn btn text-white py-2 px-3 fw-semibold">Shop Now</Link>
                     </div>
                 }
                 <div className="container-fluid px-4 py-5 w-100">
@@ -69,31 +69,38 @@ const CartPage = ({cart, setCart}) => {
                         cart.map((currentElement) => 
                         {
                            return(
-                                <div className="container-fluid cart_item_container mb-4">
-                                    
-                                    <div className="cart_item row container-fluid px-2 py-4" key={currentElement.id}>
-                                        <div className="col-lg-1 col-md-1 col-sm-1 d-flex align-items-center justify-content-center">
-                                            <button onClick={() => removeProduct(currentElement)} className="btn btn-danger"><i className="bi bi-x-lg"></i></button>
-                                        </div>
-                                        <div className="col-lg-4 col-md-4 col-sm-6 img_box">
-                                            <img src={currentElement.Image} alt={currentElement.Title} className="img-fluid cart_product_img" />
-                                        </div>
-                                        <div className="detail col-lg-7 col-md-7 col-sm-7 pe-3">
-                                            <div className="info container">
-                                                <h4>{currentElement.Category}</h4>
-                                                <h3>{currentElement.Title}</h3>
-                                                <p>₱{currentElement.Price.toLocaleString()}</p>
-                                                <div className="qty">
-                                                    <button className="incrementQuantity btn btn-success" onClick={() => incrementQuantity(currentElement)}>+</button>
-                                                    <input type="number" className="text-center py-1" value={currentElement.qty} onChange={(e) => handleQuantityChange(e, currentElement)}/>
-                                                    <button className="decrementQuantity btn btn-warning" onClick={() => decrementQuantity(currentElement)}>-</button>
-                                                </div>
-                                            
-                                                <h4 className="subtotal">Sub Total: ₱{(currentElement.Price * currentElement.qty).toLocaleString()}</h4>
+                                
+                            <div className="container-fluid px-2 py-4 cart_item_container mb-4" key={currentElement.id}>
+                                <div className="row">
+                                    <div className="col-lg-1 col-md-1 col-sm-4 d-flex align-items-center justify-content-center">
+                                        <i onClick={() => removeProduct(currentElement)} className="bi bi-x-circle text-danger"></i>
+                                    </div>
+                                    <div className="col-lg-2 col-md-2 col-sm-4 d-flex align-items-center justify-content-center">
+                                        <img src={currentElement.Image} alt={currentElement.Title} className="img-fluid cart_product_img" />
+                                    </div>
+                                    <div className="col-lg-3 col-md-3 col-sm-4 d-flex align-items-center justify-content-center">
+                                        <h3 className="fw-medium text-center">{currentElement.Title}</h3>
+                                    </div>
+                                    <div className="col-lg-2 col-md-2 col-sm-4 d-flex align-items-center justify-content-center">
+                                        <p className="fw-medium fs-4 my-2">₱{currentElement.Price.toLocaleString()}.00</p>
+                                    </div>
+                                    <div className="col-lg-2 col-md-2 col-sm-4 d-flex align-items-center justify-content-center">
+                                        <div className="quantity input-group">
+                                            <button className="decrementQuantity btn btn-danger" onClick={() => decrementQuantity(currentElement)}>-</button>
+                                            <input type="number" className="item_input_field form-control text-center w-25 py-1 px-0" value={currentElement.qty} onChange={(e) => handleQuantityChange(e, currentElement)}/>
+                                            <button className="incrementQuantity btn btn-success" onClick={() => incrementQuantity(currentElement)}>+</button>            
                                             </div>
                                         </div>
+                                    <div className="col-lg-2 col-md-2 col-sm-4 d-flex align-items-center justify-content-center">
+                                        <h4 className="subtotal mt-3 fw-bold"> ₱{(currentElement.Price * currentElement.qty).toLocaleString()}.00</h4>
                                     </div>
+
                                 </div>
+
+                            </div>
+
+                                
+
                            ) 
                         })
                     }
@@ -102,9 +109,9 @@ const CartPage = ({cart, setCart}) => {
                 {
                     cart.length > 0 &&
                     <>
-                        <div className="container p-2 text-center">
-                            <h2 className="totalprice fw-bold">Total: ₱{Totalprice.toLocaleString()}</h2>
-                            <button className="checkout btn btn-success px-3 py-2 fw-semibold" type="button">Checkout</button>
+                        <div className="container p-2 text-center mb-5">
+                            <h2 className="totalprice fw-bold mb-3">Total: ₱{Totalprice.toLocaleString()}.00</h2>
+                            <button className="checkout text-white px-3 py-2 fw-semibold" type="button">Checkout</button>
                         </div>
                         
                     </>

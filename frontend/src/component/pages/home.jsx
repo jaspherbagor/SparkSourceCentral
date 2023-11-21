@@ -2,7 +2,7 @@ import React from "react";
 import '../styles/home.css';
 import Topproducts from "../resources/Topproducts";
 import { Link } from "react-router-dom";
-const Home = ({detail, view, close, setClose}) => {
+const Home = ({detail, view, close, setClose, addToCart}) => {
     return(
         <>  
             {
@@ -36,6 +36,12 @@ const Home = ({detail, view, close, setClose}) => {
                     }
                 </> : null  
             }
+            {/* Added code */}
+            {/* <div>
+                <h2>this is my homepage</h2>
+                <button className='btn btn-default' onClick={logout}>Logout</button>
+            </div> */}
+            {/* Added Code */}
 
             {/* Hero Section Start */}
             <section className="hero_section container-fluid h-auto align-items-center justify-content-center py-5 px-3">
@@ -69,7 +75,7 @@ const Home = ({detail, view, close, setClose}) => {
                         </div>
                         <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-center mb-4">
                             <div className="icon me-4">
-                                <i class="fa-solid fa-right-left"></i>
+                                <i className="fa-solid fa-right-left"></i>
                             </div>
                             <div className="detail">
                                 <h4 className="fw-bolder">RETURN AND REFUND</h4>
@@ -78,7 +84,7 @@ const Home = ({detail, view, close, setClose}) => {
                         </div>
                         <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-center mb-4">
                             <div className="icon me-4">
-                                <i class="fa-solid fa-trophy"></i>
+                                <i className="fa-solid fa-trophy"></i>
                             </div>
                             <div className="detail">
                                 <h4 className="fw-bolder">HIGH QUALITY</h4>
@@ -87,7 +93,7 @@ const Home = ({detail, view, close, setClose}) => {
                         </div>
                         <div className="features col-lg-3 col-md-4 col-sm-6 col-12 d-flex align-items-center justify-content-center mb-4">
                             <div className="icon me-4">
-                                <i class="fa-solid fa-headset"></i>
+                                <i className="fa-solid fa-headset"></i>
                             </div>
                             <div className="detail">
                                 <h4 className="fw-bolder">CUSTOMER SUPPORT</h4>
@@ -140,7 +146,7 @@ const Home = ({detail, view, close, setClose}) => {
                                                 <p className="card-price fw-bold fs-5 p-0">₱{currentElement.Price}</p>
                                                 <div className="card-footer bg-transparent">
                                                         <div className="d-flex justify-content-center align-items-baseline mb-1 mt-0 pt-0">
-                                                            <li className="btn me-2 add_to_cart">
+                                                            <li className="btn me-2 add_to_cart" onClick={() => addToCart (currentElement)}>
                                                                 <i className="bi bi-bag-plus"></i>
                                                             </li>
                                                             <li className="btn me-2 add_to_wishlist">

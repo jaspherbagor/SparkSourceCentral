@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "../styles/navbar.css";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ searchProducts, filteredProducts}) => {
+const Navbar = ({ searchProducts, filteredProducts, userToken}) => {
     const [search, setSearch] = useState("");
   
     const handleSearch = (e) => {
@@ -17,6 +17,17 @@ const Navbar = ({ searchProducts, filteredProducts}) => {
     const handleSuggestionClick = () => {
         setSearch("")
     };
+
+    // Added code
+    const logout = ()=>{
+        localStorage.clear(); // clear yung storage including token
+        window.location.href = 'login'; // redirect to login page
+    }
+    // // Added code
+    // if((window.location.pathname !== '/login' && window.location.pathname !== '/register')  && !userToken){
+    //     window.location.href = 'login';
+    //   }
+    // // Added code
     
     return(
         <>
@@ -74,8 +85,9 @@ const Navbar = ({ searchProducts, filteredProducts}) => {
                                     <span className="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
                                         0
                                     </span>
-                                </a>
-                                <Link to="/login" className="text-white">
+                                </a> 
+                                {/* to="/login" */}
+                                <Link onClick={logout}  className="text-white">
                                     <i className="bi bi-person fs-2"></i>
                                 </Link>
                             </div>
