@@ -14,7 +14,7 @@ const Footer = () => {
                     <div className="customer_service col-lg-2 col-md-4 col-sm-4 col-12 text-white text-start px-2 py-2">
                         <h5 className="fw-semibold mb-3">CUSTOMER SERVICE</h5>
                         <p>
-                            <a href="" className="text-decoration-none text-white">Contact Us</a>
+                            <Link to="/contact" className="text-decoration-none text-white">Contact Us</Link>
                         </p>
                         <p>
                             <a href="" className="text-decoration-none text-white">Shipping Information</a>
@@ -64,7 +64,7 @@ const Footer = () => {
                     <div className="my_account col-lg-2 col-md-4 col-sm-4 col-12 text-white text-start px-2 py-2">
                         <h5 className="fw-semibold mb-3">MY ACCOUNT</h5>
                         <p>
-                            <a href="" className="text-decoration-none text-white">Cart</a>
+                            <Link to="/cart" className="text-decoration-none text-white">Cart</Link>
                         </p>
                         <p>
                             <a href="" className="text-decoration-none text-white">Checkout</a>

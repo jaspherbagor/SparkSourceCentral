@@ -33,3 +33,51 @@ html, body {
     --grayish-color:#E5E5E5;
     --font-family: 'Inter', sans-serif;
 }
+
+/* Contact Text Section Start */
+.contact-text-section {
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20201022/pngtree-abstract-technology-background-line-high-tech-electricity-image_430309.jpg');
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+/* Contact Text Section End */
+
+/* Contact Form Start */
+.first_name, .last_name, .contact_number, .zip_code, .email .address {
+    height:50px
+}
+
+.first_name, .last_name, .contact_number, .zip_code, .email .address, textarea.message-text-area {
+    border:1px solid var(--text-color-dark)
+}
+
+textarea.message-text-area {
+    height:150px
+}
+
+.submit_form {
+    background:var(--navbar-bg);
+    border-radius:10px;
+    border: 2px solid var(--primary-color);
+}
+
+.submit_form:hover {
+    background: var(--text-color-dark);
+    border: 2px solid var(--primary-color);
+}
+/* Contact Form End */
+
+/* Contact Section Start */
+.contact {
+    background: var(--navbar-bg);
+}
+
+.contact p {
+    color:var(--primary-color)
+}
+
+.social-icons a i:hover {
+    color:var(--primary-color)
+}
+/* Contact Section End */

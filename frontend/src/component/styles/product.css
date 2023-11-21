@@ -42,7 +42,7 @@ html, body {
 
 .close_btn {
     cursor: pointer;
-    margin-left:97%
+    margin-left:98%
 }
 
 .close_btn:hover {
@@ -72,8 +72,8 @@ html, body {
     box-shadow: 1px 19px 400px 200px rgba(0,0,0,0.77);
     -webkit-box-shadow: 1px 19px 400px 200px rgba(0,0,0,0.77);
     -moz-box-shadow: 1px 19px 400px 200px rgba(0,0,0,0.77);
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 80%;
+    max-height: 80%;
     overflow: auto;
     background: var(--text-color-light);
 }
