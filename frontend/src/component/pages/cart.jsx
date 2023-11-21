@@ -82,7 +82,7 @@ const CartPage = ({cart, setCart}) => {
                                         <h3 className="fw-medium text-center">{currentElement.Title}</h3>
                                     </div>
                                     <div className="col-lg-2 col-md-2 col-sm-4 d-flex align-items-center justify-content-center">
-                                        <p className="fw-medium fs-4 my-2">₱{currentElement.Price.toLocaleString()}.00</p>
+                                        <p className="fw-medium fs-4 my-2">₱{currentElement.Price}</p>
                                     </div>
                                     <div className="col-lg-2 col-md-2 col-sm-4 d-flex align-items-center justify-content-center">
                                         <div className="quantity input-group">
@@ -92,7 +92,7 @@ const CartPage = ({cart, setCart}) => {
                                             </div>
                                         </div>
                                     <div className="col-lg-2 col-md-2 col-sm-4 d-flex align-items-center justify-content-center">
-                                        <h4 className="subtotal mt-3 fw-bold"> ₱{(currentElement.Price * currentElement.qty).toLocaleString()}.00</h4>
+                                        <h4 className="subtotal mt-3 fw-bold"> ₱{(currentElement.Price * currentElement.qty).toLocaleString()}</h4>
                                     </div>
 
                                 </div>
@@ -110,8 +110,11 @@ const CartPage = ({cart, setCart}) => {
                     cart.length > 0 &&
                     <>
                         <div className="container p-2 text-center mb-5">
-                            <h2 className="totalprice fw-bold mb-3">Total: ₱{Totalprice.toLocaleString()}.00</h2>
-                            <button className="checkout text-white px-3 py-2 fw-semibold" type="button">Checkout</button>
+                            <h2 className="totalprice fw-bold mb-3">Total: ₱{Totalprice.toLocaleString()}</h2>
+                            <Link>
+                                <button className="checkout text-white px-3 py-2 fw-semibold" type="button">Checkout</button>
+                            </Link>
+                            
                         </div>
                         
                     </>

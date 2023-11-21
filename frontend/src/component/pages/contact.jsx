@@ -19,7 +19,20 @@ const Contact = () => {
 
     const sendData = async (e) => {
         e.preventDefault();
-        const { FirstName, LastName, ContactNumber, ZipCode, Email, Address, Message } = users;
+
+        // Validation: Check if any required field is empty
+        if (
+            !users.FirstName ||
+            !users.LastName ||
+            !users.ContactNumber ||
+            !users.ZipCode ||
+            !users.Email ||
+            !users.Address ||
+            !users.Message
+        ) {
+            alert("Please fill in all required fields");
+            return;
+        }
 
         const options = {
             method: 'POST',
@@ -27,13 +40,13 @@ const Contact = () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                FirstName,
-                LastName,
-                ContactNumber,
-                ZipCode,
-                Email,
-                Address,
-                Message
+                FirstName: users.FirstName,
+                LastName: users.LastName,
+                ContactNumber: users.ContactNumber,
+                ZipCode: users.ZipCode,
+                Email: users.Email,
+                Address: users.Address,
+                Message: users.Message
             })
         };
 

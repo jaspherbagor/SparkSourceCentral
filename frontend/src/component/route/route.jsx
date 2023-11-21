@@ -6,6 +6,7 @@ import LoginPage from "../pages/login";
 import RegisterPage from "../pages/register";
 import CartPage from "../pages/cart";
 import Contact from "../pages/contact";
+import Checkout from "../pages/checkout";
 const Routeway = ({product, setProduct, detail, view, close, setClose, cart, setCart, addToCart, userToken}) => {
     return(
         
@@ -16,11 +17,12 @@ const Routeway = ({product, setProduct, detail, view, close, setClose, cart, set
             <Route path="/product" element={<Product product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} addToCart={addToCart}/>}/>
             <Route path="/cart" element={<CartPage cart={cart} setCart={setCart}/>}/>
             <Route path="/contact" element={<Contact/>} />
-            {
+            <Route path="/checkout" element={<Checkout/>}/>
+            {/* {
                 userToken ? 
-                <Route path="/checkout" element={""}/>
+                
                 : ""
-            }
+            } */}
             
             
         </Routes>

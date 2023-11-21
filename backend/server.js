@@ -57,6 +57,24 @@ app.post('/login', function (request, response) {
   });
 })
 
+
+app.get('/user', function(request, response) {
+  try {
+    const header = request.headers;
+    const authorizationHeader = header.authorization;
+    if(authorizationHeader !== 'undefined'){
+      const token = authorizationHeader.split(' ')[1];
+      const decoded = jwt.verify(token, 'shhhhh');
+
+      console.log('decoded token: ', decoded)
+      response.send({'success': true, 'data': decoded})
+    }
+  } catch(err) {
+    // err
+    response.send({'success': false})
+  }
+})
+
 app.post('/register', function (request, response) {
   const firstNameFromFrontEnd = request.body.firstName;
   const lastNameFromFrontEnd = request.body.lastName;

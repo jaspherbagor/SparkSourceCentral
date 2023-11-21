@@ -1,8 +1,27 @@
-import React from "react";
+import React, {useEffect} from "react";
 import '../styles/home.css';
 import Topproducts from "../resources/Topproducts";
 import { Link } from "react-router-dom";
 const Home = ({detail, view, close, setClose, addToCart}) => {
+    const userToken = localStorage.getItem('token');
+    const getUserData = () => {
+        fetch('http://localhost:4000/user', {
+            method: 'get',
+            headers: {
+                'Authorization': 'Bearer ' + userToken
+            },
+            body: null
+        }).then((result)=>{
+            return result.json();
+        }).then((result)=>{
+            console.log('result: ', result)
+        })
+    }
+    
+    useEffect(()=>{
+        getUserData();
+    }, [])
+    
     return(
         <>  
             {
@@ -259,3 +278,20 @@ const Home = ({detail, view, close, setClose, addToCart}) => {
 }
 
 export default Home;
+
+// // const getUserData = () => {
+//     fetch('http://localhost:3000/user', {
+//         method: 'get',
+//         headers: {
+//             'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE3MDA1NjczNzgsImV4cCI6MTcwMDU3MDk3OH0.VyKMHBr3OZWXZpxrRw354s-oxQorM1psS07b--rAh54'
+//         },
+//         body: null
+//     }).then((result)=>{
+//         return result.json();
+//     }).then((result)=>{
+//         console.log('result: ', result)
+//     })
+// }
+
+
+
