@@ -67,9 +67,6 @@ const Footer = () => {
                             <Link to="/cart" className="text-decoration-none text-white">Cart</Link>
                         </p>
                         <p>
-                            <Link to="/checkout" className="text-decoration-none text-white">Checkout</Link>
-                        </p>
-                        <p>
                             <a href="" className="text-decoration-none text-white">My Wishlist</a>
                         </p>
                     </div>

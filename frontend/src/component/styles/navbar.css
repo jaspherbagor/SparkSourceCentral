@@ -77,3 +77,8 @@ header {
 .result_list:hover {
     color:var(--text-color-light) !important
 }
+
+.dropdown-menu {
+    border-radius: 5px;
+    background: var(--primary-color);
+}

@@ -19,9 +19,9 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart}) => {
     };
 
     // Added code
-    const logout = ()=>{
+    const handleLogout = ()=>{
         localStorage.clear(); // clear yung storage including token
-        window.location.href = 'login'; // redirect to login page
+        window.location.href = '/'; // redirect to login page
     }
     // // Added code
     // if((window.location.pathname !== '/login' && window.location.pathname !== '/register')  && !userToken){
@@ -82,16 +82,33 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart}) => {
                                 </span>
                                 )}
                             </Link>
-                                <a className="text-white position-relative nav-link me-3">
-                                    <i className="bi bi-heart fs-4"></i>
-                                    <span className="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
-                                        0
-                                    </span>
-                                </a> 
+                            <li className="text-white position-relative nav-link me-3">
+                                <i className="bi bi-heart fs-4"></i>
+                                <span className="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
+                                    0
+                                </span>
+                            </li> 
                                 {/* to="/login" */}
-                                <Link onClick={logout}  className="text-white">
-                                    <i className="bi bi-person fs-2"></i>
-                                </Link>
+                                {/* onClick={logout} */}
+                            <li>
+                                <div className="dropdown">
+                                    <i className="bi bi-person fs-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                    <ul className="dropdown-menu p-0">
+                                        {!userToken ? (
+                                            <li>
+                                            <Link className="dropdown-item" to="/login">
+                                                Login
+                                            </Link>
+                                            </li>
+                                        ) : (
+                                            <li onClick={handleLogout} className="dropdown-item">
+                                            Logout
+                                            </li>
+                                    )}
+                                    </ul>
+                                </div>
+                            </li>
+                                
                             </div>
                         </div>
                     </div>

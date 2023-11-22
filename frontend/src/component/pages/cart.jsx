@@ -111,7 +111,7 @@ const CartPage = ({cart, setCart}) => {
                     <>
                         <div className="container p-2 text-center mb-5">
                             <h2 className="totalprice fw-bold mb-3">Total: ₱{Totalprice.toLocaleString()}</h2>
-                            <Link>
+                            <Link to="/checkout">
                                 <button className="checkout text-white px-3 py-2 fw-semibold" type="button">Checkout</button>
                             </Link>
                             

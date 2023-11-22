@@ -64,7 +64,7 @@ const App = () => {
 
     <>
       <BrowserRouter>
-        <Navbar searchProducts={searchProducts} filteredProducts={filteredProducts} cart={cart}/>
+        <Navbar searchProducts={searchProducts} filteredProducts={filteredProducts} cart={cart} userToken={userToken} />
         <Routeway product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addToCart={addToCart} userToken={userToken} />
         <Footer/>
       </BrowserRouter>
