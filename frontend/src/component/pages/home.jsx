@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import '../styles/home.css';
 import Topproducts from "../resources/Topproducts";
 import { Link } from "react-router-dom";
@@ -21,6 +21,58 @@ const Home = ({detail, view, close, setClose, addToCart}) => {
     useEffect(()=>{
         getUserData();
     }, [])
+
+    // Newsletter
+    const [users, setUser] = useState({
+        Email: ''
+    });
+
+    const [submitted, setSubmitted] = useState(false);
+
+    const data = (e) => {
+        const { name, value } = e.target;
+        setUser({...users, [name]: value});
+    };
+
+    const sendData = async (e) => {
+        e.preventDefault();
+
+        // Validation: Check if any required field is empty
+        if (
+            !users.Email
+        ) {
+            alert("Please enter your email");
+            return;
+        }
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                Email: users.Email,
+            })
+        };
+
+        try {
+            const res = await fetch('https://sparksource-central-newsletter-default-rtdb.firebaseio.com/Message.json', options);
+            console.log(res);
+
+            if (res.ok) {
+                alert("Your Message Has Been Sent");
+                setUser({ // Reset the form fields after successful submission
+                    Email: ''
+                });
+                setSubmitted(true);
+            } else {
+                alert("An Error Occurred");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("An Error Occurred");
+        }
+    };
     
     return(
         <>  
@@ -261,10 +313,10 @@ const Home = ({detail, view, close, setClose, addToCart}) => {
                         <div className="newsletter_container col-md-8 col-12 text-center">
                             <h2 className="fw-bolder text-white">Subscribe to SparkSource Central's Latest Promotion</h2>
                             <p className="fw-light text-white">Suscribe to our email newsletter so that you never miss out our newest promotions. </p>
-                            <form className="newsletter-form">
+                            <form method="POST" className="newsletter-form">
                                 <div className="input-group mb-3">
-                                    <input type="email" className="form-control newsletter_input_field" placeholder="Your Email Address" aria-label="Your Email Address" aria-describedby="subscribe-button"/>
-                                    <button className="btn subscribe_btn mx-0 fw-semibold text-white" type="submit" id="subscribe-button">Subscribe</button>
+                                    <input type="email" name="Email" className="form-control newsletter_input_field" value={users.Email} placeholder="Your Email Address" required autoComplete="off" onChange={data}/>
+                                    <button className="btn subscribe_btn mx-0 fw-semibold text-white" onClick={sendData} type="submit" id="subscribe-button">Subscribe</button>
                                 </div>
                             </form>
                         </div>

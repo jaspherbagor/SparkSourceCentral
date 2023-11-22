@@ -12,6 +12,8 @@ const Contact = () => {
         Message: ''
     });
 
+    const [submitted, setSubmitted] = useState(false);
+
     const data = (e) => {
         const { name, value } = e.target;
         setUser({...users, [name]: value});
@@ -51,11 +53,21 @@ const Contact = () => {
         };
 
         try {
-            const res = await fetch('https://e-commerce-contact-f93f2-default-rtdb.firebaseio.com/Message.json', options);
+            const res = await fetch('https://spark-source-central-contact-default-rtdb.firebaseio.com//Message.json', options);
             console.log(res);
 
             if (res.ok) {
                 alert("Your Message Has Been Sent");
+                setUser({ // Reset the form fields after successful submission
+                    FirstName: '',
+                    LastName: '',
+                    ContactNumber: '',
+                    ZipCode: '',
+                    Email: '',
+                    Address: '',
+                    Message: ''
+                });
+                setSubmitted(true); // Update the submission status
             } else {
                 alert("An Error Occurred");
             }

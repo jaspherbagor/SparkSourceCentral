@@ -13,7 +13,7 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart}) => {
     const handleSearchButtonClick = () => {
         searchProducts(search);
         setSearch("")
-      };
+    };
     const handleSuggestionClick = () => {
         setSearch("")
     };
@@ -74,40 +74,40 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart}) => {
                         </div>
                         <div className="col-md-2 text-center">
                             <div className="account_info d-flex justify-content-end align-items-center text-white mt-3">
-                            <Link to="/cart" className="text-white position-relative nav-link me-3">
-                                <i className="bi bi-bag fs-4"></i>
-                                {cart.length > 0 && (
-                                <span className="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
-                                    {cart.length}
-                                </span>
-                                )}
-                            </Link>
-                            <li className="text-white position-relative nav-link me-3">
-                                <i className="bi bi-heart fs-4"></i>
-                                <span className="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
-                                    0
-                                </span>
-                            </li> 
-                                {/* to="/login" */}
-                                {/* onClick={logout} */}
-                            <li>
-                                <div className="dropdown">
-                                    <i className="bi bi-person fs-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></i>
-                                    <ul className="dropdown-menu p-0">
-                                        {!userToken ? (
-                                            <li>
-                                            <Link className="dropdown-item" to="/login">
-                                                Login
-                                            </Link>
-                                            </li>
-                                        ) : (
-                                            <li onClick={handleLogout} className="dropdown-item">
-                                            Logout
-                                            </li>
+                                <Link to="/cart" className="text-white position-relative nav-link me-3">
+                                    <i className="bi bi-bag fs-4"></i>
+                                    {cart.length > 0 && (
+                                    <span className="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
+                                        {cart.length}
+                                    </span>
                                     )}
-                                    </ul>
-                                </div>
-                            </li>
+                                </Link>
+                                <li className="text-white position-relative nav-link me-3">
+                                    <i className="bi bi-heart fs-4"></i>
+                                    <span className="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
+                                        0
+                                    </span>
+                                </li> 
+                                    {/* to="/login" */}
+                                    {/* onClick={logout} */}
+                                <li>
+                                    <div className="dropdown">
+                                        <i className="bi bi-person fs-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                        <ul className="dropdown-menu p-0">
+                                            {!userToken ? (
+                                                <li>
+                                                <Link className="dropdown-item" to="/login">
+                                                    Login
+                                                </Link>
+                                                </li>
+                                            ) : (
+                                                <li onClick={handleLogout} className="dropdown-item">
+                                                Logout
+                                                </li>
+                                        )}
+                                        </ul>
+                                    </div>
+                                </li>
                                 
                             </div>
                         </div>
@@ -127,22 +127,22 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart}) => {
                                     </Link>
                                 </li>
                                 <li className="nav-item me-3">
-                                    <Link to="/product?category=lighting-fixtures" className="nav-link text-white fw-semibold">
+                                    <Link to="/product" className="nav-link text-white fw-semibold">
                                         <i className="bi bi-lightbulb"></i> LIGHTING FIXTURES
                                     </Link>
                                 </li>
                                 <li className="nav-item me-3">
-                                    <Link to="/product?category=switches-outlets" className="nav-link text-white fw-semibold">
+                                    <Link to="/product" className="nav-link text-white fw-semibold">
                                         <i className="bi bi-toggle-on"></i> SWITCHES & OUTLETS
                                     </Link>
                                 </li>
                                 <li className="nav-item me-3">
-                                    <Link to="/product?category=safety-protection" className="nav-link text-white fw-semibold">
+                                    <Link to="/product" className="nav-link text-white fw-semibold">
                                         <i className="bi bi-shield-lock"></i> SAFETY & PROTECTION
                                     </Link>
                                 </li>
                                 <li className="nav-item me-3">
-                                    <Link to="/product?category=tools-accessories" className="nav-link text-white fw-semibold">
+                                    <Link to="/product" className="nav-link text-white fw-semibold">
                                         <i className="bi bi-tools"></i> TOOLS & ACCESSORIES
                                     </Link>
                                 </li>
