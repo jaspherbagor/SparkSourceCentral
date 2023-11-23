@@ -387,7 +387,7 @@ const Home = ({detail, view, close, setClose, addToCart}) => {
             </section>
             {/* <!-- Newsletter Subscription Section End --> */}
 
-            <div className="text-center">
+            <div className="container">
                 <div className="toast-container position-fixed start-50 translate-middle p-2">
                     <div id="liveToast" className="toast" role="alert" aria-live="assertive" aria-atomic="true">
                         <div className="toast-header" id="toastHeader">
