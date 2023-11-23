@@ -103,16 +103,7 @@ function RegisterPage() {
                     toastMessage.style.color = "green";
                     toastLive.style.border = "2.5px solid green"
                     toastHeader.style.background = "green";
-    
-                    // firstName.value = '';
-                    // lastName.value = '';
-                    // email.value = '';
-                    // phoneNumber.value = '';
-                    // username.value = '';
-                    // password.value = '';
-                    // confirmPassword.value = '';
-                    // passwordValidation.innerText = '';
-    
+                    window.location.href = '/login';
     
                 } else {
                     toastLabel.innerText = "ERROR";

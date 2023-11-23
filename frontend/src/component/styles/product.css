@@ -175,3 +175,7 @@ img.card-img-top {
     color:var(--primary-color)
 }
 /* Products Column End */
+
+.toast-container {
+    top:45px
+}

@@ -230,3 +230,7 @@ img.card-img-top {
     color: var(--text-color-light);
 }
 /* Newsletter Section End */
+
+.toast-container {
+    top:45px
+}

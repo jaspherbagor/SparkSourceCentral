@@ -6,17 +6,23 @@ const Home = ({detail, view, close, setClose, addToCart}) => {
     const userToken = localStorage.getItem('token');
     const getUserData = () => {
         fetch('http://localhost:4000/user', {
-            method: 'get',
+            method: 'GET',
             headers: {
                 'Authorization': 'Bearer ' + userToken
-            },
-            body: null
-        }).then((result)=>{
-            return result.json();
-        }).then((result)=>{
-            console.log('result: ', result)
+            }
+            
         })
-    }
+        .then((result) => {
+            return result.json();
+        })
+        .then((result) => {
+            console.log('result: ', result);
+        })
+        .catch((error) => {
+            console.error('Error fetching user data:', error);
+            // Handle the error (show a message to the user or perform any necessary action)
+        });
+    };
     
     useEffect(()=>{
         getUserData();
@@ -38,10 +44,20 @@ const Home = ({detail, view, close, setClose, addToCart}) => {
         e.preventDefault();
 
         // Validation: Check if any required field is empty
-        if (
-            !users.Email
-        ) {
-            alert("Please enter your email");
+        if (!users.Email) {
+            // alert("Please enter your email");
+            const toastLive = document.getElementById('liveToast');
+            const toastLabel = document.getElementById('toastLabel');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastHeader = document.getElementById('toastHeader');
+            const toast = new window.bootstrap.Toast(toastLive);
+            toastLabel.innerText = "FAILED";
+            toastLabel.style.color = "#FFFFFF";
+            toastMessage.innerText ='Please Enter Your Email';
+            toastMessage.style.color = "#000000";
+            toastLive.style.border = "2.5px solid #fca311";
+            toastHeader.style.background = "#14213d";
+            toast.show();
             return;
         }
 
@@ -58,21 +74,67 @@ const Home = ({detail, view, close, setClose, addToCart}) => {
         try {
             const res = await fetch('https://sparksource-central-newsletter-default-rtdb.firebaseio.com/Message.json', options);
             console.log(res);
+            const toastLive = document.getElementById('liveToast');
+            const toastLabel = document.getElementById('toastLabel');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastHeader = document.getElementById('toastHeader');
+            const toast = new window.bootstrap.Toast(toastLive);
 
             if (res.ok) {
-                alert("Your Message Has Been Sent");
+                toastLabel.innerText = "SUCCESS";
+                toastLabel.style.color = "#FFFFFF";
+                toastMessage.innerText ='Your Message Has Been Sent';
+                toastMessage.style.color = "#000000";
+                toastLive.style.border = "2.5px solid #fca311";
+                toastHeader.style.background = "#14213d";
+                toast.show();
+                // alert("Your Message Has Been Sent");
                 setUser({ // Reset the form fields after successful submission
                     Email: ''
                 });
                 setSubmitted(true);
             } else {
-                alert("An Error Occurred");
+                toastLabel.innerText = "ERROR";
+                toastLabel.style.color = "#FFFFFF";
+                toastMessage.innerText ='An Error Occured';
+                toastMessage.style.color = "#000000";
+                toastLive.style.border = "2.5px solid #fca311";
+                toastHeader.style.background = "#14213d";
+                toast.show();
             }
         } catch (error) {
             console.error("Error:", error);
-            alert("An Error Occurred");
+            const toastLive = document.getElementById('liveToast');
+            const toastLabel = document.getElementById('toastLabel');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastHeader = document.getElementById('toastHeader');
+            const toast = new window.bootstrap.Toast(toastLive);
+            toastLabel.innerText = "ERROR";
+            toastLabel.style.color = "#FFFFFF";
+            toastMessage.innerText ='An Error Occured';
+            toastMessage.style.color = "#000000";
+            toastLive.style.border = "2.5px solid #fca311";
+            toastHeader.style.background = "#14213d";
+            toast.show();
+            // alert("An Error Occurred");
         }
     };
+
+    const addToCartToast = (currentElement) => {
+        addToCart(currentElement);
+        const toastLive = document.getElementById('liveToast');
+        const toastLabel = document.getElementById('toastLabel');
+        const toastMessage = document.getElementById('toastMessage');
+        const toastHeader = document.getElementById('toastHeader');
+        const toast = new window.bootstrap.Toast(toastLive);
+        toastLabel.innerText = "SUCCESS";
+        toastLabel.style.color = "#FFFFFF";
+        toastMessage.innerText ='Product Added To Cart';
+        toastMessage.style.color = "#000000";
+        toastLive.style.border = "2.5px solid #fca311";
+        toastHeader.style.background = "#14213d";
+        toast.show();
+    }
     
     return(
         <>  
@@ -97,7 +159,7 @@ const Home = ({detail, view, close, setClose, addToCart}) => {
                                                 <p className="fs-2 pb-3 fw-bold">{currentElement.Title}</p>
                                                 <p>A product that everyone would love</p>
                                                 <h3 className="pb-4 pt-3 fw-bold">₱{currentElement.Price.toLocaleString()}</h3>
-                                                <button type="button" className="add_to_cart_btn btn px-3 py-2 mb-auto">Add to Cart</button>
+                                                <button type="button" className="add_to_cart_btn btn px-3 py-2 mb-auto" onClick={() =>addToCartToast(currentElement)} >Add to Cart</button>
                                             </div>
                                         </div> 
                                     </div>
@@ -217,7 +279,7 @@ const Home = ({detail, view, close, setClose, addToCart}) => {
                                                 <p className="card-price fw-bold fs-5 p-0">₱{currentElement.Price}</p>
                                                 <div className="card-footer bg-transparent">
                                                         <div className="d-flex justify-content-center align-items-baseline mb-1 mt-0 pt-0">
-                                                            <li className="btn me-2 add_to_cart" onClick={() => addToCart (currentElement)}>
+                                                            <li className="btn me-2 add_to_cart" onClick={()=>addToCartToast(currentElement)}>
                                                                 <i className="bi bi-bag-plus"></i>
                                                             </li>
                                                             <li className="btn me-2 add_to_wishlist">
@@ -324,6 +386,19 @@ const Home = ({detail, view, close, setClose, addToCart}) => {
                 </div>
             </section>
             {/* <!-- Newsletter Subscription Section End --> */}
+
+            <div className="text-center">
+                <div className="toast-container position-fixed start-50 translate-middle p-2">
+                    <div id="liveToast" className="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div className="toast-header" id="toastHeader">
+                            <strong className="me-auto" id="toastLabel"></strong>
+                            <button type="button" className="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div className="toast-body fw-medium" id="toastMessage">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </>
     )

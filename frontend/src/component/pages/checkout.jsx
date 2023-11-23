@@ -1,7 +1,143 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
-import "../styles/checkout.css"
-const Checkout = ({cart}) => {
+import "../styles/checkout.css";
+import { getCartItems} from "../resources/localStorageUtils";
+
+const Checkout = () => {
+    const [savedCart, setSavedCart] = useState([]);
+  
+    useEffect(() => {
+      const retrievedCart = getCartItems();
+      if (Array.isArray(retrievedCart)) {
+        setSavedCart(retrievedCart);
+      }
+    }, []);
+  
+    const totalPrice = savedCart.reduce(
+        (total, item) => total + item.Price * item.qty,
+        0
+    );
+
+    // Checkout Form
+    const [users, setUser] = useState({
+        FullName: '',
+        Email: '',
+        Address: '',
+        ContactNumber: '',
+        City: '',
+        Provice: '',
+        ZipCode: '',
+        CardName: '',
+        CardNumber: ''
+    });
+
+    const [submitted, setSubmitted] = useState(false);
+
+    const data = (e) => {
+        const { name, value } = e.target;
+        setUser({...users, [name]: value});
+    };
+
+    const sendData = async (e) => {
+        e.preventDefault();
+
+        // Validation: Check if any required field is empty
+        if (
+            !users.FirstName ||
+            !users.LastName ||
+            !users.ContactNumber ||
+            !users.ZipCode ||
+            !users.Email ||
+            !users.Address ||
+            !users.Message
+        ) {
+            // alert("Please fill in all required fields");
+            const toastLive = document.getElementById('liveToast');
+            const toastLabel = document.getElementById('toastLabel');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastHeader = document.getElementById('toastHeader');
+            const toast = new window.bootstrap.Toast(toastLive);
+            toastLabel.innerText = "FAILED";
+            toastLabel.style.color = "#FFFFFF";
+            toastMessage.innerText ='Please Fill All The Required Information!';
+            toastMessage.style.color = "red";
+            toastLive.style.border = "2.5px solid red";
+            toastHeader.style.background = "red";
+            toast.show();
+            return;
+        }
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                FirstName: users.FirstName,
+                LastName: users.LastName,
+                ContactNumber: users.ContactNumber,
+                ZipCode: users.ZipCode,
+                Email: users.Email,
+                Address: users.Address,
+                Message: users.Message
+            })
+        };
+
+        try {
+            const res = await fetch('https://spark-source-central-contact-default-rtdb.firebaseio.com//Message.json', options);
+            console.log(res);
+            const toastLive = document.getElementById('liveToast');
+            const toastLabel = document.getElementById('toastLabel');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastHeader = document.getElementById('toastHeader');
+            const toast = new window.bootstrap.Toast(toastLive);
+
+            if (res.ok) {
+                // alert("Your Message Has Been Sent");
+                toastLabel.innerText = "SUCCESS";
+                toastLabel.style.color = "#FFFFFF";
+                toastMessage.innerText ='Your Message Has Been Sent';
+                toastMessage.style.color = "#000000";
+                toastLive.style.border = "2.5px solid #fca311";
+                toastHeader.style.background = "#14213d";
+                toast.show();
+                setUser({ // Reset the form fields after successful submission
+                    FirstName: '',
+                    LastName: '',
+                    ContactNumber: '',
+                    ZipCode: '',
+                    Email: '',
+                    Address: '',
+                    Message: ''
+                });
+                setSubmitted(true); // Update the submission status
+            } else {
+                // alert("An Error Occurred");
+                toastLabel.innerText = "ERROR";
+                toastLabel.style.color = "#FFFFFF";
+                toastMessage.innerText ='An Error Occured';
+                toastMessage.style.color = "red";
+                toastLive.style.border = "2.5px solid red";
+                toastHeader.style.background = "red";
+                toast.show();
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            // alert("An Error Occurred");
+            const toastLive = document.getElementById('liveToast');
+            const toastLabel = document.getElementById('toastLabel');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastHeader = document.getElementById('toastHeader');
+            const toast = new window.bootstrap.Toast(toastLive);
+            toastLabel.innerText = "ERROR";
+            toastLabel.style.color = "#FFFFFF";
+            toastMessage.innerText ='An Error Occured';
+            toastMessage.style.color = "red";
+            toastLive.style.border = "2.5px solid red";
+            toastHeader.style.background = "red";
+            toast.show();
+        }
+    };
 
     return(
         <>
@@ -28,11 +164,11 @@ const Checkout = ({cart}) => {
                                         <div className="row">
                                         <div className="col-md-6">
                                             <label htmlFor="province" className="text-black">Province</label>
-                                            <input type="text" className="form-control" id="province" name="province" placeholder="Zamboanga Del Norte"/>
+                                            <input type="text" className="form-control mb-3" id="province" name="province" placeholder="Zamboanga Del Norte"/>
                                         </div>
                                         <div className="col-md-6">
                                             <label htmlFor="zip" className="text-black">Zip/Postal Code</label>
-                                            <input type="text" className="form-control" id="zip" name="zip" placeholder="7100"/>
+                                            <input type="text" className="form-control mb-3" id="zip" name="zip" placeholder="7100"/>
                                         </div>
                                         </div>
                                     </div>
@@ -67,17 +203,12 @@ const Checkout = ({cart}) => {
 
                                 </div>
                                 <div className="form-check">
-                                    <input type="checkbox" className="form-check-input" name="sameadr" id="sameadr"/>
+                                    <input type="checkbox" className="form-check-input" defaultChecked name="sameadr" id="sameadr"/>
                                     <label className="form-check-label text-black" htmlFor="sameadr"> Shipping address same as billing</label>
                                 </div>
                                 <div className="d-grid text-start mt-4">
                                     <button type="submit" className="btn place_order_btn fw-semibold px-3 py-2">
-                                        Place Order <i className="bi bi-lock-fill"></i> @ ₱<span>
-                                        {cart.reduce(
-                                        (total, item) => total + item.Price * item.qty,
-                                        0
-                                        )}
-                                        </span>
+                                        Place Order <i className="bi bi-lock-fill"></i> @ ₱<span>{totalPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                                     </button>
                                 </div>
                             </form>
@@ -88,29 +219,37 @@ const Checkout = ({cart}) => {
                         <div className="container my-4">
                             <h4 className="fw-bold">Order Details</h4>
                             <ul className="list-group">
-                            {cart.map((item) => (
+                            {savedCart.map((item) => (
                                 <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
                                     <p>{item.Title} {"  "}
-                                    <span className="badge bg-success rounded-pill">
-                                    ₱{item.Price * item.qty}
-                                    </span>
+                                        <span className="badge bg-success rounded-pill">
+                                        ₱{(item.Price * item.qty).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                        </span>
                                     </p>
                                 </li>
                                 ))}
                             </ul>
                             <hr/>
                             <p className="text-end fw-semibold">
-                            Total Amount:{" "}
-                            <span className="price text-black">
-                            <b>
-                                ₱
-                                {cart.reduce(
-                                (total, item) => total + item.Price * item.qty,
-                                0
-                                )}
-                            </b>
-                            </span>
-                        </p>
+                                Total Amount:{" "}
+                                <span className="price text-black">
+                                <b>
+                                    ₱{totalPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                </b>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="container">
+                <div className="toast-container position-fixed start-50 translate-middle p-2">
+                    <div id="liveToast" className="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div className="toast-header" id="toastHeader">
+                            <strong className="me-auto" id="toastLabel"></strong>
+                            <button type="button" className="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div className="toast-body fw-medium" id="toastMessage">
                         </div>
                     </div>
                 </div>

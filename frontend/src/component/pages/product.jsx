@@ -35,6 +35,23 @@ const Product = ({product, setProduct, detail, view, close, setClose, addToCart}
         }
         setSelectedCategory(selectedCategory);
     };
+
+    const addToCartProductPage = (currentElement) => {
+        addToCart(currentElement);
+        const toastLive = document.getElementById('liveToast');
+        const toastLabel = document.getElementById('toastLabel');
+        const toastMessage = document.getElementById('toastMessage');
+        const toastHeader = document.getElementById('toastHeader');
+        const toast = new window.bootstrap.Toast(toastLive);
+        toastLabel.innerText = "SUCCESS";
+        toastLabel.style.color = "#FFFFFF";
+        toastMessage.innerText ='Product Added To Cart';
+        toastMessage.style.color = "#000000";
+        toastLive.style.border = "2.5px solid #fca311";
+        toastHeader.style.background = "#14213d";
+        toast.show();
+    }
+
     return(
         <>
             {
@@ -58,7 +75,7 @@ const Product = ({product, setProduct, detail, view, close, setClose, addToCart}
                                                 <p className="fs-2 pb-3 fw-bold">{currentElement.Title}</p>
                                                 <p>A product that everyone would love</p>
                                                 <h3 className="pb-4 pt-3 fw-bold">₱{currentElement.Price}</h3>
-                                                <button type="button" className="add_to_cart_btn btn px-3 py-2 mb-auto" onClick={() => addToCart (currentElement)}>Add to Cart</button>
+                                                <button type="button" className="add_to_cart_btn btn px-3 py-2 mb-auto" onClick={() =>addToCartProductPage(currentElement)}>Add to Cart</button>
                                             </div>
                                         </div> 
                                     </div>
@@ -109,7 +126,7 @@ const Product = ({product, setProduct, detail, view, close, setClose, addToCart}
                                                 <p className="card-price fw-bold fs-5 p-0">₱{currentElement.Price}</p>
                                                 <div className="card-footer bg-transparent">
                                                         <div className="d-flex justify-content-center align-items-baseline mb-1 mt-0 pt-0">
-                                                            <li className="btn me-2 add_to_cart" onClick={() => addToCart (currentElement)}>
+                                                            <li className="btn me-2 add_to_cart" onClick={() =>addToCartProductPage(currentElement)}>
                                                                 <i className="bi bi-bag-plus"></i>
                                                             </li>
                                                             <li className="btn me-2 add_to_wishlist">
@@ -128,6 +145,19 @@ const Product = ({product, setProduct, detail, view, close, setClose, addToCart}
                             }
                         </div>
                         
+                    </div>
+                </div>
+            </div>
+
+            <div className="text-center">
+                <div className="toast-container position-fixed start-50 translate-middle p-2">
+                    <div id="liveToast" className="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div className="toast-header" id="toastHeader">
+                            <strong className="me-auto" id="toastLabel"></strong>
+                            <button type="button" className="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div className="toast-body fw-medium" id="toastMessage">
+                        </div>
                     </div>
                 </div>
             </div>

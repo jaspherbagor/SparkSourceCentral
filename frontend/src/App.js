@@ -47,11 +47,9 @@ const App = () => {
       const updatedCart = [...cart];
       updatedCart[productIndex].qty += 1;
       setCart(updatedCart);
-      alert("Quantity updated in the cart");
     } else {
       // If product doesn't exist, add it to the cart with quantity 1
       setCart([...cart, { ...product, qty: 1 }]);
-      alert("Product added to cart");
     }
   }
   console.log(cart)

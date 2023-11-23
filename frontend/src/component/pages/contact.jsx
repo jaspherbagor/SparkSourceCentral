@@ -32,7 +32,19 @@ const Contact = () => {
             !users.Address ||
             !users.Message
         ) {
-            alert("Please fill in all required fields");
+            // alert("Please fill in all required fields");
+            const toastLive = document.getElementById('liveToast');
+            const toastLabel = document.getElementById('toastLabel');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastHeader = document.getElementById('toastHeader');
+            const toast = new window.bootstrap.Toast(toastLive);
+            toastLabel.innerText = "FAILED";
+            toastLabel.style.color = "#FFFFFF";
+            toastMessage.innerText ='Please Fill All The Required Information!';
+            toastMessage.style.color = "red";
+            toastLive.style.border = "2.5px solid red";
+            toastHeader.style.background = "red";
+            toast.show();
             return;
         }
 
@@ -55,9 +67,21 @@ const Contact = () => {
         try {
             const res = await fetch('https://spark-source-central-contact-default-rtdb.firebaseio.com//Message.json', options);
             console.log(res);
+            const toastLive = document.getElementById('liveToast');
+            const toastLabel = document.getElementById('toastLabel');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastHeader = document.getElementById('toastHeader');
+            const toast = new window.bootstrap.Toast(toastLive);
 
             if (res.ok) {
-                alert("Your Message Has Been Sent");
+                // alert("Your Message Has Been Sent");
+                toastLabel.innerText = "SUCCESS";
+                toastLabel.style.color = "#FFFFFF";
+                toastMessage.innerText ='Your Message Has Been Sent';
+                toastMessage.style.color = "#000000";
+                toastLive.style.border = "2.5px solid #fca311";
+                toastHeader.style.background = "#14213d";
+                toast.show();
                 setUser({ // Reset the form fields after successful submission
                     FirstName: '',
                     LastName: '',
@@ -69,11 +93,30 @@ const Contact = () => {
                 });
                 setSubmitted(true); // Update the submission status
             } else {
-                alert("An Error Occurred");
+                // alert("An Error Occurred");
+                toastLabel.innerText = "ERROR";
+                toastLabel.style.color = "#FFFFFF";
+                toastMessage.innerText ='An Error Occured';
+                toastMessage.style.color = "red";
+                toastLive.style.border = "2.5px solid red";
+                toastHeader.style.background = "red";
+                toast.show();
             }
         } catch (error) {
             console.error("Error:", error);
-            alert("An Error Occurred");
+            // alert("An Error Occurred");
+            const toastLive = document.getElementById('liveToast');
+            const toastLabel = document.getElementById('toastLabel');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastHeader = document.getElementById('toastHeader');
+            const toast = new window.bootstrap.Toast(toastLive);
+            toastLabel.innerText = "ERROR";
+            toastLabel.style.color = "#FFFFFF";
+            toastMessage.innerText ='An Error Occured';
+            toastMessage.style.color = "red";
+            toastLive.style.border = "2.5px solid red";
+            toastHeader.style.background = "red";
+            toast.show();
         }
     };
 
@@ -142,7 +185,18 @@ const Contact = () => {
                 </div>
             </section>
             {/* Contacts Section End  */}
-
+            <div className="container">
+                <div className="toast-container position-fixed start-50 translate-middle p-2">
+                    <div id="liveToast" className="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div className="toast-header" id="toastHeader">
+                            <strong className="me-auto" id="toastLabel"></strong>
+                            <button type="button" className="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div className="toast-body fw-medium" id="toastMessage">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 };

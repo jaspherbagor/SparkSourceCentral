@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "../styles/cart.css"
 import { Link } from "react-router-dom";
+import {saveCartItems, getCartItems} from "../resources/localStorageUtils"
 
-const CartPage = ({cart, setCart}) => {
+const CartPage = ({cart, setCart, userToken}) => {
     //increase qty
     const incrementQuantity = (product) => 
     {
@@ -54,6 +55,60 @@ const CartPage = ({cart, setCart}) => {
 
     //total price
     const Totalprice = cart.reduce((price, item) => price + item.qty * item.Price, 0)
+    
+    //Checkout Logic
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    useEffect(() => {
+        
+    // Update isLoggedIn state based on userToken prop
+        setIsLoggedIn(userToken !== null && userToken !== undefined);
+      }, [userToken]);
+    
+      // Save cart items to local storage only when the user modifies the cart
+    useEffect(() => {
+        saveCartItems(cart);
+    }, [cart]);
+
+    // Load cart items from local storage only when the component mounts
+    useEffect(() => {
+        const savedCart = getCartItems();
+        if (savedCart && savedCart.length > 0 && cart.length === 0) {
+            setCart(savedCart);
+        }
+    }, [cart, setCart]);
+
+    const handleCheckout = () => {
+        const toastLive = document.getElementById('liveToast');
+        const toastLabel = document.getElementById('toastLabel');
+        const toastMessage = document.getElementById('toastMessage');
+        const toastButtons = document.getElementById('toastButtons');
+        const toastHeader = document.getElementById('toastHeader');
+        const toast = new window.bootstrap.Toast(toastLive);
+    
+        if (isLoggedIn) {
+        console.log("Proceeding to checkout");
+        // Do not save cart items when checking out
+        window.location.href = "/checkout";
+        } else {
+        setIsLoggedIn(false);
+        toastLabel.innerText = "Error";
+        toastLabel.style.color = "#FFFFFF";
+        toastMessage.innerText ='You need to Login/Register to Checkout!';
+        toastButtons.innerHTML= `
+            <div class="d-flex align-items-baseline justify-content-center">
+            <a href="/login" class="btn btn-primary btn-outline-warning me-5">LOGIN</a>
+            <a href="/register" class="btn btn-success btn-outline-dark">REGISTER</a>
+            </div>
+        `;
+        toastMessage.style.color = "#000000";
+        toastLive.style.border = "2.5px solid #fca311";
+        toastHeader.style.background = "#14213d";
+        }
+    
+        toast.show();
+    };
+
+
     return (
         <>
             <div className="cartcontainer">
@@ -76,7 +131,7 @@ const CartPage = ({cart, setCart}) => {
                                         <i onClick={() => removeProduct(currentElement)} className="bi bi-x-circle text-danger"></i>
                                     </div>
                                     <div className="col-lg-2 col-md-2 col-sm-4 d-flex align-items-center justify-content-center">
-                                        <img src={currentElement.Image} alt={currentElement.Title} className="img-fluid cart_product_img" />
+                                        <img src={currentElement.Image} alt={currentElement.Title} className="img-fluid cart_product_img"/>
                                     </div>
                                     <div className="col-lg-3 col-md-3 col-sm-4 d-flex align-items-center justify-content-center">
                                         <h3 className="fw-medium text-center">{currentElement.Title}</h3>
@@ -106,19 +161,32 @@ const CartPage = ({cart, setCart}) => {
                     }
                     
                 </div>
-                {
-                    cart.length > 0 &&
+                {cart.length > 0 && (
                     <>
                         <div className="container p-2 text-center mb-5">
                             <h2 className="totalprice fw-bold mb-3">Total: ₱{Totalprice.toLocaleString()}</h2>
-                            <Link to="/checkout">
-                                <button className="checkout text-white px-3 py-2 fw-semibold" type="button">Checkout</button>
-                            </Link>
-                            
+                            <button className="checkout text-white px-3 py-2 fw-semibold" onClick={handleCheckout} type="button">
+                                Checkout
+                            </button>
                         </div>
-                        
                     </>
-                }
+                )}
+                <div className="text-center">
+                    <div className="toast-container position-fixed top-50 start-50 translate-middle p-2">
+                        <div id="liveToast" className="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div className="toast-header" id="toastHeader">
+                                <strong className="me-auto" id="toastLabel"></strong>
+                                <button type="button" className="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                            </div>
+                            <div className="toast-body fw-medium" id="toastMessage">
+                            </div>
+                            <div className="toast-body fw-medium" id="toastButtons">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 
             </div>
         </>
