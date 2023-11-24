@@ -129,7 +129,7 @@ const Checkout = () => {
                     CardNumber: ''
                 });
                 setSubmitted(true); // Update the submission status
-
+                window.location.href="/"
             } else {
                 // alert("An Error Occurred");
                 toastLabel.innerText = "ERROR";
