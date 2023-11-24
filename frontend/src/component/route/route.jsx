@@ -7,24 +7,19 @@ import RegisterPage from "../pages/register";
 import CartPage from "../pages/cart";
 import Contact from "../pages/contact";
 import Checkout from "../pages/checkout";
-const Routeway = ({product, setProduct, detail, view, close, setClose, cart, setCart, addToCart, userToken}) => {
+import WishlistPage from "../pages/wishlist";
+const Routeway = ({product, setProduct, detail, view, close, setClose, cart, setCart, addToCart, userToken, wishlist, setWishlist, addToWishlist}) => {
     return(
         
         <Routes>
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/register" element={<RegisterPage/>}/>
-            <Route path="/" element={<Home detail={detail} view={view} close={close} setClose={setClose} addToCart={addToCart} userToken={userToken}/>}/>
-            <Route path="/product" element={<Product product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} addToCart={addToCart}/>}/>
+            <Route path="/" element={<Home detail={detail} view={view} close={close} setClose={setClose} addToCart={addToCart} userToken={userToken} addToWishList={addToWishlist}/>}/>
+            <Route path="/product" element={<Product product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} addToCart={addToCart} addToWishlist={addToWishlist} />}/>
             <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} userToken={userToken}/>}/>
             <Route path="/contact" element={<Contact/>} />
             <Route path="/checkout" element={<Checkout cart={cart}/>}/>
-            {/* {
-                userToken ? 
-                
-                : ""
-            } */}
-            
-            
+            <Route path="/wishlist" element={<WishlistPage wishlist={wishlist} setWishlist={setWishlist} addToCart={addToCart}/>}/>                      
         </Routes>
     )
 }

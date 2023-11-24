@@ -17,17 +17,16 @@ const CartPage = ({cart, setCart, userToken}) => {
         }))
     }
     //decrease qty
-    const decrementQuantity = (product) => 
-    {
-        const exist = cart.find((x) => 
-        {
-            return x.id === product.id
-        })
-        setCart(cart.map((currentElement) => 
-        {
-            return currentElement.id === product.id ? {...exist, qty:exist.qty - 1} : currentElement
-        }))
-    }
+    const decrementQuantity = (product) => {
+        const exist = cart.find((x) => x.id === product.id);
+        if (exist.qty > 0) {
+          setCart(cart.map((currentElement) =>
+            currentElement.id === product.id ?
+            { ...exist, qty: Math.max(0, exist.qty - 1) } 
+            : currentElement
+          ));
+        }
+      };
     //remove cart product
     const removeProduct = (product) => 
     {
@@ -147,7 +146,7 @@ const CartPage = ({cart, setCart, userToken}) => {
                                             </div>
                                         </div>
                                     <div className="col-lg-2 col-md-2 col-sm-4 d-flex align-items-center justify-content-center">
-                                        <h4 className="subtotal mt-3 fw-bold"> ₱{(currentElement.Price * currentElement.qty).toLocaleString()}</h4>
+                                        <h4 className="subtotal mt-3 fw-bold"> ₱{(currentElement.Price * currentElement.qty).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h4>
                                     </div>
 
                                 </div>
@@ -164,7 +163,7 @@ const CartPage = ({cart, setCart, userToken}) => {
                 {cart.length > 0 && (
                     <>
                         <div className="container p-2 text-center mb-5">
-                            <h2 className="totalprice fw-bold mb-3">Total: ₱{Totalprice.toLocaleString()}</h2>
+                            <h2 className="totalprice fw-bold mb-3">Total: ₱{Totalprice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</h2>
                             <button className="checkout text-white px-3 py-2 fw-semibold" onClick={handleCheckout} type="button">
                                 Checkout
                             </button>

@@ -129,7 +129,9 @@ const Checkout = () => {
                     CardNumber: ''
                 });
                 setSubmitted(true); // Update the submission status
-                window.location.href="/"
+                setTimeout(function() {
+                    window.location.href = "/";
+                }, 2500); // 2000 milliseconds (2.5 seconds) delay before redirecting
             } else {
                 // alert("An Error Occurred");
                 toastLabel.innerText = "ERROR";

@@ -58,12 +58,25 @@ const App = () => {
   const userToken = localStorage.getItem('token');
   console.log('current userToken: ', userToken);
   
+  //Add to wishlist
+  const [wishlist, setWishlist] = useState([]);
+
+  const addToWishlist = (product) => {
+    const exists = wishlist.some((item) => item.id === product.id);
+
+    if (!exists) {
+      setWishlist([...wishlist, { ...product }]);
+    }
+  };
+
+
+
   return (
 
     <>
       <BrowserRouter>
-        <Navbar searchProducts={searchProducts} filteredProducts={filteredProducts} cart={cart} userToken={userToken} />
-        <Routeway product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addToCart={addToCart} userToken={userToken} />
+        <Navbar searchProducts={searchProducts} filteredProducts={filteredProducts} cart={cart} userToken={userToken} wishlist={wishlist} />
+        <Routeway product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addToCart={addToCart} userToken={userToken} wishlist={wishlist} setWishlist={setWishlist} addToWishlist={addToWishlist} />
         <Footer/>
       </BrowserRouter>
     </>

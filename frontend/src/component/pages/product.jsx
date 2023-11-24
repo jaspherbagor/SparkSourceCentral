@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import "../styles/product.css";
 import AllProducts from "../resources/Allproducts";
 import { Link } from "react-router-dom";
-const Product = ({product, setProduct, detail, view, close, setClose, addToCart}) => {
+const Product = ({product, setProduct, detail, view, close, setClose, addToCart, addToWishlist}) => {
     const location = useLocation();
     const [selectedCategory, setSelectedCategory] = useState("All Categories");
     useEffect(() => {
@@ -35,6 +35,22 @@ const Product = ({product, setProduct, detail, view, close, setClose, addToCart}
         }
         setSelectedCategory(selectedCategory);
     };
+
+    const addToWishlistPage = (currentElement) => {
+        addToWishlist(currentElement);
+        const toastLive = document.getElementById('liveToast');
+        const toastLabel = document.getElementById('toastLabel');
+        const toastMessage = document.getElementById('toastMessage');
+        const toastHeader = document.getElementById('toastHeader');
+        const toast = new window.bootstrap.Toast(toastLive);
+        toastLabel.innerText = "SUCCESS";
+        toastLabel.style.color = "#FFFFFF";
+        toastMessage.innerText ='Product Added To Wishlist';
+        toastMessage.style.color = "#000000";
+        toastLive.style.border = "2.5px solid #fca311";
+        toastHeader.style.background = "#14213d";
+        toast.show();
+    }
 
     const addToCartProductPage = (currentElement) => {
         addToCart(currentElement);
@@ -129,7 +145,7 @@ const Product = ({product, setProduct, detail, view, close, setClose, addToCart}
                                                             <li className="btn me-2 add_to_cart" onClick={() =>addToCartProductPage(currentElement)}>
                                                                 <i className="bi bi-bag-plus"></i>
                                                             </li>
-                                                            <li className="btn me-2 add_to_wishlist">
+                                                            <li className="btn me-2 add_to_wishlist" onClick={()=> addToWishlistPage(currentElement)}>
                                                                 <i className="bi bi-heart"></i>
                                                             </li>
                                                             <li onClick={() => view (currentElement)} className="btn view_detail">

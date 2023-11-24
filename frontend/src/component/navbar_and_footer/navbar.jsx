@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "../styles/navbar.css";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ searchProducts, filteredProducts, userToken, cart}) => {
+const Navbar = ({ searchProducts, filteredProducts, userToken, cart, wishlist}) => {
     const [search, setSearch] = useState("");
   
     const handleSearch = (e) => {
@@ -82,14 +82,15 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart}) => {
                                     </span>
                                     )}
                                 </Link>
-                                <li className="text-white position-relative nav-link me-3">
+                                <Link to="/wishlist" className="text-white position-relative nav-link me-3">
                                     <i className="bi bi-heart fs-4"></i>
-                                    <span className="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
-                                        0
+                                    {wishlist.length > 0 && (
+                                        <span className="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
+                                        {wishlist.length}
                                     </span>
-                                </li> 
-                                    {/* to="/login" */}
-                                    {/* onClick={logout} */}
+                                    )}
+                                    
+                                </Link> 
                                 <li>
                                     <div className="dropdown">
                                         <i className="bi bi-person fs-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></i>

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import '../styles/home.css';
 import Topproducts from "../resources/Topproducts";
 import { Link } from "react-router-dom";
-const Home = ({detail, view, close, setClose, addToCart}) => {
+const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
     const userToken = localStorage.getItem('token');
     const getUserData = () => {
         fetch('http://localhost:4000/user', {
@@ -119,6 +119,22 @@ const Home = ({detail, view, close, setClose, addToCart}) => {
             // alert("An Error Occurred");
         }
     };
+
+    const addToWishlistPage = (currentElement) => {
+        addToWishlist(currentElement);
+        const toastLive = document.getElementById('liveToast');
+        const toastLabel = document.getElementById('toastLabel');
+        const toastMessage = document.getElementById('toastMessage');
+        const toastHeader = document.getElementById('toastHeader');
+        const toast = new window.bootstrap.Toast(toastLive);
+        toastLabel.innerText = "SUCCESS";
+        toastLabel.style.color = "#FFFFFF";
+        toastMessage.innerText ='Product Added To Wishlist';
+        toastMessage.style.color = "#000000";
+        toastLive.style.border = "2.5px solid #fca311";
+        toastHeader.style.background = "#14213d";
+        toast.show();
+    }
 
     const addToCartToast = (currentElement) => {
         addToCart(currentElement);
@@ -282,7 +298,7 @@ const Home = ({detail, view, close, setClose, addToCart}) => {
                                                             <li className="btn me-2 add_to_cart" onClick={()=>addToCartToast(currentElement)}>
                                                                 <i className="bi bi-bag-plus"></i>
                                                             </li>
-                                                            <li className="btn me-2 add_to_wishlist">
+                                                            <li className="btn me-2 add_to_wishlist" onClick={() => addToWishlistPage(currentElement)}>
                                                                 <i className="bi bi-heart"></i>
                                                             </li>
                                                             <li className="btn view_detail" onClick={() => view (currentElement)}>
