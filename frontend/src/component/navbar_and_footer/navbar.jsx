@@ -97,12 +97,12 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart, wishlist}) 
                                         <ul className="dropdown-menu p-0">
                                             {!userToken ? (
                                                 <li>
-                                                <Link className="dropdown-item" to="/login">
+                                                <Link className="dropdown-item login_link" to="/login">
                                                     Login
                                                 </Link>
                                                 </li>
                                             ) : (
-                                                <li onClick={handleLogout} className="dropdown-item">
+                                                <li onClick={handleLogout} className="dropdown-item logout_link">
                                                 Logout
                                                 </li>
                                         )}

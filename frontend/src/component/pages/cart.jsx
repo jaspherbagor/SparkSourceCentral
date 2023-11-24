@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import {saveCartItems, getCartItems} from "../resources/localStorageUtils"
 
 const CartPage = ({cart, setCart, userToken}) => {
+
     //increase qty
     const incrementQuantity = (product) => 
     {
@@ -75,6 +76,34 @@ const CartPage = ({cart, setCart, userToken}) => {
             setCart(savedCart);
         }
     }, [cart, setCart]);
+
+    // Fetch user's cart items from the server upon login
+    useEffect(() => {
+        const fetchCartItems = async () => {
+            try {
+                const response = await fetch('http://localhost:4000/cart', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + userToken // Send the user token for authentication
+                    }
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    setCart(data.cartItems); // Update the cart with the fetched items from the server
+                } else {
+                    console.log("error")
+                    // Handle error cases
+                }
+            } catch (error) {
+                console.error('Error fetching cart items:', error);
+                // Handle fetch error
+            }
+        };
+
+        if (isLoggedIn) {
+            fetchCartItems();
+        }
+    }, [isLoggedIn, userToken, setCart]);
 
     const handleCheckout = () => {
         const toastLive = document.getElementById('liveToast');

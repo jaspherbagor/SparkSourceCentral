@@ -79,6 +79,15 @@ header {
 }
 
 .dropdown-menu {
-    border-radius: 5px;
+    border-radius: 0px;
     background: var(--primary-color);
+}
+
+.login_link, .logout_link {
+    cursor:pointer;
+}
+
+.login_link:hover, .logout_link:hover {
+    background: var(--navbar-bg);
+    color:var(--primary-color)
 }

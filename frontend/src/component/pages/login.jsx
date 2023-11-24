@@ -65,7 +65,6 @@ function LoginPage() {
 
               if (result.success) {
                 localStorage.setItem('token', result.token);
-                window.location.href = '/';
                 toastLabel.innerText = "SUCCESS";
                 toastLabel.style.color = "#FFFFFF";
                 toastMessage.innerText = "Login Success";
@@ -75,6 +74,9 @@ function LoginPage() {
 
                 username.value = "";
                 password.value = "";
+                setTimeout(function() {
+                    window.location.href = "/";
+                }, 2000); // 2000 milliseconds (2 seconds) delay before redirecting
 
               } else {
                 toastLabel.innerText = "ERROR";

@@ -26,7 +26,7 @@ const WishlistPage = ({wishlist, setWishlist, addToCart}) => {
         setTimeout(() => {
             const updatedWishlist = wishlist.filter((x) => x.id !== currentElement.id);
             setWishlist(updatedWishlist);
-        }, 1500); // 1500 milliseconds (1.5 seconds)
+        }, 1000); // 1000 milliseconds (1.0 seconds)
     }
 
     return(

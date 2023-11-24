@@ -120,6 +120,7 @@ const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
         }
     };
 
+    // Add to Wishlist
     const addToWishlistPage = (currentElement) => {
         addToWishlist(currentElement);
         const toastLive = document.getElementById('liveToast');
@@ -136,6 +137,7 @@ const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
         toast.show();
     }
 
+    // Add to cart
     const addToCartToast = (currentElement) => {
         addToCart(currentElement);
         const toastLive = document.getElementById('liveToast');
