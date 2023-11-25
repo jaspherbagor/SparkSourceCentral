@@ -5,18 +5,6 @@ import {saveCartItems, getCartItems} from "../resources/localStorageUtils"
 
 const CartPage = ({cart, setCart, userToken}) => {
 
-    //increase qty
-    const incrementQuantity = (product) => 
-    {
-        const exist = cart.find((x) => 
-        {
-            return x.id === product.id
-        })
-        setCart(cart.map((currentElement) => 
-        {
-            return currentElement.id === product.id ? {...exist, qty:exist.qty + 1} : currentElement
-        }))
-    }
     //decrease qty
     const decrementQuantity = (product) => {
         const exist = cart.find((x) => x.id === product.id);
@@ -63,47 +51,55 @@ const CartPage = ({cart, setCart, userToken}) => {
     // Update isLoggedIn state based on userToken prop
         setIsLoggedIn(userToken !== null && userToken !== undefined);
       }, [userToken]);
-    
-      // Save cart items to local storage only when the user modifies the cart
-    useEffect(() => {
-        saveCartItems(cart);
-    }, [cart]);
 
     // Load cart items from local storage only when the component mounts
     useEffect(() => {
         const savedCart = getCartItems();
-        if (savedCart && savedCart.length > 0 && cart.length === 0) {
-            setCart(savedCart);
+        if (savedCart && savedCart.length > 0) {
+        setCart(savedCart);
         }
-    }, [cart, setCart]);
+    }, []);
+
+    // Save cart items to local storage whenever the cart state changes
+    useEffect(() => {
+        saveCartItems(cart);
+    }, [cart]);
+
+    // Function to update cart when modifying items
+    const updateCart = (updatedCart) => {
+        setCart(updatedCart);
+    };
+
 
     // Fetch user's cart items from the server upon login
     useEffect(() => {
         const fetchCartItems = async () => {
-            try {
-                const response = await fetch('http://localhost:4000/cart', {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': 'Bearer ' + userToken // Send the user token for authentication
-                    }
-                });
-                if (response.ok) {
-                    const data = await response.json();
-                    setCart(data.cartItems); // Update the cart with the fetched items from the server
-                } else {
-                    console.log("error")
-                    // Handle error cases
-                }
-            } catch (error) {
-                console.error('Error fetching cart items:', error);
-                // Handle fetch error
+          try {
+            const response = await fetch('http://localhost:4000/cart', {
+              method: 'GET',
+              headers: {
+                'Authorization': 'Bearer ' + userToken // Send the user token for authentication
+              }
+            });
+      
+            if (response.ok) {
+              const data = await response.json();
+              setCart(data); // Assuming data is an array of cart items received from the server
+            } else {
+              // Handle other HTTP response statuses if necessary
+              console.log("Error: Unable to fetch cart items");
             }
+          } catch (error) {
+            console.error('Error fetching cart items:', error);
+            // Handle fetch error
+          }
         };
-
-        if (isLoggedIn) {
-            fetchCartItems();
+      
+        if (isLoggedIn && userToken) {
+          fetchCartItems();
         }
-    }, [isLoggedIn, userToken, setCart]);
+      }, [isLoggedIn, userToken, setCart]);
+      
 
     const handleCheckout = () => {
         const toastLive = document.getElementById('liveToast');
@@ -136,6 +132,15 @@ const CartPage = ({cart, setCart, userToken}) => {
         toast.show();
     };
 
+    // Example incrementQuantity function with local storage update
+    const incrementQuantity = (product) => {
+        const updatedCart = cart.map((currentElement) =>
+        currentElement.id === product.id
+            ? { ...currentElement, qty: currentElement.qty + 1 }
+            : currentElement
+        );
+        updateCart(updatedCart);
+    };
 
     return (
         <>

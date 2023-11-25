@@ -1,7 +1,33 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "../styles/wishlist.css"
 
 const WishlistPage = ({wishlist, setWishlist, addToCart}) => {
+
+    // Function to save wishlist items to local storage
+    const saveWishlistToLocalStorage = (wishlistItems) => {
+        localStorage.setItem("wishlist", JSON.stringify(wishlistItems));
+    };
+
+    // Function to load wishlist items from local storage
+    const loadWishlistFromLocalStorage = () => {
+        const savedWishlist = localStorage.getItem("wishlist");
+        return savedWishlist ? JSON.parse(savedWishlist) : [];
+    };
+
+    // Load wishlist items from local storage when the component mounts
+    useEffect(() => {
+        if (wishlist.length === 0) {
+        const savedWishlist = loadWishlistFromLocalStorage();
+        console.log('Retrieved Wishlist from Local Storage:', savedWishlist);
+        setWishlist(savedWishlist);
+        }
+    }, [wishlist, setWishlist]);
+
+    // Save wishlist items to local storage whenever the wishlist state changes
+    useEffect(() => {
+        saveWishlistToLocalStorage(wishlist);
+    }, [wishlist]);
+
     //remove wishlist product
     const removeProduct = (product) => {
         const updatedWishlist = wishlist.filter((x) => x.id !== product.id);
