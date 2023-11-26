@@ -175,7 +175,7 @@ const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
                                             <div className="col-lg-7 col-md-7 col-sm-7 col-12">
                                                 <h4 className="text-secondary mt-2 mb-3 text-uppercase">{currentElement.Category}</h4>
                                                 <p className="fs-2 pb-3 fw-bold">{currentElement.Title}</p>
-                                                <p>A product that everyone would love</p>
+                                                <p>{currentElement.Description}</p>
                                                 <h3 className="pb-4 pt-3 fw-bold">₱{currentElement.Price.toLocaleString()}</h3>
                                                 <button type="button" className="add_to_cart_btn btn px-3 py-2 mb-auto" onClick={() =>addToCartToast(currentElement)} >Add to Cart</button>
                                             </div>

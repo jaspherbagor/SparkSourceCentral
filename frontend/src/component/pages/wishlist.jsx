@@ -1,33 +1,20 @@
 import React, {useEffect} from "react";
 import "../styles/wishlist.css"
+import { saveWishlistItems, getWishlistItems } from "../resources/localStorageUtils";
 
 const WishlistPage = ({wishlist, setWishlist, addToCart}) => {
 
-    // Function to save wishlist items to local storage
-    const saveWishlistToLocalStorage = (wishlistItems) => {
-        localStorage.setItem("wishlist", JSON.stringify(wishlistItems));
-    };
-
-    // Function to load wishlist items from local storage
-    const loadWishlistFromLocalStorage = () => {
-        const savedWishlist = localStorage.getItem("wishlist");
-        return savedWishlist ? JSON.parse(savedWishlist) : [];
-    };
-
-    // Load wishlist items from local storage when the component mounts
     useEffect(() => {
-        if (wishlist.length === 0) {
-        const savedWishlist = loadWishlistFromLocalStorage();
-        console.log('Retrieved Wishlist from Local Storage:', savedWishlist);
-        setWishlist(savedWishlist);
+        const savedWishlist = getWishlistItems();
+        if (wishlist.length === 0 && savedWishlist.length > 0) {
+          setWishlist(savedWishlist);
         }
     }, [wishlist, setWishlist]);
-
-    // Save wishlist items to local storage whenever the wishlist state changes
+    
     useEffect(() => {
-        saveWishlistToLocalStorage(wishlist);
+    saveWishlistItems(wishlist);
     }, [wishlist]);
-
+    
     //remove wishlist product
     const removeProduct = (product) => {
         const updatedWishlist = wishlist.filter((x) => x.id !== product.id);
@@ -48,11 +35,12 @@ const WishlistPage = ({wishlist, setWishlist, addToCart}) => {
         toastLive.style.border = "2.5px solid #fca311";
         toastHeader.style.background = "#14213d";
         toast.show();
-        // Remove product after 2.5 seconds
+
+        // Remove product from wishlist after adding to cart
         setTimeout(() => {
-            const updatedWishlist = wishlist.filter((x) => x.id !== currentElement.id);
-            setWishlist(updatedWishlist);
-        }, 1000); // 1000 milliseconds (1.0 seconds)
+        const updatedWishlist = wishlist.filter((x) => x.id !== currentElement.id);
+        setWishlist(updatedWishlist);
+        }, 1000);
     }
 
     return(
@@ -84,7 +72,7 @@ const WishlistPage = ({wishlist, setWishlist, addToCart}) => {
                                     </div>
 
                                     <div className="col-lg-2 col-md-2 col-sm-6 d-flex align-items-center justify-content-center">
-                                        <p className="fw-medium fs-4 my-2">Price: ₱{currentElement.Price}</p>
+                                        <p className="fw-medium fs-4 fw-semibold my-2">₱{currentElement.Price}</p>
                                     </div>
 
                                     <div className="col-lg-3 col-md-3 col-sm-6 d-flex align-items-center justify-content-center">

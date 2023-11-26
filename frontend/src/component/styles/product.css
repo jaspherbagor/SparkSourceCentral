@@ -21,7 +21,7 @@ h2, h1 {
 
 /* Paragraph Line Height */
 p {
-    line-height: 30px;
+    line-height: 25px !important;
 }
 
 html, body {

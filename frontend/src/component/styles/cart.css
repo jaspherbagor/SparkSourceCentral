@@ -35,7 +35,7 @@ html, body {
 }
 
 .cart_product_img {
-    max-width: 100px !important
+    max-height: 100px !important
 }
 
 .cart_item_container {
