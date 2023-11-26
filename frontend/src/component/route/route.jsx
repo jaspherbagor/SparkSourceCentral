@@ -8,6 +8,7 @@ import CartPage from "../pages/cart";
 import Contact from "../pages/contact";
 import Checkout from "../pages/checkout";
 import WishlistPage from "../pages/wishlist";
+import TermsAndCondition from "../pages/terms_and_condition";
 const Routeway = ({product, setProduct, detail, view, close, setClose, cart, setCart, addToCart, userToken, wishlist, setWishlist, addToWishlist}) => {
     return(
         
@@ -19,7 +20,8 @@ const Routeway = ({product, setProduct, detail, view, close, setClose, cart, set
             <Route path="/cart" element={<CartPage cart={cart} setCart={setCart} userToken={userToken}/>}/>
             <Route path="/contact" element={<Contact/>} />
             <Route path="/checkout" element={<Checkout cart={cart}/>}/>
-            <Route path="/wishlist" element={<WishlistPage wishlist={wishlist} setWishlist={setWishlist} addToCart={addToCart}/>}/>                      
+            <Route path="/wishlist" element={<WishlistPage wishlist={wishlist} setWishlist={setWishlist} addToCart={addToCart}/>}/> 
+            <Route path="/termsandcondition" element={<TermsAndCondition/>} />                     
         </Routes>
     )
 }

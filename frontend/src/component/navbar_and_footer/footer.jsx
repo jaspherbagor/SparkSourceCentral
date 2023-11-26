@@ -17,18 +17,18 @@ const Footer = () => {
                             <Link to="/contact" className="text-decoration-none text-white">Contact Us</Link>
                         </p>
                         <p>
-                            <a href="" className="text-decoration-none text-white">Shipping Information</a>
+                            <Link to="/termsandcondition" className="text-decoration-none text-white">Shipping Policy</Link>
                         </p>
                         <p>
-                            <a href="" className="text-decoration-none text-white">Return & Refund</a></p>
+                            <Link to="/termsandcondition#returnsandrefunds" className="text-decoration-none text-white">Return & Refund</Link></p>
                         <p>
                             <a href="" className="text-decoration-none text-white">FAQs</a>
                         </p>
                         <p>
-                            <a href="" className="text-decoration-none text-white">Privacy Policy</a>
+                            <Link to="/termsandcondition" className="text-decoration-none text-white">Privacy Policy</Link>
                         </p>
                         <p>
-                            <a href="" className="text-decoration-none text-white">Terms and Condition</a>
+                            <Link to="/termsandcondition" className="text-decoration-none text-white">Terms and Condition</Link>
                         </p>
                     </div>
                     <div className="categories col-lg-2 col-md-4 col-sm-4 col-12 text-white text-start px-2 py-2">
