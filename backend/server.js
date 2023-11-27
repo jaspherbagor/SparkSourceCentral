@@ -5,6 +5,7 @@ import bcrypt from "bcrypt";
 //Token import
 import jwt from "jsonwebtoken";
 // Token import
+
 const app = express();
 
 app.use(express.json());
@@ -124,20 +125,6 @@ app.post('/cart', authenticateToken, (req, res) => {
   });
 });
 
-
-// app.post('/cart', authenticateToken, (req, res) => {
-//   const userId = req.user && req.user.userId; // Extract user ID from decoded token
-//   const newItem = req.body.item; // Extract the new item from the request body
-
-//   // Insert the new item into the user_cart table associating it with the user
-//   connection.query('INSERT INTO sparksource_central_db.user_cart (user_id, item_name) VALUES (?, ?)', [userId, newItem], (error, results) => {
-//     if (error) {
-//       console.error('Error adding item to cart:', error);
-//       return res.status(500).json({ message: 'Error adding item to cart.' });
-//     }
-//     res.send('Item added to cart!');
-//   });
-// });
 
 // Endpoint to handle the checkout process using authenticateToken middleware
 app.post('/checkout', authenticateToken, (req, res) => {
