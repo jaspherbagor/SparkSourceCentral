@@ -126,104 +126,107 @@ function RegisterPage() {
 return (
     <>
         <div className="register-container-div container-fluid h-auto d-flex align-items-center justify-content-center px-3 py-3 w-100">
-                <div className="g-3 needs-validation form-container p-4 my-4 h-auto" noValidate>
-                    <div className="text-center">
-                        <img src="../images/spark_source_central_logo.svg" className="logo"/>
-                    </div>
-                    <h1  className="mb-4 text-center fw-bolder heading">REGISTER ACCOUNT</h1>
+            <div className="g-3 needs-validation form-container p-4 my-4 h-auto" noValidate>
+                <div className="text-center">
+                    <img src="../images/spark_source_central_logo.svg" className="logo"/>
+                </div>
+                <h1  className="mb-4 text-center fw-bolder heading">REGISTER ACCOUNT</h1>
 
-                    <div className="row">
-                        <div className="col-md-6 mb-3">
-                            <label htmlFor="firstName" className="form-label">First Name</label>
-                            <input type="text" className="form-control" id="firstName" required/>
-                            
+                <div className="row">
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="firstName" className="form-label">First Name</label>
+                        <input type="text" className="form-control" id="firstName" required/>
+                        
+                    </div>
+        
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="lastName" className="form-label">Last Name</label>
+                        <input type="text" className="form-control" id="lastName" required/>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="email" className="form-label">Email Address</label>
+                        <input type="email" className="form-control" id="email" required/>
+                    </div>
+        
+                    <div className="col-md-6 mb-3">
+                        <label htmlFor="phoneNumber" className="form-label">Phone Number</label>
+                        <input type="number" className="form-control" id="phoneNumber" required/>
+                        
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-md-12 mb-3">
+                        <label htmlFor="username" className="form-label">Username</label>
+                        <input type="text" className="form-control" id="username" required/>
+                        
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-md-12 mb-3">
+                        <label htmlFor="password" className="form-label">Password</label>
+                        <div className="d-flex">
+                            <input type="password" className="form-control" id="password" required/>
+                            <span className="input-group-addon">
+                                <i className="bi bi-eye position-absolute fs-4 mt-1" id="togglePassword" onClick={togglePassword}></i>
+                            </span>    
+                        </div>            
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-md-12 mb-3">
+                        <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
+                        <div className="d-flex">
+                            <input type="password" className="form-control" id="confirmPassword" required/>
+                            <span className="input-group-addon">
+                                <i className="bi bi-eye position-absolute fs-4 mt-1" id="toggleConfirmPassword" onClick={toggleConfirmPassword}></i>
+                            </span>
                         </div>
-            
-                        <div className="col-md-6 mb-3">
-                            <label htmlFor="lastName" className="form-label">Last Name</label>
-                            <input type="text" className="form-control" id="lastName" required/>
+                        <p id="password-validation"></p>
+                        
+                    </div>
+                </div>
+
+                <div className="col-md-12 mt-1">
+                    <div className="form-check">
+                        <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
+                        <label className="form-check-label">
+                        Agree to terms and conditions
+                        </label>
+                        
+                    </div>
+                </div>
+
+                <div className="text-center mt-4 mb-2">
+                <button className="btn text-white fw-semibold px-3 py-2 register-btn" type="button" id="register" onClick={register}>REGISTER</button>
+                </div>
+
+                <div className="text-center mt-3">
+                    <p className="text-white">Already have an account? <Link to="/login" className="text-decoration-none login-link">Login instead.</Link></p>
+                </div>
+
+                <div className="toast-container position-fixed top-0 p-2">
+                    <div id="liveToast" className="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div className="toast-header" id="toastHeader">
+                            <strong className="me-auto" id="toastLabel"></strong>
+                            <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div className="toast-body fw-medium" id="toastMessage">
                         </div>
                     </div>
-
-                    <div className="row">
-                        <div className="col-md-6 mb-3">
-                            <label htmlFor="email" className="form-label">Email Address</label>
-                            <input type="email" className="form-control" id="email" required/>
-                        </div>
-            
-                        <div className="col-md-6 mb-3">
-                            <label htmlFor="phoneNumber" className="form-label">Phone Number</label>
-                            <input type="number" className="form-control" id="phoneNumber" required/>
-                            
-                        </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="col-md-12 mb-3">
-                            <label htmlFor="username" className="form-label">Username</label>
-                            <input type="text" className="form-control" id="username" required/>
-                            
-                        </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="col-md-12 mb-3">
-                            <label htmlFor="password" className="form-label">Password</label>
-                            <div className="d-flex">
-                                <input type="password" className="form-control" id="password" required/>
-                                <span className="input-group-addon">
-                                    <i className="bi bi-eye position-absolute fs-4 mt-1" id="togglePassword" onClick={togglePassword}></i>
-                                </span>    
-                            </div>            
-                        </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="col-md-12 mb-3">
-                            <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
-                            <div className="d-flex">
-                                <input type="password" className="form-control" id="confirmPassword" required/>
-                                <span className="input-group-addon">
-                                    <i className="bi bi-eye position-absolute fs-4 mt-1" id="toggleConfirmPassword" onClick={toggleConfirmPassword}></i>
-                                </span>
-                            </div>
-                            <p id="password-validation"></p>
-                            
-                        </div>
-                    </div>
-
-                    <div className="col-md-12 mt-1">
-                        <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
-                            <label className="form-check-label">
-                            Agree to terms and conditions
-                            </label>
-                            
-                        </div>
-                    </div>
-
-                    <div className="text-center mt-4 mb-2">
-                    <button className="btn text-white fw-semibold px-3 py-2 register-btn" type="button" id="register" onClick={register}>REGISTER</button>
-                    </div>
-
-                    <div className="text-center mt-3">
-                        <p className="text-white">Already have an account? <Link to="/login" className="text-decoration-none login-link">Login instead.</Link></p>
-                    </div>
-
-                    <div className="toast-container position-fixed top-0 p-2">
-                        <div id="liveToast" className="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div className="toast-header" id="toastHeader">
-                                <strong className="me-auto" id="toastLabel"></strong>
-                                <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                            </div>
-                            <div className="toast-body fw-medium" id="toastMessage">
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
             </div>
+
+        </div>
+        {/* Back to Top Button */}
+        <a href="#" id="back-to-top" className="btn position-fixed text-decoration-none fs-5"><i className="bi bi-arrow-up-short"></i></a>
+        {/* Back to Top Button */}
     </>
   );   
  

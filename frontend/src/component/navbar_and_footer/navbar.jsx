@@ -23,11 +23,6 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart, wishlist}) 
         localStorage.clear(); // clear yung storage including token
         window.location.href = '/'; // redirect to login page
     }
-    // // Added code
-    // if((window.location.pathname !== '/login' && window.location.pathname !== '/register')  && !userToken){
-    //     window.location.href = 'login';
-    //   }
-    // // Added code
     
     return(
         <>
@@ -75,7 +70,7 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart, wishlist}) 
                         <div className="col-md-2 text-center">
                             <div className="account_info d-flex justify-content-end align-items-center text-white mt-3">
                                 <Link to="/cart" className="text-white position-relative nav-link me-3">
-                                    <i className="bi bi-bag fs-4"></i>
+                                    <i className="navbar_link bi bi-bag fs-4"></i>
                                     {cart.length > 0 && (
                                     <span className="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
                                         {cart.length}
@@ -83,7 +78,7 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart, wishlist}) 
                                     )}
                                 </Link>
                                 <Link to="/wishlist" className="text-white position-relative nav-link me-3">
-                                    <i className="bi bi-heart fs-4"></i>
+                                    <i className="navbar_link bi bi-heart fs-4"></i>
                                     {wishlist.length > 0 && (
                                         <span className="position-absolute top-0 start-1 translate-middle badge rounded-pill bg-danger">
                                         {wishlist.length}
@@ -93,7 +88,7 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart, wishlist}) 
                                 </Link> 
                                 <li>
                                     <div className="dropdown">
-                                        <i className="bi bi-person fs-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                        <i className="navbar_link bi bi-person fs-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></i>
                                         <ul className="dropdown-menu p-0">
                                             {!userToken ? (
                                                 <li>
@@ -144,7 +139,7 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart, wishlist}) 
                                 </li>
                                 <li className="nav-item me-3">
                                     <Link to="/product" className="nav-link text-white fw-semibold">
-                                        <i className="bi bi-tools"></i> TOOLS & ACCESSORIES
+                                        <i className="bi bi-tools navbar_link"></i> TOOLS & ACCESSORIES
                                     </Link>
                                 </li>
                             </ul>

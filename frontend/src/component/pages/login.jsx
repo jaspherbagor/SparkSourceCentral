@@ -151,6 +151,9 @@ function LoginPage() {
         </div>
 
       </div>
+      {/* Back to Top Button */}
+      <a href="#" id="back-to-top" className="btn position-fixed text-decoration-none fs-5"><i className="bi bi-arrow-up-short"></i></a>
+            {/* Back to Top Button */}
     </>
   );
 }

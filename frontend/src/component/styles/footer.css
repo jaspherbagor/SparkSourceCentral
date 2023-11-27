@@ -34,6 +34,10 @@ footer {
     font-size: 12px
 }
 
+.footer_link:hover {
+    color:var(--primary-color) !important
+}
+
 @media only screen and (max-width:575px) {
     .footer_logo, .customer_service, .categories, .quick_links, .my_account, .social_links, div .social_icons a i {
         text-align: center !important;

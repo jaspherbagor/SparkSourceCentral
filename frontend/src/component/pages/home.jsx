@@ -187,13 +187,6 @@ const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
                     }
                 </> : null  
             }
-            {/* Added code */}
-            {/* <div>
-                <h2>this is my homepage</h2>
-                <button className='btn btn-default' onClick={logout}>Logout</button>
-            </div> */}
-            {/* Added Code */}
-
             {/* Hero Section Start */}
             <section className="hero_section container-fluid h-auto align-items-center justify-content-center py-5 px-3">
             <div className="container mt-0">
@@ -203,7 +196,7 @@ const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
                         <p className="fw-medium mt-1 fs-6">Find High-Quality Electrical Products at Affordable Prices.</p>
                         <Link to="/product"  className="btn shopnow_btn px-4 py-3 fw-semibold">SHOP NOW</Link>
                     </div>
-                    <div className="col-md-6 col-sm-12">
+                    <div className="col-md-6 col-sm-12 d-flex align-items-center justify-content-center">
                         <img src="../images/hero-image.svg" alt="" className="img-fluid p-2 mt-0"/>
                     </div>
                 </div>
@@ -418,25 +411,15 @@ const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
                 </div>
             </div>
 
+            {/* Back to Top Button */}
+            <a href="#" id="back-to-top" className="btn position-fixed text-decoration-none fs-5"><i className="bi bi-arrow-up-short"></i></a>
+            {/* Back to Top Button */}
+
         </>
     )
 }
 
 export default Home;
-
-// // const getUserData = () => {
-//     fetch('http://localhost:3000/user', {
-//         method: 'get',
-//         headers: {
-//             'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE3MDA1NjczNzgsImV4cCI6MTcwMDU3MDk3OH0.VyKMHBr3OZWXZpxrRw354s-oxQorM1psS07b--rAh54'
-//         },
-//         body: null
-//     }).then((result)=>{
-//         return result.json();
-//     }).then((result)=>{
-//         console.log('result: ', result)
-//     })
-// }
 
 
 

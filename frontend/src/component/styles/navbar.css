@@ -91,3 +91,8 @@ header {
     background: var(--navbar-bg);
     color:var(--primary-color)
 }
+
+.navbar_link:hover, .nav-link:hover {
+    color: var(--primary-color)!important;
+    cursor: pointer;
+}
