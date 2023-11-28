@@ -75,7 +75,7 @@ const App = () => {
 
     <>
       <BrowserRouter>
-        <Navbar searchProducts={searchProducts} filteredProducts={filteredProducts} cart={cart} userToken={userToken} wishlist={wishlist} />
+        <Navbar product={product} setProduct={setProduct} searchProducts={searchProducts} filteredProducts={filteredProducts} cart={cart} userToken={userToken} wishlist={wishlist} />
         <Routeway product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addToCart={addToCart} userToken={userToken} wishlist={wishlist} setWishlist={setWishlist} addToWishlist={addToWishlist} />
         <Footer/>
       </BrowserRouter>

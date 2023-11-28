@@ -69,38 +69,7 @@ const CartPage = ({cart, setCart, userToken}) => {
     const updateCart = (updatedCart) => {
         setCart(updatedCart);
     };
-
-
-    // // Fetch user's cart items from the server upon login
-    // useEffect(() => {
-    //     const fetchCartItems = async () => {
-    //       try {
-    //         const response = await fetch('http://localhost:4000/cart', {
-    //           method: 'GET',
-    //           headers: {
-    //             'Authorization': 'Bearer ' + userToken // Send the user token for authentication
-    //           }
-    //         });
       
-    //         if (response.ok) {
-    //           const data = await response.json();
-    //           setCart(data); // Assuming data is an array of cart items received from the server
-    //         } else {
-    //           // Handle other HTTP response statuses if necessary
-    //           console.log("Error: Unable to fetch cart items");
-    //         }
-    //       } catch (error) {
-    //         console.error('Error fetching cart items:', error);
-    //         // Handle fetch error
-    //       }
-    //     };
-      
-    //     if (isLoggedIn && userToken) {
-    //       fetchCartItems();
-    //     }
-    //   }, [isLoggedIn, userToken, setCart]);
-      
-
     const handleCheckout = () => {
         const toastLive = document.getElementById('liveToast');
         const toastLabel = document.getElementById('toastLabel');

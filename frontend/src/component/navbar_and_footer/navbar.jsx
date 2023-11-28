@@ -1,8 +1,23 @@
 import React, {useState} from "react";
 import "../styles/navbar.css";
 import { Link } from "react-router-dom";
+import AllProducts from "../resources/Allproducts";
 
-const Navbar = ({ searchProducts, filteredProducts, userToken, cart, wishlist}) => {
+const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToken, cart, wishlist}) => {
+    const [selectedCategory, setSelectedCategory] = useState("All Categories");
+    const filterProducts = (selectedCategory) => 
+    {
+        if (selectedCategory === "All Categories") {
+            setProduct(AllProducts);
+        } else {
+            const filteredProducts = AllProducts.filter((product) => {
+                return product.Category === selectedCategory;
+            });
+            setProduct(filteredProducts);
+        }
+        setSelectedCategory(selectedCategory);
+    };
+    
     const [search, setSearch] = useState("");
   
     const handleSearch = (e) => {
@@ -118,29 +133,46 @@ const Navbar = ({ searchProducts, filteredProducts, userToken, cart, wishlist}) 
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav mx-auto">
                                 <li className="nav-item me-3">
-                                    <Link to="/product" className="nav-link text-white fw-semibold">
+                                    <Link to="/product" className="text-decoration-none">
+                                        <button
+                                        className="nav-link text-white fw-semibold"
+                                        onClick={() => filterProducts("All Categories")}>
                                         <i className="bi bi-lightning"></i> ALL ITEMS
+                                        </button>
                                     </Link>
+                                    
                                 </li>
                                 <li className="nav-item me-3">
-                                    <Link to="/product" className="nav-link text-white fw-semibold">
-                                        <i className="bi bi-lightbulb"></i> LIGHTING FIXTURES
-                                    </Link>
+                                    <button
+                                    className="nav-link text-white fw-semibold"
+                                    onClick={() => filterProducts("Lighting Fixtures")}
+                                    >
+                                    <i className="bi bi-lightbulb"></i> LIGHTING FIXTURES
+                                    </button>
                                 </li>
                                 <li className="nav-item me-3">
-                                    <Link to="/product" className="nav-link text-white fw-semibold">
-                                        <i className="bi bi-toggle-on"></i> SWITCHES & OUTLETS
-                                    </Link>
+                                    <button
+                                    className="nav-link text-white fw-semibold"
+                                    onClick={() => filterProducts("Switches & Outlets")}
+                                    >
+                                    <i className="bi bi-toggle-on"></i> SWITCHES & OUTLETS
+                                    </button>
                                 </li>
                                 <li className="nav-item me-3">
-                                    <Link to="/product" className="nav-link text-white fw-semibold">
-                                        <i className="bi bi-shield-lock"></i> SAFETY & PROTECTION
-                                    </Link>
+                                    <button
+                                    className="nav-link text-white fw-semibold"
+                                    onClick={() => filterProducts("Safety & Protection")}
+                                    >
+                                    <i className="bi bi-shield-lock"></i> SAFETY & PROTECTION
+                                    </button>
                                 </li>
                                 <li className="nav-item me-3">
-                                    <Link to="/product" className="nav-link text-white fw-semibold">
-                                        <i className="bi bi-tools navbar_link"></i> TOOLS & ACCESSORIES
-                                    </Link>
+                                    <button
+                                    className="nav-link text-white fw-semibold"
+                                    onClick={() => filterProducts("Tools & Accessories")}
+                                    >
+                                    <i className="bi bi-tools navbar_link"></i> TOOLS & ACCESSORIES
+                                    </button>
                                 </li>
                             </ul>
                         </div>

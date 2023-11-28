@@ -131,7 +131,8 @@ const Checkout = () => {
                 setSubmitted(true); // Update the submission status
                 setTimeout(function() {
                     window.location.href = "/";
-                }, 2500); // 2000 milliseconds (2.5 seconds) delay before redirecting
+                }, 2500); // 2500 milliseconds (2.5 seconds) delay before redirecting
+                localStorage.removeItem('cartItems');
             } else {
                 // alert("An Error Occurred");
                 toastLabel.innerText = "ERROR";
