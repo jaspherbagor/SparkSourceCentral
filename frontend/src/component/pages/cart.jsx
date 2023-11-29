@@ -33,11 +33,14 @@ const CartPage = ({cart, setCart, userToken}) => {
     }
     // handle quantity change
     const handleQuantityChange = (event, product) => {
-        const newQty = parseInt(event.target.value);
-        if (!isNaN(newQty) && newQty >= 0) {
-            setCart(cart.map((currentElement) =>
-            currentElement.id === product.id ? { ...currentElement, qty: newQty } : currentElement
-            ));
+        const inputValue = event.target.value.trim();
+    
+        if (inputValue === '' || /^\d+$/.test(inputValue)) {
+            const newQty = inputValue === '' ? 0 : parseInt(inputValue, 10);
+            const updatedCart = cart.map((item) =>
+                item.id === product.id ? { ...item, qty: isNaN(newQty) ? 0 : newQty } : item
+            );
+            setCart(updatedCart);
         }
     };
 
