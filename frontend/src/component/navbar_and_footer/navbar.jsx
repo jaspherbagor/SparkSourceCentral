@@ -50,6 +50,40 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
         }
     }, [])
     
+    const [username, setUsername] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        if (userToken) {
+          const response = await fetch("http://localhost:4000/user", {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${userToken}`,
+              "Content-Type": "application/json",
+            },
+          });
+
+          if (response.ok) {
+            const userData = await response.json();
+            if (userData && userData.data && userData.data.user.username) {
+              setUsername(userData.data.user.username);
+            } else {
+              setUsername(null);
+            }
+          } else {
+            setUsername(null);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+        setUsername(null);
+      }
+    };
+
+    fetchUserData();
+  }, [userToken]);
+    
     return(
         <>
             <header className="sticky-top container-fluid m-0 p-0">
@@ -118,14 +152,17 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
                                         <ul className="dropdown-menu p-0">
                                             {!userToken ? (
                                                 <li>
-                                                <Link className="dropdown-item login_link" to="/login">
-                                                    Login
-                                                </Link>
+                                                    <p className="not-login fw-medium text-white p-1 m-0 text-uppercase">Please Log In to Explore Further</p>
+                                                    <Link className="dropdown-item login_link fw-semibold" to="/login">
+                                                        LOGIN
+                                                    </Link>
                                                 </li>
                                             ) : (
-                                                <li onClick={handleLogout} className="dropdown-item logout_link">
-                                                Logout
-                                                </li>
+                                                <div>
+                                                    <p className="logged-in fw-medium text-white p-1 m-0 text-uppercase">Hello, {username ? username : "Guest"}!</p>
+                                                    <li onClick={handleLogout} className="dropdown-item logout_link fw-semibold">LOGOUT</li>
+                                                </div>
+                                                
                                         )}
                                         </ul>
                                     </div>

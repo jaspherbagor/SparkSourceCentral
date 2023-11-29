@@ -96,3 +96,9 @@ header {
     color: var(--primary-color)!important;
     cursor: pointer;
 }
+
+.not-login, .logged-in {
+    line-height: 20px !important;
+    background: var(--navbar-bg);
+    border-bottom: 0.5px solid var(--primary-color);
+}
