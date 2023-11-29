@@ -191,7 +191,7 @@ const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
             {/* Hero Section Start */}
             <section className="hero_section container-fluid h-auto align-items-center justify-content-center py-5 px-3">
             <div className="container mt-0">
-                <div className="row align-items-center">
+                <div className="row align-items-center justify-content-center">
                     <div className="col-md-6 col-sm-12 test-start text-md-left mx-auto mt-0">
                         <h1 className="fw-bolder mt-0">Discover Excellence in Electrical Innovation</h1>
                         <p className="fw-medium mt-1 fs-6">Find High-Quality Electrical Products at Affordable Prices.</p>

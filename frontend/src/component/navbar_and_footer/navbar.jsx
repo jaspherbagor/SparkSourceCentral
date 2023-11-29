@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "../styles/navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AllProducts from "../resources/Allproducts";
 
 const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToken, cart, wishlist}) => {
@@ -25,9 +25,13 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
       setSearch(searchTerm);
       searchProducts(searchTerm);
     };
+
+    const nav = useNavigate();
     const handleSearchButtonClick = () => {
+        localStorage.setItem('search', search)
         searchProducts(search);
         setSearch("")
+        nav('/product');
     };
     const handleSuggestionClick = () => {
         setSearch("")
@@ -38,6 +42,13 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
         localStorage.clear(); // clear yung storage including token
         window.location.href = '/'; // redirect to login page
     }
+
+    useEffect(()=>{
+        const searchKeyword = localStorage.getItem('search')
+        if(searchKeyword){
+            searchProducts(searchKeyword);
+        }
+    }, [])
     
     return(
         <>
@@ -61,11 +72,11 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
                             />
                             {/* Search button */}
                             
-                            <Link to={`/product`} className="text-white text-decoration-none">
+                            <a href="#" className="text-white text-decoration-none">
                                 <button className="btn search_btn" type="submit" onClick={handleSearchButtonClick}>
                                     <i className="bi bi-search text-white"></i>
                                 </button>
-                            </Link>
+                            </a>
                             
                             </div>
                             {/* Display filtered product suggestions */}
@@ -136,7 +147,10 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
                                     <Link to="/product" className="text-decoration-none">
                                         <button
                                         className="nav-link text-white fw-semibold"
-                                        onClick={() => filterProducts("All Categories")}>
+                                        onClick={() => {
+                                            localStorage.setItem('search', '')
+                                            filterProducts("All Categories")
+                                        } }>
                                         <i className="bi bi-lightning"></i> ALL ITEMS
                                         </button>
                                     </Link>
@@ -145,32 +159,40 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
                                 <li className="nav-item me-3">
                                     <button
                                     className="nav-link text-white fw-semibold"
-                                    onClick={() => filterProducts("Lighting Fixtures")}
-                                    >
+                                    onClick={() => {
+                                        localStorage.setItem('search', '')
+                                        filterProducts("Lighting Fixtures")
+                                    } }>
                                     <i className="bi bi-lightbulb"></i> LIGHTING FIXTURES
                                     </button>
                                 </li>
                                 <li className="nav-item me-3">
                                     <button
                                     className="nav-link text-white fw-semibold"
-                                    onClick={() => filterProducts("Switches & Outlets")}
-                                    >
+                                    onClick={() => {
+                                        localStorage.setItem('search', '')
+                                        filterProducts("Switches & Outlets")
+                                    } }>
                                     <i className="bi bi-toggle-on"></i> SWITCHES & OUTLETS
                                     </button>
                                 </li>
                                 <li className="nav-item me-3">
                                     <button
                                     className="nav-link text-white fw-semibold"
-                                    onClick={() => filterProducts("Safety & Protection")}
-                                    >
+                                    onClick={() => {
+                                        localStorage.setItem('search', '')
+                                        filterProducts("Safety & Protection")
+                                    }}>
                                     <i className="bi bi-shield-lock"></i> SAFETY & PROTECTION
                                     </button>
                                 </li>
                                 <li className="nav-item me-3">
                                     <button
                                     className="nav-link text-white fw-semibold"
-                                    onClick={() => filterProducts("Tools & Accessories")}
-                                    >
+                                    onClick={() => {
+                                        localStorage.setItem('search', '')
+                                        filterProducts("Tools & Accessories")
+                                    }}>
                                     <i className="bi bi-tools navbar_link"></i> TOOLS & ACCESSORIES
                                     </button>
                                 </li>

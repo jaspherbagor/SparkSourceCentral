@@ -5,7 +5,7 @@ const TermsAndCondition = () => {
     return(
         <>
             <div className="container-fluid px-4 py-5">
-                <h2 className="fw-bolder text-center">Terms and Conditions for SparkSource Central</h2>
+                <h2 className="fw-bolder text-center">TERMS AND CONDITIONS</h2>
                 <hr/>
                 <section className="mt-5">
                     <h3 className="fw-semibold">1. Introduction</h3>

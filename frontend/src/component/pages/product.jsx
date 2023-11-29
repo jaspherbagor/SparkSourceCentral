@@ -68,6 +68,25 @@ const Product = ({product, setProduct, detail, view, close, setClose, addToCart,
         toast.show();
     }
 
+    useEffect(()=>{
+    // console.log('product: ', product)
+    const searchTerm = localStorage.getItem('search')
+    if(searchTerm){
+    const formattedSearchTerm = searchTerm.toLowerCase();
+    const filtered = AllProducts.filter((product) => {
+    const formattedCategory = product.Category.toLowerCase();
+    const formattedTitle = product.Title.toLowerCase();
+      return (
+        formattedCategory.includes(formattedSearchTerm) ||
+        formattedTitle.includes(formattedSearchTerm)
+      );
+    });
+
+    setProduct(filtered);
+    // setFilteredProducts(filtered);
+    }
+}, [])
+
     return(
         <>
             {
@@ -119,11 +138,26 @@ const Product = ({product, setProduct, detail, view, close, setClose, addToCart,
                     {/* <!-- Product categories column --> */}
                     <div className="col-lg-3 col-md-3 col-sm-3 product_category mb-4">
                         <ul className="list-group">
-                            <li className="list-group-item all_product_category fw-medium" onClick={() => filterProducts("All Categories")}>All Categories</li>
-                            <li className="list-group-item fw-medium" onClick={() => filterProducts("Tools & Accessories")}>Tools & Accessories</li>
-                            <li className="list-group-item fw-medium" onClick={() => filterProducts("Safety & Protection")}>Safety & Protection</li>
-                            <li className="list-group-item fw-medium" onClick={() => filterProducts("Lighting Fixtures")}>Lighting Fixtures</li>
-                            <li className="list-group-item fw-medium" onClick={() => filterProducts("Switches & Outlets")}>Switches & Outlets</li>
+                            <li className="list-group-item all_product_category fw-medium" onClick={() => {
+                                localStorage.setItem('search', '')
+                                filterProducts("All Categories")
+                            } }>All Categories</li>
+                            <li className="list-group-item fw-medium" onClick={() =>{
+                                localStorage.setItem('search', '')
+                                filterProducts("Tools & Accessories")
+                            } }>Tools & Accessories</li>
+                            <li className="list-group-item fw-medium" onClick={() => {
+                                localStorage.setItem('search', '')
+                                filterProducts("Safety & Protection")
+                            } }>Safety & Protection</li>
+                            <li className="list-group-item fw-medium" onClick={() => {
+                                localStorage.setItem('search', '')
+                                filterProducts("Lighting Fixtures")
+                            } }>Lighting Fixtures</li>
+                            <li className="list-group-item fw-medium" onClick={() => {
+                                localStorage.setItem('search', '')
+                                filterProducts("Switches & Outlets")
+                            } }>Switches & Outlets</li>
                         </ul>
                     </div>
                     {/* <!-- Product cards column --> */}

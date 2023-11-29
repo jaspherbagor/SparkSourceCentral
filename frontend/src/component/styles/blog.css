@@ -13,6 +13,16 @@
     word-wrap: break-word;
 }
 
+/* Heading 2 & Heading 1 Spacing */
+h2, h1 {
+    word-spacing: 10px;
+    letter-spacing: 5px;
+}
+
+p {
+    line-height:30px !important;
+}
+
 html, body {
     width:100%;
     overflow-x:hidden
@@ -20,27 +30,20 @@ html, body {
 
 :root {
     --primary-color: #fca311;
-    --footer-bg: #000;
     --text-color-light: #fff;
+    --navbar-bg: #14213d;
     --text-color-dark: #000;
+    --dark-semitransparent: rgba(0,0,0,0.4);
+    --grayish-color:#E5E5E5;
     --font-family: 'Inter', sans-serif;
 }
 
-footer {
-    background: var(--footer-bg);
+.related-posts-container {
+    background-color: var(--navbar-bg);
+    color:var(--text-color-light)
 }
 
-.footer_copyright p {
-    font-size: 12px
-}
-
-.footer_link:hover, p.footer_link:hover {
-    color:var(--primary-color) !important;
+.related-posts-container p:hover {
+    background:var(--primary-color);
     cursor: pointer;
-}
-
-@media only screen and (max-width:575px) {
-    .footer_logo, .customer_service, .categories, .quick_links, .my_account, .social_links, div .social_icons a i {
-        text-align: center !important;
-    }
 }

@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React , {useState, useEffect} from "react";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "./component/navbar_and_footer/navbar";
 import Footer from "./component/navbar_and_footer/footer";
@@ -35,7 +35,6 @@ const App = () => {
     setProduct(filtered);
     setFilteredProducts(filtered);
   };
-
 
   //add to cart
   const [cart, setCart] = useState([]);
@@ -77,7 +76,7 @@ const App = () => {
       <BrowserRouter>
         <Navbar product={product} setProduct={setProduct} searchProducts={searchProducts} filteredProducts={filteredProducts} cart={cart} userToken={userToken} wishlist={wishlist} />
         <Routeway product={product} setProduct={setProduct} detail={detail} view={view} close={close} setClose={setClose} cart={cart} setCart={setCart} addToCart={addToCart} userToken={userToken} wishlist={wishlist} setWishlist={setWishlist} addToWishlist={addToWishlist} />
-        <Footer/>
+        <Footer setProduct={setProduct} filteredProducts={filteredProducts}/>
       </BrowserRouter>
     </>
   );

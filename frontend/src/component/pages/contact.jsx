@@ -174,9 +174,9 @@ const Contact = () => {
                         <p>OPENING HOURS: <span className="text-white d-inline"> 8:00AM-5:00PM Mon-Sat</span></p>
                         <p>EMAIL: <span className="d-inline"><a href="mailto:jbagor96@gmail.com" target="_blank" className="text-decoration-none text-white"> jbagor96@gmail.com</a></span></p>
                         <div className="social-icons m-auto d-flex gap-3">
-                            <a href="https:www.facebook.com/KinabuhingTurnero" target="_blank" className="text-decoration-none fs-3 text-white"><i className="bi bi-facebook"></i></a>
-                            <a href="https:www.tiktok.com/@kinabuhingturnero?_t=8g1xeOPP3Zp&_r=1" target="_blank" className="text-decoration-none fs-3 text-white"><i className="bi bi-tiktok"></i></a>
-                            <a href="https:www.youtube.com/@KinabuhingTurnero" target="_blank" className="text-decoration-none fs-3 text-white"><i className="bi bi-youtube"></i></a>
+                            <a href="https://www.facebook.com/jas.bagor/" target="_blank" className="text-decoration-none fs-3 text-white"><i className="bi bi-facebook"></i></a>
+                            <a href="https://www.tiktok.com/@jasbgr" target="_blank" className="text-decoration-none fs-3 text-white"><i className="bi bi-tiktok"></i></a>
+                            <a href="https://www.youtube.com/channel/UCTNYaiZxQGNiNLFg8VosSpw" target="_blank" className="text-decoration-none fs-3 text-white"><i className="bi bi-youtube"></i></a>
                         </div>
                     </div>
                     <div className="col-md-6 contact-map-right py-4 px-4">
