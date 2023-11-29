@@ -106,7 +106,7 @@ const Product = ({product, setProduct, detail, view, close, setClose, addToCart,
                                                 </div>
                                             </div>
                                             <div className="col-lg-7 col-md-7 col-sm-7 col-12">
-                                                <h4 className="text-secondary mt-2 mb-3 text-uppercase">{currentElement.Category}</h4>
+                                                <h5 className="text-secondary mt-2 mb-3 text-uppercase">{currentElement.Category}</h5>
                                                 <p className="fs-2 pb-3 fw-bold">{currentElement.Title}</p>
                                                 <p>{currentElement.Description}</p>
                                                 <h3 className="pb-4 pt-3 fw-bold">₱{currentElement.Price}</h3>

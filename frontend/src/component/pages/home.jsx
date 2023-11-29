@@ -173,7 +173,7 @@ const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
                                                 </div>
                                             </div>
                                             <div className="col-lg-7 col-md-7 col-sm-7 col-12">
-                                                <h4 className="text-secondary mt-2 mb-3 text-uppercase">{currentElement.Category}</h4>
+                                                <h5 className="text-secondary mt-2 mb-3 text-uppercase">{currentElement.Category}</h5>
                                                 <p className="fs-2 pb-3 fw-bold">{currentElement.Title}</p>
                                                 <p>{currentElement.Description}</p>
                                                 <h3 className="pb-4 pt-3 fw-bold">₱{currentElement.Price.toLocaleString()}</h3>
@@ -420,20 +420,6 @@ const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
 }
 
 export default Home;
-
-// // const getUserData = () => {
-//     fetch('http://localhost:3000/user', {
-//         method: 'get',
-//         headers: {
-//             'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE3MDA1NjczNzgsImV4cCI6MTcwMDU3MDk3OH0.VyKMHBr3OZWXZpxrRw354s-oxQorM1psS07b--rAh54'
-//         },
-//         body: null
-//     }).then((result)=>{
-//         return result.json();
-//     }).then((result)=>{
-//         console.log('result: ', result)
-//     })
-// }
 
 
 
