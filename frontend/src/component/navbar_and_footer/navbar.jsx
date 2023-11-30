@@ -52,37 +52,37 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
     
     const [username, setUsername] = useState(null);
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        if (userToken) {
-          const response = await fetch("http://localhost:4000/user", {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${userToken}`,
-              "Content-Type": "application/json",
-            },
-          });
+    useEffect(() => {
+        const fetchUserData = async () => {
+        try {
+            if (userToken) {
+            const response = await fetch("http://localhost:4000/user", {
+                method: "GET",
+                headers: {
+                Authorization: `Bearer ${userToken}`,
+                "Content-Type": "application/json",
+                },
+            });
 
-          if (response.ok) {
-            const userData = await response.json();
-            if (userData && userData.data && userData.data.user.username) {
-              setUsername(userData.data.user.username);
+            if (response.ok) {
+                const userData = await response.json();
+                if (userData && userData.data && userData.data.user.username) {
+                setUsername(userData.data.user.username);
+                } else {
+                setUsername(null);
+                }
             } else {
-              setUsername(null);
+                setUsername(null);
             }
-          } else {
+            }
+        } catch (error) {
+            console.error("Error fetching user data:", error);
             setUsername(null);
-          }
         }
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-        setUsername(null);
-      }
-    };
+        };
 
-    fetchUserData();
-  }, [userToken]);
+        fetchUserData();
+    }, [userToken]);
     
     return(
         <>
