@@ -20,7 +20,6 @@ const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
         })
         .catch((error) => {
             console.error('Error fetching user data:', error);
-            // Handle the error (show a message to the user or perform any necessary action)
         });
     };
     
@@ -45,7 +44,6 @@ const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
 
         // Validation: Check if any required field is empty
         if (!users.Email) {
-            // alert("Please enter your email");
             const toastLive = document.getElementById('liveToast');
             const toastLabel = document.getElementById('toastLabel');
             const toastMessage = document.getElementById('toastMessage');
@@ -88,8 +86,7 @@ const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
                 toastLive.style.border = "2.5px solid #fca311";
                 toastHeader.style.background = "#14213d";
                 toast.show();
-                // alert("Your Message Has Been Sent");
-                setUser({ // Reset the form fields after successful submission
+                setUser({
                     Email: ''
                 });
                 setSubmitted(true);
