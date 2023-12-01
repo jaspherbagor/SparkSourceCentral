@@ -152,7 +152,6 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
                                         <ul className="dropdown-menu p-0">
                                             {!userToken ? (
                                                 <li>
-                                                    <p className="not-login fw-medium text-white p-1 m-0 text-uppercase">Checkout feature requires authentication.</p>
                                                     <Link className="dropdown-item login_link fw-semibold" to="/login">
                                                         LOGIN
                                                     </Link>
