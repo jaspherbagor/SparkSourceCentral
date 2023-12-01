@@ -16,13 +16,13 @@ const TermsAndCondition = () => {
                     <p className="mt-3 mb-4">By accessing or using our website, you confirm your agreement to comply with and be bound by these terms and conditions. If you do not agree with any part of these terms, please refrain from using SparkSource Central.</p>
                     <h4>Changes to Terms and Conditions:</h4>
                     <p className="mt-3 mb-4">We reserve the right to modify or update these terms at any time without prior notice. Changes will be effective immediately upon posting on the website. It is your responsibility to review these terms periodically for any amendments. Your continued use of SparkSource Central after changes signifies your acceptance of the updated terms.</p>
-                    <p mt-3>Thank you for choosing SparkSource Central for your shopping needs. If you have any questions or concerns regarding these terms and conditions, please contact us at [contact information].</p>
+                    <p mt-3>Thank you for choosing SparkSource Central for your shopping needs. If you have any questions or concerns regarding these terms and conditions, please contact us at <a href="https://spark-source-central.vercel.app/contact" target="_blank">Contact Page</a>.</p>
                 </section>
                 <section className="mt-5">
                     <h3 className="fw-semibold">2. Definitions</h3>
                     <p className="mt-3 mb-4">The following terms used in these terms and conditions shall have the meanings ascribed to them below:</p>
                     <li className="my-3"><strong>"SparkSource Central," "we," "our," or "us":</strong>  Refers to the e-commerce platform, its owners, operators, and affiliates.</li>
-                    <li className="my-3"><strong>"Website":</strong> Refers to the SparkSource Central website accessible at <a href="http://localhost:3000/" target="_blank" >SparkSource Central</a>.</li>
+                    <li className="my-3"><strong>"Website":</strong> Refers to the SparkSource Central website accessible at <a href="https://spark-source-central.vercel.app/" target="_blank" >SparkSource Central</a>.</li>
                     <li className="my-3"><strong>"User," "you," or "your":</strong> Refers to any person or entity accessing or using the SparkSource Central platform.</li>
                     <li className="my-3"><strong>"Products": </strong>  Refers to goods, items, or merchandise available for purchase on SparkSource Central.</li>
                     <li className="my-3"><strong>"Services": </strong> Refers to any additional offerings, features, or functionalities provided by SparkSource Central.</li>
