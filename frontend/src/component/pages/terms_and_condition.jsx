@@ -182,8 +182,30 @@ const TermsAndCondition = () => {
 
                     <p className="mt-3 mb-4">Users are encouraged to carefully review our Returns and Refunds policy before initiating a return request.</p>
                 </section>
+                <section class="mt-5">
+                    <h3 class="fw-semibold">11. Privacy Policy</h3>
+                    <p class="mt-3 mb-4">At SparkSource Central, we are committed to protecting your privacy and ensuring the security of your personal information. Our privacy policy outlines how we collect, use, disclose, and safeguard your data when you use our platform. By accessing or using SparkSource Central, you agree to the terms outlined in this privacy policy.</p>
+
+                    <h4>Information Collection and Use:</h4>
+                    <p class="mt-3 mb-4">We collect various types of information when you use SparkSource Central, including personal data provided by you during account creation, browsing, or making purchases. This information may include but is not limited to your name, contact details, shipping address, payment information, and browsing behavior on our platform. We use this information to process orders, provide customer support, personalize your experience, and improve our services.</p>
+
+                    <h4>Information Sharing:</h4>
+                    <p class="mt-3 mb-4">We may share your personal information with third-party service providers or affiliates to facilitate services such as payment processing, order fulfillment, or marketing activities. However, we do not sell or disclose your information to unaffiliated third parties for their marketing purposes without your explicit consent.</p>
+
+                    <h4>Data Security:</h4>
+                    <p class="mt-3 mb-4">We implement appropriate security measures to protect your information against unauthorized access, alteration, disclosure, or destruction. Despite our efforts, no method of data transmission over the internet or electronic storage is completely secure. Therefore, we cannot guarantee absolute security, but we continuously review and enhance our security practices to safeguard your data.</p>
+
+                    <h4>Cookie Policy:</h4>
+                    <p class="mt-3 mb-4">SparkSource Central uses cookies and similar tracking technologies to enhance user experience, analyze trends, track user interactions, and gather demographic information. You can manage your cookie preferences through your browser settings, although disabling certain cookies may limit your access to certain features on our platform.</p>
+
+                    <h4>Changes to Privacy Policy:</h4>
+                    <p class="mt-3 mb-4">We reserve the right to update or modify our privacy policy at any time. Any changes will be posted on SparkSource Central, and your continued use of the platform after the modifications indicate your acceptance of the updated privacy policy. It is advisable to review this policy periodically for any changes.</p>
+
+                    <h4>Contact Us:</h4>
+                    <p class="mt-3 mb-4">If you have any questions, concerns, or requests regarding our privacy practices or this policy, please contact us using the information provided in the "Contact Information" section.</p>
+                </section>
                 <section className="mt-5">
-                    <h3 className="fw-bold">11. Contact Information</h3>
+                    <h3 className="fw-bold">12. Contact Information</h3>
                     <p className="mt-3 mb-4">For inquiries, assistance, or further information regarding our services, products, or these terms and conditions, please contact us:</p>
 
                     <h5>11.1 Customer Support</h5>
