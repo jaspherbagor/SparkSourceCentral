@@ -102,7 +102,7 @@ const AllProducts =
         Category: "Lighting Fixtures",
         Price: "1050",
         Description: "Effortlessly blending style and functionality, the flush mount ceiling light delivers ambient illumination while seamlessly integrating into diverse interior spaces.",
-        Image: "../images/Flush_Mount_Celing_light.webp"
+        Image: "../images/Flush_Mount_Celing_Light.webp"
     },
     {
         id: 14,
