@@ -87,18 +87,18 @@ const CartPage = ({cart, setCart, userToken}) => {
         window.location.href = "/checkout";
         } else {
         setIsLoggedIn(false);
-        toastLabel.innerText = "Error";
+        toastLabel.innerText = "Ops!!";
         toastLabel.style.color = "#FFFFFF";
         toastMessage.innerText ='You need to Login/Register to Checkout!';
         toastButtons.innerHTML= `
             <div class="d-flex align-items-baseline justify-content-center">
-            <a href="/login" class="btn btn-primary btn-outline-warning me-5">LOGIN</a>
-            <a href="/register" class="btn btn-success btn-outline-dark">REGISTER</a>
+            <a href="/login" class="btn btn-warning btn-outline-dark me-5">LOGIN</a>
+            <a href="/register" class="btn btn-warning btn-outline-dark">REGISTER</a>
             </div>
         `;
         toastMessage.style.color = "#000000";
         toastLive.style.border = "2.5px solid #fca311";
-        toastHeader.style.background = "#14213d";
+        toastHeader.style.background = "#8b0000";
         }
     
         toast.show();
