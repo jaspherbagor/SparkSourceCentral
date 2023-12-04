@@ -3,22 +3,12 @@ import "../styles/wishlist.css"
 import { saveWishlistItems, getWishlistItems } from "../resources/localStorageUtils";
 
 const WishlistPage = ({wishlist, setWishlist, addToCart}) => {
-
-    useEffect(() => {
-        const savedWishlist = getWishlistItems();
-        if (wishlist.length === 0 && savedWishlist.length > 0) {
-          setWishlist(savedWishlist);
-        }
-    }, [wishlist, setWishlist]);
-    
-    useEffect(() => {
-    saveWishlistItems(wishlist);
-    }, [wishlist]);
-    
     //remove wishlist product
     const removeProduct = (product) => {
-        const updatedWishlist = wishlist.filter((x) => x.id !== product.id);
-        setWishlist(updatedWishlist);
+        setWishlist(wishlist.filter((x) =>
+            {
+                return  x.id !==  product.id
+            }))
     };
 
     const addToCartToast = (currentElement) => {
@@ -38,10 +28,27 @@ const WishlistPage = ({wishlist, setWishlist, addToCart}) => {
 
         // Remove product from wishlist after adding to cart
         setTimeout(() => {
-        const updatedWishlist = wishlist.filter((x) => x.id !== currentElement.id);
-        setWishlist(updatedWishlist);
+            const updatedWishlist = wishlist.filter((x) => x.id !== currentElement.id);
+            setWishlist(updatedWishlist);
+            saveWishlistItems(updatedWishlist); // Save updated wishlist to local storage
         }, 1000);
     }
+
+    // Load wishlist items from local storage when the component mounts
+    useEffect(() => {
+        const savedWishlist = getWishlistItems();
+        if (savedWishlist && savedWishlist.length > 0) {
+            setWishlist(savedWishlist);
+        }
+    }, [setWishlist]);
+    
+   // Save wishlist items to local storage whenever the wishlist state changes
+   useEffect(() => {
+    saveWishlistItems(wishlist);
+}, [wishlist]);
+
+
+    
 
     return(
         <>
