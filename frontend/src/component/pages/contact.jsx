@@ -38,12 +38,12 @@ const Contact = () => {
             const toastMessage = document.getElementById('toastMessage');
             const toastHeader = document.getElementById('toastHeader');
             const toast = new window.bootstrap.Toast(toastLive);
-            toastLabel.innerText = "FAILED";
+            toastLabel.innerText = "OPS!!";
             toastLabel.style.color = "#FFFFFF";
             toastMessage.innerText ='Please Fill All The Required Information!';
             toastMessage.style.color = "red";
             toastLive.style.border = "2.5px solid red";
-            toastHeader.style.background = "red";
+            toastHeader.style.background = "#8d0000";
             toast.show();
             return;
         }

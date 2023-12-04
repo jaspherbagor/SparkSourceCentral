@@ -49,12 +49,12 @@ const Home = ({detail, view, close, setClose, addToCart, addToWishlist}) => {
             const toastMessage = document.getElementById('toastMessage');
             const toastHeader = document.getElementById('toastHeader');
             const toast = new window.bootstrap.Toast(toastLive);
-            toastLabel.innerText = "FAILED";
+            toastLabel.innerText = "OPS!!";
             toastLabel.style.color = "#FFFFFF";
             toastMessage.innerText ='Please Enter Your Email';
             toastMessage.style.color = "#000000";
             toastLive.style.border = "2.5px solid #fca311";
-            toastHeader.style.background = "#14213d";
+            toastHeader.style.background = "#8d0000";
             toast.show();
             return;
         }

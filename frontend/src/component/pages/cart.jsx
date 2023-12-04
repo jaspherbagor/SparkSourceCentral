@@ -87,7 +87,7 @@ const CartPage = ({cart, setCart, userToken}) => {
         window.location.href = "/checkout";
         } else {
         setIsLoggedIn(false);
-        toastLabel.innerText = "Ops!!";
+        toastLabel.innerText = "OPS!!";
         toastLabel.style.color = "#FFFFFF";
         toastMessage.innerText ='You need to Login/Register to Checkout!';
         toastButtons.innerHTML= `
