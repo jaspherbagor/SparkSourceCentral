@@ -25,6 +25,7 @@ const Product = ({product, setProduct, detail, view, close, setClose, addToCart,
 
     const filterProducts = (selectedCategory) => 
     {
+        const category = localStorage.setItem(selectedCategory)
         if (selectedCategory === "All Categories") {
             setProduct(AllProducts);
         } else {

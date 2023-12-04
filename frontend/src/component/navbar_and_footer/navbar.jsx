@@ -5,18 +5,19 @@ import AllProducts from "../resources/Allproducts";
 
 const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToken, cart, wishlist}) => {
     const [selectedCategory, setSelectedCategory] = useState("All Categories");
-    const filterProducts = (selectedCategory) => 
-    {
-        if (selectedCategory === "All Categories") {
-            setProduct(AllProducts);
-        } else {
-            const filteredProducts = AllProducts.filter((product) => {
-                return product.Category === selectedCategory;
-            });
-            setProduct(filteredProducts);
-        }
-        setSelectedCategory(selectedCategory);
-    };
+
+    // const filterProducts = (selectedCategory) => 
+    // {
+    //     if (selectedCategory === "All Categories") {
+    //         setProduct(AllProducts);
+    //     } else {
+    //         const filteredProducts = AllProducts.filter((product) => {
+    //             return product.Category === selectedCategory;
+    //         });
+    //         setProduct(filteredProducts);
+    //     }
+    //     setSelectedCategory(selectedCategory);
+    // };
     
     const [search, setSearch] = useState("");
   
@@ -33,6 +34,26 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
         setSearch("")
         nav('/product');
     };
+
+    const filterProducts = (selectedCategory) => {
+        if (selectedCategory === "All Categories") {
+            setProduct(AllProducts);
+        } else {
+            const filteredProducts = AllProducts.filter((product) => {
+                return product.Category === selectedCategory;
+            });
+            setProduct(filteredProducts);
+        }
+        setSelectedCategory(selectedCategory);
+    };
+
+    const handleCategoryClick = (category) => {
+        localStorage.setItem('category', category);
+        filterProducts(category);
+        setSelectedCategory('')
+        nav('/product');
+    };
+
     const handleSuggestionClick = () => {
         setSearch("")
     };
@@ -185,7 +206,7 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
                                         className="nav-link text-white fw-semibold"
                                         onClick={() => {
                                             localStorage.setItem('search', '')
-                                            filterProducts("All Categories")
+                                            handleCategoryClick("All Categories")
                                         } }>
                                         <i className="bi bi-lightning"></i> ALL ITEMS
                                         </button>
@@ -197,7 +218,7 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
                                     className="nav-link text-white fw-semibold"
                                     onClick={() => {
                                         localStorage.setItem('search', '')
-                                        filterProducts("Lighting Fixtures")
+                                        handleCategoryClick("Lighting Fixtures")
                                     } }>
                                     <i className="bi bi-lightbulb"></i> LIGHTING FIXTURES
                                     </button>
@@ -207,7 +228,7 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
                                     className="nav-link text-white fw-semibold"
                                     onClick={() => {
                                         localStorage.setItem('search', '')
-                                        filterProducts("Switches & Outlets")
+                                        handleCategoryClick("Switches & Outlets")
                                     } }>
                                     <i className="bi bi-toggle-on"></i> SWITCHES & OUTLETS
                                     </button>
@@ -217,7 +238,7 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
                                     className="nav-link text-white fw-semibold"
                                     onClick={() => {
                                         localStorage.setItem('search', '')
-                                        filterProducts("Safety & Protection")
+                                        handleCategoryClick("Safety & Protection")
                                     }}>
                                     <i className="bi bi-shield-lock"></i> SAFETY & PROTECTION
                                     </button>
@@ -227,7 +248,7 @@ const Navbar = ({product, setProduct, searchProducts, filteredProducts, userToke
                                     className="nav-link text-white fw-semibold"
                                     onClick={() => {
                                         localStorage.setItem('search', '')
-                                        filterProducts("Tools & Accessories")
+                                        handleCategoryClick("Tools & Accessories")
                                     }}>
                                     <i className="bi bi-tools navbar_link"></i> TOOLS & ACCESSORIES
                                     </button>
